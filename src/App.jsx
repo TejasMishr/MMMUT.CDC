@@ -2,21 +2,14 @@
 
 // IMPORTING ROUTES
 // import SiteRoutes from './routes.js'
-
-
+import Dashboard from "./components/pages/dashboard"
+import ContactForm from "./components/pages/contactus"
 function App() {
 
   return (
-    <>
-      {/* <BrowserRouter>
-        <Routes>
-          {SiteRoutes.map((route, index) => (
-            <Route key={index} path={route.path} element={path.element}></Route>
-          ))}
-        </Routes>
-      </BrowserRouter> */}
+  <Dashboard/>
+    
 
-    </>
   )
 }
 
