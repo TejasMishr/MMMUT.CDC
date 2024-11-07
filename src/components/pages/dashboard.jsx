@@ -37,7 +37,7 @@ const Dashboard = () => {
           initial={{ opacity: 0, x: 100 }}
           whileInView={{ opacity: 1, x: 0 }}
           transition={{ duration: 0.5, delay: 0.4 }}
-          className="flex flex-col items-center justify-around space-y-4 sm:h-[80%] sm:w-[40%] h-[90%] w-[100%] lg:text-1xl mt-4 text-o.5xl sm:mt-[0%]"
+          className="flex flex-col items-center justify-around space-y-4 sm:h-[80%] sm:w-[40%] h-[90%] w-[100%] lg:text-1xl lg:w-[30%] mt-4 text-o.5xl sm:mt-[0%]"
         >
           {cardData.map((item, index) => (
             <div
@@ -53,7 +53,41 @@ const Dashboard = () => {
           ))}
         </motion.div>
       </motion.div>
+ 
+    
+<div className="flex w-11/12 flex-col  space-y-2 items-center justify-center ">
+
+<h1 className=" text-white   text-2xl"> Teams  </h1>
+<div className="flex w-full h-[30vh]  bg-gray-800 p-10 border border-[#5FA4EA] rounded-md"></div>
+
+
+
+
+</div>
+<div className="flex flex-col space-y-2 w-11/12 items-center justify-center ">
+
+<h1 className=" text-white  text-2xl">Events  </h1>
+<div className="flex w-full h-[30vh] bg-gray-800 p-10 border border-[#5FA4EA] rounded-md"></div>
+
+
+
+
+</div>
+
+<div className="flex flex-col space-y-2 w-11/12 items-center justify-center ">
+
+<h1 className=" text-white  text-2xl"> Your Score  </h1>
+<div className="flex w-full h-[30vh] bg-gray-800 p-10 border border-[#5FA4EA] rounded-md"></div>
+
+
+
+
+</div>
+
+
     </div>
+      
+
   );
 };
 
