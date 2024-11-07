@@ -4,7 +4,7 @@ import { faPhone } from '@fortawesome/free-solid-svg-icons';
 
 const Dashboard = () => {
   return (
-    <div className="bg-gray-900 min-h-screen flex flex-col">
+    <div className="bg-gray-900 min-h-screen flex   items-center  space-y-6 flex-col">
       <h1 className="text-center text-5xl font-bold mt-2 text-white">DASHBOARD</h1>
       <div className="w-[80vw] h-[35vh] relative left-[10vw] flex justify-around items-center sm:flex-row flex-col mt-[2%]">
         
@@ -46,8 +46,43 @@ const Dashboard = () => {
           </div>
         </div>
       </div>
+
+{/*  */}
+
+
+<div className="flex w-11/12 flex-col  space-y-2 items-center justify-center ">
+
+<h1 className=" text-white   text-2xl"> Teams  </h1>
+<div className="flex w-full  bg-gray-800 p-10 border border-[#5FA4EA] rounded-md"></div>
+
+
+
+
+</div>
+<div className="flex flex-col space-y-2 w-11/12 items-center justify-center ">
+
+<h1 className=" text-white  text-2xl">Events  </h1>
+<div className="flex w-full  bg-gray-800 p-10 border border-[#5FA4EA] rounded-md"></div>
+
+
+
+
+</div>
+
+<div className="flex flex-col space-y-2 w-11/12 items-center justify-center ">
+
+<h1 className=" text-white  text-2xl"> Your Score  </h1>
+<div className="flex w-full  bg-gray-800 p-10 border border-[#5FA4EA] rounded-md"></div>
+
+
+
+
+</div>
+
+
     </div>
   );
 };
 
 export default Dashboard;
+
