@@ -5,11 +5,16 @@
 import Dashboard from "./components/pages/dashboard"
 import ContactForm from "./components/pages/contactus"
 import LandingPage from "./components/pages/LandingPage/Landingpage"
+import RegistrationForm from "./components/pages/RegistrationForm"
+
 function App() {
 
   return (
+    <>
   <LandingPage />
-    
+  <Dashboard />
+  <RegistrationForm />
+  </>
 
   )
 }
