@@ -44,11 +44,11 @@ const Dashboard = () => {
               key={index}
               className="bg-custom-gray text-white border border-gray-600 rounded-2xl w-[90%] h-[20%] flex flex-row items-center p-3"
             >
-              <div className="bg-black h-[30px] w-[30px] rounded-full flex items-center justify-center">
+              <div className="bg-black h-[30px] w-[30px]  rounded-full flex items-center justify-center">
                 <FontAwesomeIcon icon={item.icon} className="text-white" />
               </div>
-              <div className="ml-3 ">{item.label}:</div>
-              <div className="ml-2">{item.value}</div>
+              <div className="ml-3 text-2xl lg:text-xl ">{item.label}:</div>
+              <div className="ml-2 text-2xl lg:text-xl">{item.value}</div>
             </div>
           ))}
         </motion.div>

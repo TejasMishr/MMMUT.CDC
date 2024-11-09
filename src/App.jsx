@@ -4,10 +4,11 @@
 // import SiteRoutes from './routes.js'
 import Dashboard from "./components/pages/dashboard"
 import ContactForm from "./components/pages/contactus"
+import LandingPage from "./components/pages/LandingPage/Landingpage"
 function App() {
 
   return (
-  <Dashboard/>
+  <LandingPage/>
     
 
   )
