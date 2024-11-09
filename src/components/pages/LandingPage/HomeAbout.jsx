@@ -1,5 +1,5 @@
 import { motion } from "framer-motion";
-import { useGradientUpdater } from "../hooks/useGradientUpdater";
+import { useGradientUpdater } from "../../hooks/useGradientUpdater";
 
 
 

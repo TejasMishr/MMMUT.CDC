@@ -8,7 +8,7 @@ import LandingPage from "./components/pages/LandingPage/Landingpage"
 function App() {
 
   return (
-  <LandingPage/>
+  <LandingPage />
     
 
   )

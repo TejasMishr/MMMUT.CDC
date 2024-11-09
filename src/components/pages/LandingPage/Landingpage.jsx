@@ -1,4 +1,4 @@
-
+import { useGradientUpdater } from "../../hooks/useGradientUpdater"
 import Carousel from './Glimpse'
  import HomeAbout from './HomeAbout'
 import JoinOur from './JoinOur'

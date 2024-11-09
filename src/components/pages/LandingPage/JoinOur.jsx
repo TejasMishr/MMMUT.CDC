@@ -1,4 +1,4 @@
-import { useGradientUpdater } from "../hooks/useGradientUpdater";
+import { useGradientUpdater } from "../../hooks/useGradientUpdater";
 import { motion } from "framer-motion";
 
 
