@@ -5,11 +5,12 @@
 import Dashboard from "./components/pages/dashboard"
 import ContactForm from "./components/pages/contactus"
 import LandingPage from "./components/pages/LandingPage/Landingpage"
+import { Navbar } from "./components/Navbar/Navbar"
 function App() {
 
   return (
   <LandingPage />
-    
+   
 
   )
 }

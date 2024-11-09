@@ -34,6 +34,12 @@ export default {
         'xs': '480px', // Extra small screens
         '3xl': '1920px', // Extra large screens
       },
+     
+        fontFamily: {
+          poppins: ['"Poppins"', 'sans-serif'],
+          'roboto-slab': ['"Roboto Slab"', 'serif'],
+        },
+      
     },
   },
   plugins: [],
