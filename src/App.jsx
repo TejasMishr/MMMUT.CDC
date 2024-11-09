@@ -7,6 +7,7 @@ import ContactForm from "./components/pages/contactus"
 import LandingPage from "./components/pages/LandingPage/Landingpage"
 import RegistrationForm from "./components/pages/RegistrationForm"
 
+import { Navbar } from "./components/Navbar/Navbar"
 function App() {
 
   return (
@@ -15,6 +16,7 @@ function App() {
   <Dashboard />
   <RegistrationForm />
   </>
+   
 
   )
 }
