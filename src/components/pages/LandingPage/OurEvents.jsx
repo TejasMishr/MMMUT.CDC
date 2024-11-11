@@ -10,7 +10,7 @@ const OurEvents = () => {
         </h3>
         <div className="grid xxl:gap-y-[30px] xl:gap-y-6 gap-y-4 items-start lg:mt-[55px] mt-9 ">
               <motion.div
-                className=" rounded-3xl px-[3px]   "
+                className=" rounded-3xl px-[3px] overflow-hidden   "
                 initial={{
                   opacity: 0,
                   x: -100,
