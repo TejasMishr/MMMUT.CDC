@@ -93,7 +93,7 @@ export const Navbar = () => {
 
       {/* Mobile & Tablet Menu - Only visible on smaller screens */}
       {isMobileMenuOpen && (
-        <ul className="absolute top-full left-0 w-full bg-black text-center py-4 lg:hidden">
+        <ul className="absolute top-full left-0 w-full h-screen  bg-black bg-opacity-50 text-center py-4 lg:hidden">
           {["HOME", "CONTACT", "TEAM", "EVENTS", "VERIFY"].map((item) => (
             <li key={item} className="group">
               <a
