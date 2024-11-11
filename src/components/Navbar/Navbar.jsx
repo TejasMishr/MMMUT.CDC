@@ -25,7 +25,7 @@ export const Navbar = () => {
     <nav className="flex items-center justify-between py-4 px-6 w-full bg-black text-white relative z-50">
       {/* Title */}
       <div className="flex items-center space-x-4">
-        <span className="text-2xl font-bold font-poppins tracking-wide">
+        <span className="lg:text-2xl  text-xl font-bold font-poppins tracking-wide">
           CODERS & DEVELOPERS CLUB
         </span>
       </div>
@@ -93,7 +93,7 @@ export const Navbar = () => {
 
       {/* Mobile & Tablet Menu - Only visible on smaller screens */}
       {isMobileMenuOpen && (
-        <ul className="absolute top-full left-0 w-full bg-black text-center py-4 lg:hidden">
+        <ul className="absolute top-full left-0 w-full h-screen  bg-black bg-opacity-50 text-center py-4 lg:hidden">
           {["HOME", "CONTACT", "TEAM", "EVENTS", "VERIFY"].map((item) => (
             <li key={item} className="group">
               <a

@@ -8,7 +8,7 @@ import TestimonialsCarousel from './Testimonials'
 function LandingPage() {
   return (
     <>
-     <div className="overflow-x-hidden bg-errie-black after:content-['']
+     <div className="overflow-x-hidden bg-gray-900 after:content-['']
 
         ">
           <UpperSection/>
