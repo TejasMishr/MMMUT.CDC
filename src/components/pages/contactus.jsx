@@ -43,12 +43,12 @@ const ContactForm = () => {
                 className="w-full p-2 bg-gray-700 text-white border border-gray-600 rounded h-36 resize-none focus:outline-none focus:ring-2 focus:ring-blue-500"
               />
             </div>
-            <button 
-  type="submit"
-  className="w-full py-2 bg-blue-600 text-white font-bold text-lg rounded hover:bg-blue-700 hover:border-0 border-2 border-black"
->
-  SUBMIT
-</button>
+            <button
+            type="submit"
+            className="w-full py-2 mt-4 bg-blue-600 hover:bg-blue-700 text-white rounded-md transition duration-200"
+          >
+            Submit
+          </button>
 
           </form>
         </div>
