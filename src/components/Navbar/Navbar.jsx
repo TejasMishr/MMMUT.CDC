@@ -25,7 +25,7 @@ export const Navbar = () => {
     <nav className="flex items-center justify-between py-4 px-6 w-full bg-black text-white relative z-50">
       {/* Title */}
       <div className="flex items-center space-x-4">
-        <span className="text-2xl font-bold font-poppins tracking-wide">
+        <span className="lg:text-2xl  text-xl font-bold font-poppins tracking-wide">
           CODERS & DEVELOPERS CLUB
         </span>
       </div>
