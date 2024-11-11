@@ -1,5 +1,5 @@
 import { motion } from "framer-motion";
-
+import { useGradientUpdater } from "../../hooks/useGradientUpdater"
 const OurEvents = () => {
   return (
     <section className="lg:pb-[65px] pb-10 text-white px-4 h-auto mx-auto z-20
@@ -10,22 +10,22 @@ const OurEvents = () => {
         </h3>
         <div className="grid xxl:gap-y-[30px] xl:gap-y-6 gap-y-4 items-start lg:mt-[55px] mt-9 ">
               <motion.div
-                className=" rounded-3xl px-[3px]   "
-                initial={{
-                  opacity: 0,
-                  x: -100,
-                }}
-                whileInView={{
-                  opacity: 1,
-                  x: 0,
-                }}
-                transition={{
-                  duration: 0.5,
-                  ease: "easeInOut",
-                }}
-                whileHover={{
-                  scale: 1.02,
-                }}
+               className=" rounded-3xl px-[3px]   overflow-hidden"
+               initial={{
+                 opacity: 0,
+                 y: 80,
+               }}
+               whileInView={{
+                 opacity: 1,
+                 y: 0,
+               }}
+               transition={{
+                 duration: 0.5,
+                 ease: "easeInOut",
+               }}
+               whileHover={{
+                 scale: 1.02,
+               }}
               >
                  <div className=" max-w-[1200px] mx-auto px-6 py-2  text-white rounded-lg shadow-lg flex items-center space-x-4 lg:mt-[40px] mt-6 bg-[rgba(255,255,255,0.1)]
                   ">
@@ -50,22 +50,22 @@ const OurEvents = () => {
     
 
     <motion.div
-                className=" rounded-3xl px-[3px]  overflow-hidden "
-                initial={{
-                  opacity: 0,
-                  x: 100,
-                }}
-                whileInView={{
-                  opacity: 1,
-                  x: 0,
-                }}
-                transition={{
-                  duration: 1,
-                  ease: "easeInOut",
-                }}
-                whileHover={{
-                  scale: 1.02,
-                }}
+             className=" rounded-3xl px-[3px]   overflow-hidden"
+             initial={{
+               opacity: 0,
+               y: 80,
+             }}
+             whileInView={{
+               opacity: 1,
+               y: 0,
+             }}
+             transition={{
+               duration: 0.5,
+               ease: "easeInOut",
+             }}
+             whileHover={{
+               scale: 1.02,
+             }}
               >
     <div className=" bg-[rgba(255,255,255,0.1)] lg:mt-[40px] mt-6   max-w-[1200px] mx-auto px-6 py-2  text-white rounded-lg shadow-lg flex items-center space-x-4 z-50">
      
