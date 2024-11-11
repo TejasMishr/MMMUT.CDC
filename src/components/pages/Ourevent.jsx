@@ -2,7 +2,7 @@ import React from 'react';
 
 const OurEvents = () => {
   return (
-    <div className="px-4 py-1 sm:px-8 bg-gradient-to-r from-blue-950 to-black text-white">
+    <div className="px-4 py-1 sm:px-8 bg-gray-900 text-white">
 
      
 
