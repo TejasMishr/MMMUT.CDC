@@ -16,14 +16,13 @@ const DashBoard = () => {
     <div className="bg-gray-900 min-h-screen flex flex-col items-center py-10 space-y-16">
       <h1 className="text-center text-4xl font-bold mt-2 text-white mb-4">DASHBOARD</h1>
 
-      {/* Updated motion div to ensure even height */}
+      {/* Profile and Contact Section */}
       <motion.div
         initial={{ opacity: 0, x: -100 }}
         whileInView={{ opacity: 1, x: 0 }}
         transition={{ duration: 0.5 }}
         className="w-[90vw] flex flex-wrap justify-around items-center gap-8 sm:flex-row flex-col mt-4"
       >
-        {/* Profile Section */}
         <motion.div
           initial={{ opacity: 0, x: -100 }}
           whileInView={{ opacity: 1, x: 0 }}
@@ -57,22 +56,37 @@ const DashBoard = () => {
       </motion.div>
 
       {/* Teams Section */}
-      <div className="flex flex-col w-11/12 items-center mt-10 space-y-4">
+      <motion.div
+        initial={{ opacity: 0, y: 100 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.5, delay: 0.3 }}
+        className="flex flex-col w-11/12 items-center mt-10 space-y-4"
+      >
         <h1 className="text-white text-2xl">Teams</h1>
         <div className="w-full h-[30vh] bg-gray-800 p-10 border border-[#5FA4EA] rounded-md"></div>
-      </div>
+      </motion.div>
 
       {/* Events Section */}
-      <div className="flex flex-col w-11/12 items-center mt-10 space-y-4">
+      <motion.div
+        initial={{ opacity: 0, y: 100 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.5, delay: 0.5 }}
+        className="flex flex-col w-11/12 items-center mt-10 space-y-4"
+      >
         <h1 className="text-white text-2xl">Events</h1>
         <div className="w-full h-[30vh] bg-gray-800 p-10 border border-[#5FA4EA] rounded-md"></div>
-      </div>
+      </motion.div>
 
       {/* Score Section */}
-      <div className="flex flex-col w-11/12 items-center mt-10 space-y-4">
+      <motion.div
+        initial={{ opacity: 0, y: 100 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.5, delay: 0.7 }}
+        className="flex flex-col w-11/12 items-center mt-10 space-y-4"
+      >
         <h1 className="text-white text-2xl">Your Score</h1>
         <div className="w-full h-[30vh] bg-gray-800 p-10 border border-[#5FA4EA] rounded-md"></div>
-      </div>
+      </motion.div>
     </div>
   );
 };
