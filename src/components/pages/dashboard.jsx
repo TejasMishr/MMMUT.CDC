@@ -18,16 +18,16 @@ const DashBoard = () => {
 
       {/* Profile and Contact Section */}
       <motion.div
-        initial={{ opacity: 0, x: -100 }}
-        whileInView={{ opacity: 1, x: 0 }}
+        initial={{ opacity: 0, y: 80 }}
+        whileInView={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.5 }}
-        className="w-[90vw] flex flex-wrap justify-around items-center gap-8 sm:flex-row flex-col mt-4 overflow-hidden"
+        className="w-[90vw] flex flex-wrap justify-around items-center gap-8 sm:flex-row flex-col mt-4"
       >
         <motion.div
-          initial={{ opacity: 0, x: -100 }}
-          whileInView={{ opacity: 1, x: 0 }}
+          initial={{ opacity: 0, y: 80 }}
+          whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.5, delay: 0.2 }}
-          className="flex flex-col items-center p-4 justify-around bg-custom-blue-gray rounded-lg sm:w-[30%] w-full h-[250px] sm:h-[300px] overflow-hidden"
+          className="flex flex-col items-center p-4 justify-around bg-custom-blue-gray rounded-lg sm:w-[30%] w-full h-[250px] sm:h-[300px] "
         >
           <img src="contactus/image1.jpg" className="sm:h-36 sm:w-36 h-[100px] w-[100px] rounded-full" alt="Profile" />
           <h1 className="sm:text-2xl text-xl text-white">Anonymous</h1>
@@ -35,8 +35,8 @@ const DashBoard = () => {
 
         {/* Contact Cards Section */}
         <motion.div
-          initial={{ opacity: 0, x: 100 }}
-          whileInView={{ opacity: 1, x: 0 }}
+          initial={{ opacity: 0, y: 80 }}
+          whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.5, delay: 0.4 }}
           className="flex flex-col items-center justify-around space-y-4 sm:w-[40%] w-full h-[250px] sm:h-[300px]"
         >
