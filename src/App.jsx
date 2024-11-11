@@ -2,19 +2,22 @@
 
 // IMPORTING ROUTES
 // import SiteRoutes from './routes.js'
-import Dashboard from "./components/pages/dashboard"
+import DashBoard from "./components/pages/dashboard"
 import ContactForm from "./components/pages/contactus"
 import LandingPage from "./components/pages/LandingPage/Landingpage"
 import RegistrationForm from "./components/pages/RegistrationForm"
-
+import OurEvents from "./components/pages/Ourevent"
 import { Navbar } from "./components/Navbar/Navbar"
 function App() {
 
   return (
     <>
+    <Navbar />
   <LandingPage />
-  <Dashboard />
+  <DashBoard />
   <RegistrationForm />
+  <ContactForm/>
+  <OurEvents/>
   </>
    
 
