@@ -4,7 +4,7 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faPhone, faEnvelope, faGraduationCap, faBuildingColumns } from '@fortawesome/free-solid-svg-icons';
 
 const DashBoard = () => {
-  // Array of card data
+  
   const cardData = [
     { icon: faPhone, label: "Contact", value: "1234567890" },
     { icon: faEnvelope, label: "Email", value: "abc@mmmut.ac.in" },
