@@ -10,14 +10,14 @@ const OurEvents = () => {
         </h3>
         <div className="grid xxl:gap-y-[30px] xl:gap-y-6 gap-y-4 items-start lg:mt-[55px] mt-9 ">
               <motion.div
-                className=" rounded-3xl px-[3px] overflow-hidden   "
+                className=" rounded-3xl px-[3px]   "
                 initial={{
                   opacity: 0,
-                  y: 80,
+                  x: -100,
                 }}
                 whileInView={{
                   opacity: 1,
-                  y: 0,
+                  x: 0,
                 }}
                 transition={{
                   duration: 0.5,
@@ -53,11 +53,11 @@ const OurEvents = () => {
                 className=" rounded-3xl px-[3px]  overflow-hidden "
                 initial={{
                   opacity: 0,
-                  y: 80,
+                  x: 100,
                 }}
                 whileInView={{
                   opacity: 1,
-                  y: 0,
+                  x: 0,
                 }}
                 transition={{
                   duration: 1,
