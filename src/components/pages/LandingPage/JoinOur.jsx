@@ -5,7 +5,7 @@ import { motion } from "framer-motion";
  const UPLIFT_DELIVERY = [
   {
     id: "up_1",
-    icon: "instagram.png",
+    icon: "./socialicons/instagram.png",
     title: "1.2K+",
     description:
     "Instagram",

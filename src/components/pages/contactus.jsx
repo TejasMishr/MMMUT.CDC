@@ -56,7 +56,7 @@ const ContactForm = () => {
         {/* Image Section */}
         <div className="flex flex-col h-4/5 sm:w-2/5 w-full items-center justify-center p-2">
           <img
-            src="public\contactus\image1.jpg" 
+            src="" 
             alt="Contact"
             className="w-full h-full object-cover rounded"
           />
