@@ -13,11 +13,11 @@ const OurEvents = () => {
                 className=" rounded-3xl px-[3px] overflow-hidden   "
                 initial={{
                   opacity: 0,
-                  x: -100,
+                  y: 80,
                 }}
                 whileInView={{
                   opacity: 1,
-                  x: 0,
+                  y: 0,
                 }}
                 transition={{
                   duration: 0.5,
@@ -53,11 +53,11 @@ const OurEvents = () => {
                 className=" rounded-3xl px-[3px]  overflow-hidden "
                 initial={{
                   opacity: 0,
-                  x: 100,
+                  y: 80,
                 }}
                 whileInView={{
                   opacity: 1,
-                  x: 0,
+                  y: 0,
                 }}
                 transition={{
                   duration: 1,
