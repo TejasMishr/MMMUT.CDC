@@ -21,13 +21,13 @@ const DashBoard = () => {
         initial={{ opacity: 0, x: -100 }}
         whileInView={{ opacity: 1, x: 0 }}
         transition={{ duration: 0.5 }}
-        className="w-[90vw] flex flex-wrap justify-around items-center gap-8 sm:flex-row flex-col mt-4"
+        className="w-[90vw] flex flex-wrap justify-around items-center gap-8 sm:flex-row flex-col mt-4 overflow-hidden"
       >
         <motion.div
           initial={{ opacity: 0, x: -100 }}
           whileInView={{ opacity: 1, x: 0 }}
           transition={{ duration: 0.5, delay: 0.2 }}
-          className="flex flex-col items-center p-4 justify-around bg-custom-blue-gray rounded-lg sm:w-[30%] w-full h-[250px] sm:h-[300px]"
+          className="flex flex-col items-center p-4 justify-around bg-custom-blue-gray rounded-lg sm:w-[30%] w-full h-[250px] sm:h-[300px] overflow-hidden"
         >
           <img src="contactus/image1.jpg" className="sm:h-36 sm:w-36 h-[100px] w-[100px] rounded-full" alt="Profile" />
           <h1 className="sm:text-2xl text-xl text-white">Anonymous</h1>
