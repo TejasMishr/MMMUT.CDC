@@ -9,7 +9,7 @@ const OurEvents = () => {
       {/* Upcoming Events Section */}
       <div className="flex flex-col items-center text-center">
         <div>
-          <h1 className="text-3xl sm:text-4xl">UPCOMING EVENTS</h1>
+          <h1 className="text-4xl ">UPCOMING EVENTS</h1>
         </div>
         <div>
           <h2 className="text-xl sm:text-2xl my-5">Register here for our upcoming events</h2>

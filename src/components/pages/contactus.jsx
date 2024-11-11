@@ -4,7 +4,7 @@ const ContactForm = () => {
   return (
     <div className="bg-gray-900 min-h-screen flex flex-col items-center">
         <div className='flex flex-col justify-evenly items-center h-auto w-full p-2'>
-      <h1 className="text-white text-4xl sm:text-6xl font-extrabold text-center mt-4 mb-6">CONTACT US</h1>
+      <h1 className="text-white text-4xl font-extrabold text-center mt-4 mb-6">CONTACT US</h1>
       <div className="flex flex-col sm:flex-row justify-evenly items-center w-3/4 h-auto p-3">
         {/* Form Section */}
        

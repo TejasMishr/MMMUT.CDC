@@ -14,7 +14,7 @@ const DashBoard = () => {
 
   return (
     <div className="bg-gray-900 min-h-screen flex flex-col items-center py-10 space-y-16">
-      <h1 className="text-center text-5xl font-bold mt-2 text-white mb-4">DASHBOARD</h1>
+      <h1 className="text-center text-4xl font-bold mt-2 text-white mb-4">DASHBOARD</h1>
 
       {/* Updated motion div to ensure even height */}
       <motion.div
