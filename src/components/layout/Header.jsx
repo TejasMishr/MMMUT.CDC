@@ -36,7 +36,7 @@ export const Navbar = () => {
         {/* {["HOME", "CONTACT", "TEAM", "EVENTS", "VERIFY"].map((item) => ( */}
           <li className="group">
             <NavLink to="/"
-              className="hover:bg-white hover:text-black transition-colors duration-300 block p-2 "
+              className=" hover:text-gray-300 transition-colors duration-300 block p-2 "
             >
               Home
             </NavLink>
@@ -45,7 +45,7 @@ export const Navbar = () => {
 
           <li className="group">
             <NavLink to="events"
-              className="hover:bg-white hover:text-black transition-colors duration-300 block p-2"
+              className="hover:text-gray-300 transition-colors duration-300 block p-2"
             >
               Events
             </NavLink>
@@ -54,7 +54,7 @@ export const Navbar = () => {
 
           <li className="group">
             <NavLink to="team"
-              className="hover:bg-white hover:text-black transition-colors duration-300 block p-2"
+              className="hover:text-gray-300 transition-colors duration-300 block p-2"
             >
               Team
             </NavLink>
@@ -63,7 +63,7 @@ export const Navbar = () => {
 
           <li className="group">
             <NavLink to="contact"
-              className="hover:bg-white hover:text-black transition-colors duration-300 block p-2"
+              className="hover:text-gray-300 transition-colors duration-300 block p-2"
             >
               Contact
             </NavLink>
@@ -72,7 +72,7 @@ export const Navbar = () => {
 
           <li className="group">
             <NavLink to="verify"
-              className="hover:bg-white hover:text-black transition-colors duration-300 block p-2"
+              className="hover:text-gray-300 transition-colors duration-300 block p-2"
             >
               Verify
             </NavLink>
@@ -93,7 +93,7 @@ export const Navbar = () => {
       {/* Login and Dark Mode Toggle - Always Visible */}
       <div className="hidden lg:flex items-center space-x-4">
         <NavLink to="/"
-          className="text-lg font-roboto-slab font-semibold hover:bg-white hover:text-black transition-colors duration-300 block p-2"
+          className="text-lg font-roboto-slab font-semibold hover:text-gray-300 transition-colors duration-300 block p-2"
         >
           LOGIN
         </NavLink>
@@ -134,7 +134,7 @@ export const Navbar = () => {
           {/* {["HOME", "CONTACT", "TEAM", "EVENTS", "VERIFY"].map((item) => ( */}
             <li className="group">
               <NavLink to="/"
-                className="text-white text-lg font-roboto-slab hover:bg-white hover:text-black transition-colors duration-300 block py-2"
+                className="text-white text-lg font-roboto-slab hover:text-gray-300 transition-colors duration-300 block py-2"
               >
                 Home
               </NavLink>
@@ -142,7 +142,7 @@ export const Navbar = () => {
 
             <li className="group">
               <NavLink to="events"
-                className="text-white text-lg font-roboto-slab hover:bg-white hover:text-black transition-colors duration-300 block py-2"
+                className="text-white text-lg font-roboto-slab hover:text-gray-300 transition-colors duration-300 block py-2"
               >
                 Events
               </NavLink>
@@ -150,7 +150,7 @@ export const Navbar = () => {
 
             <li className="group">
               <NavLink to="team"
-                className="text-white text-lg font-roboto-slab hover:bg-white hover:text-black transition-colors duration-300 block py-2"
+                className="text-white text-lg font-roboto-slab hover:text-gray-300 transition-colors duration-300 block py-2"
               >
                 Team
               </NavLink>
@@ -158,7 +158,7 @@ export const Navbar = () => {
 
             <li className="group">
               <NavLink to="verify"
-                className="text-white text-lg font-roboto-slab hover:bg-white hover:text-black transition-colors duration-300 block py-2"
+                className="text-white text-lg font-roboto-slab hover:text-gray-300 transition-colors duration-300 block py-2"
               >
                 Verify
               </NavLink>
@@ -166,7 +166,7 @@ export const Navbar = () => {
 
             <li className="group">
               <NavLink to="contact"
-                className="text-white text-lg font-roboto-slab hover:bg-white hover:text-black transition-colors duration-300 block py-2"
+                className="text-white text-lg font-roboto-slab hover:text-gray-300 transition-colors duration-300 block py-2"
               >
                 Contact
               </NavLink>
@@ -175,7 +175,7 @@ export const Navbar = () => {
           {/* ))} */}
           <li>
              <NavLink to="/"
-              className="text-white text-lg font-roboto-slab hover:bg-white hover:text-black transition-colors duration-300 block py-2"
+              className="text-white text-lg font-roboto-slab hover:text-gray-300 transition-colors duration-300 block py-2"
             >
               LOGIN
             </NavLink>
