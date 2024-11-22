@@ -20,7 +20,7 @@ const UPLIFT_DELIVERY_DATA = [
     },
     {
       id: "uplift_3",
-      icon: "mission.png",
+      icon: "vision.png",
       title: "Vision",
       description:
         "ReqOPS requirement briefs are detailed to ensure your engineers enjoy working with us. We provide comprehensive user stories, functional UI test cases, CI integration, automated process flow generation, AI workshops, and more.",
