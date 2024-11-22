@@ -57,7 +57,7 @@ const HomeAbout = () => {
                   ease: "easeInOut",
                 }}
                 whileHover={{
-                  scale: 1.05,
+                  scale: 1.02,
                 }}
               >
                 {/* bg-jet border-t-2 border-t-blue-500*/}
@@ -101,7 +101,7 @@ const HomeAbout = () => {
                     ease: "easeInOut",
                   }}
                   whileHover={{
-                    scale: 1.05,
+                    scale: 1.02,
                   }}
                 >
                   <div className="rounded-2xl bg-jet flex flex-col items-center h-full lg:p-4 md:p-2 p-2 pt-0 relative ">

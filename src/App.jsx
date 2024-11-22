@@ -1,7 +1,3 @@
-// import { BrowserRouter, Routes, Route, Navigate } from "react-router-dom"
-
-// IMPORTING ROUTES
-// import SiteRoutes from './routes.js'
 import DashBoard from "./components/pages/dashboard"
 import ContactForm from "./components/pages/contactus"
 import LandingPage from "./components/pages/LandingPage/Landingpage"
@@ -9,21 +5,40 @@ import RegistrationForm from "./components/pages/RegistrationForm"
 import OurEvents from "./components/pages/Ourevent"
 import { Navbar } from "./components/Navbar/Navbar"
 import { Footer } from "./components/Footer/Footer"
+import { createBrowserRouter, RouterProvider } from "react-router-dom"
+import { AppLayout } from "./components/layout/AppLayout"
 function App() {
-
-  return (
-    <>
-    <Navbar />
-  <LandingPage />
-  <DashBoard />
-  <RegistrationForm />
-  <ContactForm/>
-  <OurEvents/>
-  <Footer/>
-  </>
-   
-
-  )
+  const router = createBrowserRouter([
+    {
+      path:"/",
+      element:<AppLayout/>,
+      // errorElement:<ErrorPage/>,
+      children:[
+        {
+          path:"/",
+          element:<LandingPage/>
+        },
+        {
+          path:"/events",
+          element:<OurEvents/>
+        },
+        {
+          path:"/team",
+          element:<LandingPage/>,
+          // loader:getmovieData,
+        },
+        {
+          path:"/contact",
+          element:<ContactForm/> 
+        },
+        {
+          path:"/verify",
+          element:<DashBoard/>,
+        },
+      ]
+     },
+   ]);
+   return <RouterProvider router={router}/>
 }
 
 export default App
