@@ -69,7 +69,7 @@ const ContactForm = () => {
             <div className="flex flex-col h-4/5 sm:w-2/5 w-full items-center justify-between">
               <form
                 onSubmit={handleSubmit}
-                className="flex flex-col justify-between h-full w-full space-y-4"
+                className="flex flex-col justify-between h-full w-full space-y-4 z-18"
               >
                 <div className="flex space-x-4">
                   <input
@@ -126,7 +126,7 @@ const ContactForm = () => {
                 <div className="w-full flex justify-center items-center">
                   <button
                     type="submit"
-                    className="w-full py-2 mt-4 bg-blue-600 hover:bg-blue-700 text-white rounded-md transition duration-200"
+                    className="w-full h-full py-2 mt-4 bg-blue-600 hover:bg-blue-700 text-white rounded-md transition duration-200"
                   >
                     Submit
                   </button>
@@ -136,12 +136,12 @@ const ContactForm = () => {
             </div>
 
             {/* Image Section */}
-            <div className="flex flex-col h-[200px] sm:w-2/5 w-full items-center justify-center mt-[5%] sm:mt-0">
+            <div className="flex flex-col h-[300px] sm:w-2/5 w-full items-center justify-center mt-[1%] sm:mt-0 z-[-1]">
               <Lottie
                 link="https://lottie.host/8d3fce25-2155-4ee4-8a7f-d93005ea2de9/NNJYhVZfSe.json"
                 wid="55%"
                 hig=""
-                className="sm:w-[40%] w-[90%]"
+                className="sm:w-[60%] w-[90%]"
               />
             </div>
           </div>
