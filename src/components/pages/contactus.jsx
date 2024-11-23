@@ -136,7 +136,7 @@ const ContactForm = () => {
             </div>
 
             {/* Image Section */}
-            <div className="flex flex-col h-4/5 sm:w-2/5 w-full items-center justify-center">
+            <div className="flex flex-col h-[200px] sm:w-2/5 w-full items-center justify-center mt-[5%] sm:mt-0">
               <Lottie
                 link="https://lottie.host/8d3fce25-2155-4ee4-8a7f-d93005ea2de9/NNJYhVZfSe.json"
                 wid="55%"
