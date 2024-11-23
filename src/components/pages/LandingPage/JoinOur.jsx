@@ -40,7 +40,7 @@ const JoinOur = () => {
   const gradientRefs = useGradientUpdater();
 
   return (
-    <section className="lg:py-[65px] py-10 px-4 mx-auto h-auto  z-20">
+    <section className="lg:py-[65px] py-10 px-4 mx-auto h-auto  z-20 relative">
       <div className="max-w-[1200px] mx-auto">
         <h3 className="text-center text-white font-bold xl:text-[50px] lg:text-4xl text-3xl leading-[1.25] z-20 ">
           Join Our community

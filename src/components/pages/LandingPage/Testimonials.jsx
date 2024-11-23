@@ -50,7 +50,7 @@ function TestimonialsCarousel() {
   };
 
   return (
-    <div className="flex flex-col items-center  text-white p-8 h-auto z-20
+    <div className="flex flex-col items-center relative text-white p-8 h-auto z-20
     ">
       <h3 className="text-center text-white font-bold xl:text-[50px] lg:text-4xl text-3xl leading-[1.25] z-20  lg:mb-16 mb-16">
           What Other Think About Us

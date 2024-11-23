@@ -7,6 +7,7 @@ import { Navbar } from "./components/Navbar/Navbar"
 import { Footer } from "./components/Footer/Footer"
 import { createBrowserRouter, RouterProvider } from "react-router-dom"
 import { AppLayout } from "./components/layout/AppLayout"
+
 function App() {
   const router = createBrowserRouter([
     {

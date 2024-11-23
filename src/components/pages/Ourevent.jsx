@@ -17,30 +17,41 @@ const OurEvents = () => {
   };
 
   return (
-    <div className="px-4 py-1 sm:px-8 bg-gray-900 text-white">
+    <>
+   
+    <div className="px-4 py-1 min-h-screen  relative sm:px-8 bg-gray-900 text-white">
       {/* Upcoming Events Section */}
-      <div className="flex flex-col items-center text-center">
-        <div>
-          <h1 className="text-4xl">UPCOMING EVENTS</h1>
+      <div
+    className="absolute inset-0 top-0 right-0 blur-3xl z-[0] "
+    style={{
+      background:
+        "radial-gradient(circle, rgba(23,20,27,1) 0%, rgba(58,94,121,1) 66%, rgba(42,58,78,1) 90%)",
+    }}
+  />
+     
+      <div className="flex flex-col items-center text-center z-[19]">
+        <div className='z-[8]'>
+          <h1 className="text-4xl z-[8]">UPCOMING EVENTS</h1>
         </div>
-        <div>
-          <h2 className="text-xl sm:text-2xl my-5">Register here for our upcoming events</h2>
+        <div className='z-[8]'>
+          <h2 className="text-xl sm:text-2xl my-5 z-[8]">Register here for our upcoming events</h2>
         </div>
-        <div className="flex flex-col sm:flex-row gap-5">
+        <div className="flex flex-col sm:flex-row gap-5 z-[8]">
           <button className="bg-blue-700 px-4 rounded font-semibold">REGISTER</button>
           <button className="bg-blue-700 px-4 rounded font-semibold">KNOW MORE</button>
         </div>
       </div>
 
-      <div className="flex justify-center items-center h-[30vh] sm:h-[50vh] mt-5">
-        <h1 className="text-3xl sm:text-4xl">ONGOING EVENTS</h1>
+      <div className="flex justify-center items-center h-[30vh] sm:h-[50vh] mt-5 z-[8]">
+        <h1 className="text-3xl sm:text-4xl z-[8]">ONGOING EVENTS</h1>
       </div>
 
-      <div className="h-[80vh] mt-10 sm:mt-20">
-        <h1 className="text-center text-3xl sm:text-4xl my-5">OUR EVENTS</h1>
-        <div className="flex flex-col sm:flex-row justify-center gap-8">
-
-          <div className="w-full sm:w-auto lg:bg-black rounded-xl">
+      <div className="h-[80vh] mt-10 sm:mt-20 z-[20] ">
+ 
+        <h1 className=" relative text-center text-3xl sm:text-4xl my-5 z-[20]">OUR EVENTS</h1>
+        <div className="flex flex-col sm:flex-row justify-center gap-8 relative z-[15]">
+                  
+          <div className="w-full sm:w-auto lg:bg-black rounded-xl ">
    
             <div className="block lg:hidden justify-center flex relative">
               <button
@@ -85,6 +96,7 @@ const OurEvents = () => {
         </div>
       </div>
     </div>
+    </>
   );
 };
 

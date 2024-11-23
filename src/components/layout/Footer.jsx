@@ -1,7 +1,7 @@
 import React from "react";
 export const Footer = () => {
   return (
-    <footer className="bg-[#1D1C20] text-[#F4F4F5] p-5 sm:p-10 flex flex-col sm:flex-row justify-between font-inter">
+    <footer className="bg-[#1D1C20] text-[#F4F4F5] p-5 sm:p-10 flex flex-col sm:flex-row justify-between font-inter relative z-[18]">
       <div className="footer-section mb-5 sm:mb-0">
         <h3 className="text-2xl font-poppins font-extrabold mb-2">
         ©CODERS & DEVELOPERS CLUB

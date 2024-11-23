@@ -29,7 +29,7 @@ const Carousel = () => {
   };
 
   return (
-    <div className="flex flex-col items-center p-4 h-auto mx-auto z-20">
+    <div className="flex flex-col items-center p-4 h-auto mx-auto z-20 relative">
        <h3 className="text-center mx-auto text-white font-bold xl:text-[50px] lg:text-4xl text-3xl leading-[1.25] z-20 mb-8 lg:mb-10">
           Glimpses of CDC
         </h3>
