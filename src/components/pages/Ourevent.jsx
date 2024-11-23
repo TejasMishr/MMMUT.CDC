@@ -32,14 +32,14 @@ const OurEvents = () => {
      
       <div className="flex flex-col items-center text-center z-[19]">
         <div className='z-[8]'>
-          <h1 className="text-4xl z-[8]">UPCOMING EVENTS</h1>
+          <h1 className="text-4xl z-[8] font-bold mt-5">UPCOMING EVENTS</h1>
         </div>
         <div className='z-[8]'>
           <h2 className="text-xl sm:text-2xl my-5 z-[8]">Register here for our upcoming events</h2>
         </div>
         <div className="flex flex-col sm:flex-row gap-5 z-[8]">
-          <button className="bg-blue-700 px-4 rounded font-semibold">REGISTER</button>
-          <button className="bg-blue-700 px-4 rounded font-semibold">KNOW MORE</button>
+          <button className="bg-blue-700 h-10 w-40 rounded font-semibold">REGISTER</button>
+          <button className="bg-blue-700 h-10 w-40 rounded font-semibold">KNOW MORE</button>
         </div>
       </div>
 
