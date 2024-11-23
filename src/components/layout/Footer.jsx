@@ -1,4 +1,5 @@
 import React from "react";
+import { NavLink } from "react-router-dom";
 export const Footer = () => {
   return (
     <footer className="bg-[#1D1C20] text-[#F4F4F5] p-5 sm:p-10 flex flex-col sm:flex-row justify-between font-inter relative z-[18]">
@@ -15,16 +16,16 @@ export const Footer = () => {
         <h4 className="uppercase font-semibold mb-2 text-xl">Navigation</h4>
         <ul className="list-none space-y-2 text-[#838AA7]">
           <li className="text-lg">
-            <a href="#" className="hover:text-[#F4F4F5] ">Event</a>
+          <NavLink to="events" className="hover:text-[#F4F4F5] ">Event </NavLink>
           </li>
           <li className="text-lg">
-            <a href="#" className="hover:text-[#F4F4F5] ">Contact us</a>
+          <NavLink to="contact" className="hover:text-[#F4F4F5] ">Contact us</NavLink>
           </li>
           <li className="text-lg">
-            <a href="#" className="hover:text-[#F4F4F5] ">Team</a>
+          <NavLink to="team" className="hover:text-[#F4F4F5] ">Team</NavLink>
           </li>
           <li className="text-lg">
-            <a href="#" className="hover:text-[#F4F4F5] ">Verify</a>
+          <NavLink to="verify" className="hover:text-[#F4F4F5] ">Verify</NavLink>
           </li>
         </ul>
       </div>

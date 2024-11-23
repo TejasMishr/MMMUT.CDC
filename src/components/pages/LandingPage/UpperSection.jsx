@@ -52,9 +52,10 @@ const UpperSection = () => {
         </p>
         <form className="w-full">
           <div className="flex flex-col md:flex-row  justify-center items-center gap-[14px] md:max-w-[610px] mx-auto z-20">
-            <button type="submit" className="bg-risd-blue rounded-lg lg:min-h-[56px] min-h-[50px] text-nowrap text-base px-10 font-semibold hover:scale-105 transition-all ease-in-out duration-300 z-20">
+            {/* <button type="submit" className=" bg-risd-blue rounded-lg lg:min-h-[56px] min-h-[50px] text-nowrap text-base px-10 font-semibold hover:scale-105 transition-all ease-in-out duration-300 z-20">
                Get Started
-            </button>
+            </button> */}
+             <button className="button-92" role="button">Get Started</button>
           </div>
         </form>
       </div>
