@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import Event from './algoolympics';
 
 const OurEvents = () => {
   
@@ -96,6 +97,7 @@ const OurEvents = () => {
         </div>
       </div>
     </div>
+    <Event/>
     </>
   );
 };
