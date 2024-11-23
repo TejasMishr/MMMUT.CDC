@@ -32,7 +32,7 @@ export const Navbar = () => {
 
       {/* Desktop & Tablet Links */}
       <ul className="hidden lg:flex space-x-8 text-lg font-roboto-slab font-semibold">
-        {["HOME", "CONTACT", "TEAM", "EVENTS", "VERIFY"].map((item) => (
+        {["HOME", "CONTACT", "TEAM", "EVENTS", "PROFILE"].map((item) => (
           <li key={item} className="group">
             <a
               href="#"
@@ -94,7 +94,7 @@ export const Navbar = () => {
       {/* Mobile & Tablet Menu - Only visible on smaller screens */}
       {isMobileMenuOpen && (
         <ul className="absolute top-full left-0 w-full h-screen  bg-black bg-opacity-90 text-center py-4 lg:hidden">
-          {["HOME", "CONTACT", "TEAM", "EVENTS", "VERIFY"].map((item) => (
+          {["HOME", "CONTACT", "TEAM", "EVENTS", "PROFILE"].map((item) => (
             <li key={item} className="group">
               <a
                 href="#"

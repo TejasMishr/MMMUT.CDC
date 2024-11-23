@@ -2,7 +2,7 @@ import { motion } from "framer-motion";
 import { useGradientUpdater } from "../../hooks/useGradientUpdater"
 const OurEvents = () => {
   return (
-    <section className="lg:pb-[65px] pb-10 text-white px-4 h-auto mx-auto z-20
+    <section className="lg:pb-[65px] pb-10 text-white relative px-4 h-auto mx-auto z-20
     ">
       <div className="max-w-[1200px] mx-auto z-20">
       <h3 className="text-center text-white font-bold xl:text-[50px] lg:text-4xl text-3xl leading-[1.25] z-20  lg:mb-6">

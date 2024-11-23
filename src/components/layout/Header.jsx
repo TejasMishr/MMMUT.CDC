@@ -74,7 +74,7 @@ export const Navbar = () => {
             <NavLink to="verify"
               className="hover:text-gray-300 transition-colors duration-300 block p-2"
             >
-              Verify
+              DashBoard
             </NavLink>
 
           </li>

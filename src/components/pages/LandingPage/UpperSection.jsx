@@ -8,7 +8,7 @@ const UpperSection = () => {
   return (
     <>
     <header className="text-white flex flex-col z-20">
-    
+
       
       
       
@@ -23,10 +23,26 @@ const UpperSection = () => {
         <img src="https://upload.wikimedia.org/wikipedia/commons/1/18/C_Programming_Language.svg" alt="Bottom Right" className="absolute bottom-40 right-2  w-16  h-20"/>
 
         
-        <h1 className="text-white font-bold xl:text-[64px] lg:text-6xl text-4xl leading-[1.25] z-20">
-          Join the <span className="gradi-theme-text">CODING</span> Revolution and design your future {" "}
-          {/* <span className="gradi-theme-text">software delivery.</span> */}
-        </h1>
+        <div className="flex flex-col items-center">
+            <h1 className="text-white font-bold xl:text-[64px] lg:text-6xl text-4xl leading-[1.25] z-20 relative whitespace-nowrap">
+              <div className="flex justify-center items-center">
+                <code className="gradi-theme-text">&lt;</code>
+                <span
+                  className="inline-block w-full animate-typing overflow-hidden border-r-4 border-white"
+                  onAnimationEnd={(e) => {
+                    e.target.classList.remove("animate-typing");
+                  }}
+                >
+                  {" "}
+                  Code <span className="gradi-theme-text">
+                    Create
+                  </span> Conquer{" "}
+                </span>
+                <code className="gradi-theme-text">/&gt;</code>
+              </div>
+            </h1>
+          </div>
+
         <p className="lg:text-xl md:text-lg font-source-sans text-white mt-[30px] w-2/3 z-20">
                       Welcome to CDC a community of passionate developers and coders.Step into a space where your curiosity drives
                       exploration and your code shapes the future.
