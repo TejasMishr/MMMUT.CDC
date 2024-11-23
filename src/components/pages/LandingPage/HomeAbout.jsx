@@ -38,7 +38,7 @@ const HomeAbout = () => {
 
   return (
     <section className="px-4 lg:py-[65px] py-10 h-auto overflow-hidden mx-auto z-20">
-      <div className="max-w-[1200px] mx-auto">
+      <div className="max-w-[1200px] mx-auto z-20">
         <div className="flex flex-col items-center justify-center max-w-[1020px] mx-auto text-center font-montserrat flex-1 relative z-20 mt-[20px] px-4 h-auto">
           <h1 className="text-white font-bold xl:text-[54px] lg:text-5xl text-4xl leading-[1.25] h-auto mx-auto">
             About Us
@@ -70,7 +70,7 @@ const HomeAbout = () => {
               ({ id, title, icon, description, w, h }, index) => (
                 <motion.div
                   key={id}
-                  className="bg-grad-theme-135 rounded-2xl p-[3px] md:min-h-[215px] xxs:min-h-[215px] min-h-auto mb-2"
+                  className="bg-grad-theme-135 z-20 rounded-2xl p-[3px] md:min-h-[215px] xxs:min-h-[215px] min-h-auto mb-2"
                   ref={(el) => (gradientRefs.current[index] = el)}
                   initial={{ opacity: 0, y: 80 }}
                   whileInView={{ opacity: 1, y: 0 }}
