@@ -8,6 +8,7 @@ import { Footer } from "./components/Footer/Footer"
 import { createBrowserRouter, RouterProvider } from "react-router-dom"
 import { AppLayout } from "./components/layout/AppLayout"
 import Event from "./components/pages/algoolympics"
+import Team from "./components/pages/Team/Team"
 
 function App() {
   const router = createBrowserRouter([
@@ -30,7 +31,7 @@ function App() {
         },
         {
           path:"/team",
-          element:<LandingPage/>,
+          element:<Team/>,
           // loader:getmovieData,
         },
         {
