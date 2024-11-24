@@ -148,8 +148,7 @@ const ContactForm = () => {
           </div>
         </div>
       </div>
-      <RegistrationForm/>
-    <LoginForm/>
+    
     </>
   );
 };

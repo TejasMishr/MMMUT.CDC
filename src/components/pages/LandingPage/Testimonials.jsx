@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { FaChevronLeft, FaChevronRight } from 'react-icons/fa';
 
 const testimonialsData = [
-  { name: "Awijeet Singh", title: "B.Tech, Second Year", feedback: "Organize Interactive Sessions And Workshops To Raise Awareness About Coding And Other Key Tech Domains Other Key Tech Domains." },
+  { name: "Awijeet Singh", title: "B.Tech, Second Year", feedback: "A great place to learn, collaborate, and build coding confidence." },
   { name: "Anonymous", title: "B.Tech Year 2", feedback: "Coding culture is growing, and this initiative is amazing for tech enthusiasts And Other Key Tech Domains Other Key Tech Domains." },
   { name: "Anonymous", title: "B.Tech Year 3", feedback: "The workshops are insightful and provide great hands-on learning experiences And Other Key Tech Domains Other Key Tech Domains." },
   { name: "Anonymous", title: "B.Tech Year 4", feedback: "Encourages continuous learning and tech awareness through coding competitions And Other Key Tech Domains Other Key Tech Domains." },
