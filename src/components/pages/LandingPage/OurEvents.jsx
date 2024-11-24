@@ -41,7 +41,7 @@ const OurEvents = () => {
         <span className="gradi-event-text">SYNTAX SIEGE</span>
         </h2>
         <p className="mt-1 text-white  md:text-xl xs:text-sm xxs:text-xs">
-          The Coders & Developers Club MMMUT fosters a strong coding culture by empowering students with continuous learning, tech awareness, and active contest involvement. Collaborating with faculty and alumni, we equip members with industry skills.
+        The seven-day Syntax Siege event features five days of offline coding classes, offering in-depth training in programming fundamentals. On the sixth day, participants compete in an online coding contest to test their skills. The event concludes with an exciting offline coding contest on the final day.
         </p>
       </div>
     </div>
@@ -74,7 +74,7 @@ const OurEvents = () => {
           <span className="gradi-event-text">CODE CASCADE</span>
         </h2>
         <p className="mt-1 text-white md:text-xl xs:text-sm xxs:text-xs">
-          The Coders & Developers Club MMMUT fosters a strong coding culture by empowering students with continuous learning, tech awareness, and active contest involvement. Collaborating with faculty and alumni, we equip members with industry skills.
+        The three-day Code-Cascade event offers online coding classes for juniors, focusing on programming basics in a supportive environment. Participants engage in interactive sessions, exploring key concepts and hands-on activities. The event aims to build coding skills and inspire a passion for technology.
         </p>
       </div>
       <div className="flex-shrink-0">
@@ -120,7 +120,7 @@ const OurEvents = () => {
         <span className="gradi-event-text">GAME OF CODES</span>
         </h2>
         <p className="mt-1  text-white  md:text-xl xs:text-sm xxs:text-xs">
-          The Coders & Developers Club MMMUT fosters a strong coding culture by empowering students with continuous learning, tech awareness, and active contest involvement. Collaborating with faculty and alumni, we equip members with industry skills.
+        Game of Codes is an exclusive event for second-year students, organized by the Coders and Developers Club in collaboration with the Computer Engineering Society. It aims to foster programming skills and innovation among participants. The event promises engaging activities tailored for budding coders.
         </p>
       </div>
     </div>
@@ -152,7 +152,7 @@ const OurEvents = () => {
         <span className="gradi-event-text">GENESIS</span>
         </h2>
         <p className="mt-1  text-white  md:text-xl xs:text-sm xxs:text-xs">
-          The Coders & Developers Club MMMUT fosters a strong coding culture by empowering students with continuous learning, tech awareness, and active contest involvement. Collaborating with faculty and alumni, we equip members with industry skills.
+        An exclusive event for first-year students, guided by final-year mentors. It aims to provide insights, skill-building opportunities, and a supportive environment for beginners. The event fosters learning, collaboration, and a strong foundation in coding and technology.
         </p>
       </div>
       <div className="flex-shrink-0">

@@ -11,7 +11,7 @@ const UPLIFT_DELIVERY_DATA = [
     w: "120px",
 
     description:
-      "Achieve over $70,000 in testing cost savings, automate QA roles within agile squads, and enhance communication among BAs, Developers, and Product Owners for streamlined operations and improved collaboration.",
+      "We aim to enhance coding skills and foster innovation through interactive events and workshops. We provide a platform for hands-on learning, collaboration, and preparation for future tech challenges.",
   },
   {
     id: "uplift_2",
@@ -20,7 +20,7 @@ const UPLIFT_DELIVERY_DATA = [
     h: "120px",
     w: "120px",
     description:
-      "Streamline documentation across JIRA, Confluence, and git repositories, gain instant product insights, and maintain testing traceability with our comprehensive test script dashboard.",
+      "Our mission is to foster the growth and excellence of our college's coding culture. We strive to build a community that inspires creativity, teamwork, and a passion for technology.",
   },
   {
     id: "uplift_3",
@@ -29,7 +29,7 @@ const UPLIFT_DELIVERY_DATA = [
     w: "120px",
     title: "Vision",
     description:
-      "ReqOPS requirement briefs are detailed to ensure your engineers enjoy working with us. We provide comprehensive user stories, functional UI test cases, CI integration, automated process flow generation, AI workshops, and more.",
+      "Our vision is to empower students in coding and technology by fostering innovation, collaboration, and hands-on learning, shaping skilled developers for the tech industry's future.",
   },
 ];
 
