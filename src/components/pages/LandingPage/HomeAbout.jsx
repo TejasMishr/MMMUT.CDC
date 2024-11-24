@@ -79,10 +79,10 @@ const HomeAbout = () => {
                 >
                   <div className="rounded-2xl bg-jet flex flex-col items-center h-full lg:p-4 md:p-2 p-2 pt-0 relative">
                     <div className="absolute -top-16 left-1/2 transform -translate-x-[60%]  w-24 h-24 ">
-                      {" "}
+                    
                       <Lottie link={icon} wid={w} hig={h} />
                     </div>
-                    <h4 className="lg:text-2xl md:text-xl font-extrabold text-base text-center text-blue-100 font-montserrat mt-7 mb-3">
+                    <h4 className="lg:text-2xl md:text-xl font-extrabold text-base text-center text-blue-100 font-montserrat mt-10 sm:mt-7 mb-3">
                       {title}
                     </h4>
                     <p className="lg:text-base text-sm font-source-sans text-white text-center p-4 lg:mx-4">
