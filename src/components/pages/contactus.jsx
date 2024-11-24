@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { Lottie } from "../hooks/lottie/lottie";
 import emailjs from "emailjs-com";
-
+import RegistrationForm from "./RegistrationForm";
 const ContactForm = () => {
   const [formData, setFormData] = useState({
     firstName: "",
@@ -147,6 +147,7 @@ const ContactForm = () => {
           </div>
         </div>
       </div>
+      <RegistrationForm/>
     </>
   );
 };

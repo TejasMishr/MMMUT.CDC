@@ -17,23 +17,21 @@ function TestimonialsCarousel() {
   const [currentIndex, setCurrentIndex] = useState(0);
   const [visibleTestimonials, setVisibleTestimonials] = useState(3);
 
-  // Update visibleTestimonials based on screen width
   useEffect(() => {
     const handleResize = () => {
       if (window.innerWidth < 640) {
-        setVisibleTestimonials(1); // Mobile
+        setVisibleTestimonials(1); 
       } else if (window.innerWidth < 1024) {
-        setVisibleTestimonials(2); // Tablet
+        setVisibleTestimonials(2);
       } else {
-        setVisibleTestimonials(3); // Desktop
+        setVisibleTestimonials(3); 
       }
     };
 
-    // Set initial number of testimonials and add resize event listener
     handleResize();
     window.addEventListener('resize', handleResize);
 
-    // Cleanup event listener on component unmount
+
     return () => window.removeEventListener('resize', handleResize);
   }, []);
 
