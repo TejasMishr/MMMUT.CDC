@@ -135,7 +135,7 @@ const OurEvents = () => {
                   : "Select an event to see details"}
               </h2>
               {selectedEventDetails && (
-                <p className="mt-4 text-center text-2xl">{selectedEventDetails.Description}</p>
+                <p className="mt-4 text-center lg:text-2xl md:text-xs sm:text-xs">{selectedEventDetails.Description}</p>
               )}
             </div>
           </div>
