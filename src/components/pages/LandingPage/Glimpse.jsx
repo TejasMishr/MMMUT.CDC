@@ -2,11 +2,14 @@ import React, { useState, useEffect } from 'react';
 
 const Carousel = () => {
   const images = [
-    "https://files.oaiusercontent.com/file-Fwn8eDroKirlBRN7rR1gszFw?se=2024-11-01T14%3A36%3A35Z&sp=r&sv=2024-08-04&sr=b&rscc=max-age%3D604800%2C%20immutable%2C%20private&rscd=attachment%3B%20filename%3Db678857b-a3e0-4d3d-83ae-e95950a0a78b.webp&sig=GrTWS6RQjnBvvYoBv/nhGYj7z3iSgQoD7D4bIIatUlU%3D",
-    "https://files.oaiusercontent.com/file-vYBuXWBx5z6oddgmLiKGJDf3?se=2024-11-01T14%3A37%3A29Z&sp=r&sv=2024-08-04&sr=b&rscc=max-age%3D604800%2C%20immutable%2C%20private&rscd=attachment%3B%20filename%3D781c80c8-d713-4bc8-a43e-70582b63841f.webp&sig=P7w/vwq67MAcFA5tntsgKz5Q0FbMYMq5zAfj4EDslUA%3D",
-    "https://files.oaiusercontent.com/file-Fwn8eDroKirlBRN7rR1gszFw?se=2024-11-01T14%3A36%3A35Z&sp=r&sv=2024-08-04&sr=b&rscc=max-age%3D604800%2C%20immutable%2C%20private&rscd=attachment%3B%20filename%3Db678857b-a3e0-4d3d-83ae-e95950a0a78b.webp&sig=GrTWS6RQjnBvvYoBv/nhGYj7z3iSgQoD7D4bIIatUlU%3D",
-    "https://files.oaiusercontent.com/file-vYBuXWBx5z6oddgmLiKGJDf3?se=2024-11-01T14%3A37%3A29Z&sp=r&sv=2024-08-04&sr=b&rscc=max-age%3D604800%2C%20immutable%2C%20private&rscd=attachment%3B%20filename%3D781c80c8-d713-4bc8-a43e-70582b63841f.webp&sig=P7w/vwq67MAcFA5tntsgKz5Q0FbMYMq5zAfj4EDslUA%3D",
-    "https://files.oaiusercontent.com/file-Fwn8eDroKirlBRN7rR1gszFw?se=2024-11-01T14%3A36%3A35Z&sp=r&sv=2024-08-04&sr=b&rscc=max-age%3D604800%2C%20immutable%2C%20private&rscd=attachment%3B%20filename%3Db678857b-a3e0-4d3d-83ae-e95950a0a78b.webp&sig=GrTWS6RQjnBvvYoBv/nhGYj7z3iSgQoD7D4bIIatUlU%3D",
+    "https://firebasestorage.googleapis.com/v0/b/cdc-website2023.appspot.com/o/glimpses%20of%20cdc%2Fimage1.jpg?alt=media&token=2bf595f2-f6e0-480e-a024-d9b2655e2ee9",
+    "https://firebasestorage.googleapis.com/v0/b/cdc-website2023.appspot.com/o/glimpses%20of%20cdc%2Fimage2.jpg?alt=media&token=6f492e3a-f77a-47fc-b12c-74f57d60969c",
+    "https://firebasestorage.googleapis.com/v0/b/cdc-website2023.appspot.com/o/glimpses%20of%20cdc%2Fimage3.jpg?alt=media&token=f7c3e129-b0ed-4278-a886-af4d40f8bad2",
+    "https://firebasestorage.googleapis.com/v0/b/cdc-website2023.appspot.com/o/glimpses%20of%20cdc%2Fimage4.jpg?alt=media&token=9f6ccf7e-7baa-4436-a96c-ca2927515879",
+    "https://firebasestorage.googleapis.com/v0/b/cdc-website2023.appspot.com/o/glimpses%20of%20cdc%2Fimage5.jpg?alt=media&token=3e8a8299-5d01-4e75-a36a-e559e030a1d3",
+    "https://firebasestorage.googleapis.com/v0/b/cdc-website2023.appspot.com/o/glimpses%20of%20cdc%2Fimage6.jpg?alt=media&token=b07acb61-62ba-499f-96b3-2035a4902b18",
+    "https://firebasestorage.googleapis.com/v0/b/cdc-website2023.appspot.com/o/glimpses%20of%20cdc%2Fimage7.jpg?alt=media&token=ccab5e22-947a-4aa8-acf6-8aefc57f94e0",
+    "https://firebasestorage.googleapis.com/v0/b/cdc-website2023.appspot.com/o/glimpses%20of%20cdc%2Fimage9.jpg?alt=media&token=eea124e7-483e-46c3-a88e-9f91aaea02a4",
   ];
 
   const [currentSlide, setCurrentSlide] = useState(0);
@@ -15,7 +18,7 @@ const Carousel = () => {
   useEffect(() => {
     const interval = setInterval(() => {
       setCurrentSlide((prevSlide) => (prevSlide + 1) % images.length);
-    }, 3000); // Change every 3 seconds
+    }, 6000); // Change every 3 seconds
     return () => clearInterval(interval);
   }, [images.length]);
 
