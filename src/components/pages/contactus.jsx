@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import { Lottie } from "../hooks/lottie/lottie";
 import emailjs from "emailjs-com";
 import RegistrationForm from "./RegistrationForm";
-import lForm from "./login";
+import LoginForm from "./login";
 const ContactForm = () => {
   const [formData, setFormData] = useState({
     firstName: "",
@@ -80,7 +80,7 @@ const ContactForm = () => {
                     required
                     value={formData.firstName}
                     onChange={handleChange}
-                    className="w-full p-2 bg-gray-700 text-white border border-gray-600 rounded focus:outline-none focus:ring-2 focus:ring-blue-500"
+                    className="w-full p-2 bg-transparent  text-white border border-gray-600 rounded focus:outline-none focus:ring-2 focus:ring-blue-500"
                   />
                   <input
                     type="text"
@@ -89,7 +89,7 @@ const ContactForm = () => {
                     required
                     value={formData.lastName}
                     onChange={handleChange}
-                    className="w-full p-2 bg-gray-700 text-white border border-gray-600 rounded focus:outline-none focus:ring-2 focus:ring-blue-500"
+                    className="w-full p-2 bg-transparent text-white border border-gray-600 rounded focus:outline-none focus:ring-2 focus:ring-blue-500"
                   />
                 </div>
                 <div>
@@ -149,7 +149,7 @@ const ContactForm = () => {
         </div>
       </div>
       <RegistrationForm/>
-      <lForm />
+    <LoginForm/>
     </>
   );
 };
