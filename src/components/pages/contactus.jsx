@@ -124,10 +124,10 @@ const ContactForm = () => {
                     className="mt-1 block w-full px-4 py-2 border-none h-36 resize-none bg-gray-800 text-white rounded-lg shadow-neumorphism focus:ring focus:ring-blue-300 focus:outline-none focus:ring-offset-gray-900"
                   />
                 </div>
-                <div className="w-full flex justify-center items-center">
+                <div className="w-full   flex justify-center items-center">
                   <button
                     type="submit"
-                    className="w-full h-full py-2 mt-4 bg-blue-600 hover:bg-blue-700 text-white rounded-md transition duration-200"
+                    className="w-full h-full text-2xl py-2 mt-4 bg-blue-600 hover:bg-blue-700 text-white rounded-md transition duration-200"
                   >
                     Submit
                   </button>
