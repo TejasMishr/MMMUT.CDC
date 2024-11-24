@@ -9,6 +9,7 @@ import { motion } from "framer-motion";
     title: "1.2K+",
     description:
     "Instagram",
+    link:"https://www.instagram.com/cdc.mmmut/",
   },
   {
     id: "up_2",
@@ -16,6 +17,7 @@ import { motion } from "framer-motion";
     title: "2K+",
     description:
       "LinkedIn",
+      link:"https://www.linkedin.com/company/codechef-mmmut-chapter",
   },
   {
     id: "up_3",
@@ -23,6 +25,7 @@ import { motion } from "framer-motion";
     title: "1.1K+",
     description:
       "Telegram",
+      link:"https://www.instagram.com/cdc.mmmut/",
   },
   {
     id: "up_4",
@@ -30,6 +33,7 @@ import { motion } from "framer-motion";
     title: "250+",
     description:
     "Youtube",
+    link:"https://www.youtube.com/@cdcmmmut",
   },
 ];
 
@@ -47,7 +51,7 @@ const JoinOur = () => {
         </h3>
         <div className="grid lg:grid-cols-4 md:grid-cols-4 sm:grid-cols-4 xs:grid-cols-2 xxs:grid-cols-2 xxl:gap-10 xl:gap-8 lg:gap-6 gap-4 lg:mt-10 md:mt-8 mt-6 mx-auto">
           {UPLIFT_DELIVERY?.map(
-            ({ id, title, icon, description }, index) => {
+            ({ id, title, icon, description ,link}, index) => {
               return (
                 <motion.div
                   key={id}
@@ -70,7 +74,7 @@ const JoinOur = () => {
                     scale: 1.05,
                   }}
                 >
-                   <a href="#">
+                   <a href={link}>
                   <div className={`rounded-[45px] bg-jet flex flex-col items-center h-full lg:p-4 md:p-3 p-2 
                   `}>
                    

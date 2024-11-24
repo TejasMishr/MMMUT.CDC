@@ -7,6 +7,7 @@ import { Navbar } from "./components/Navbar/Navbar"
 import { Footer } from "./components/Footer/Footer"
 import { createBrowserRouter, RouterProvider } from "react-router-dom"
 import { AppLayout } from "./components/layout/AppLayout"
+import Event from "./components/pages/algoolympics"
 
 function App() {
   const router = createBrowserRouter([
@@ -22,6 +23,10 @@ function App() {
         {
           path:"/events",
           element:<OurEvents/>
+        },
+        {
+          path:"/events/eve",
+          element:<Event/>
         },
         {
           path:"/team",

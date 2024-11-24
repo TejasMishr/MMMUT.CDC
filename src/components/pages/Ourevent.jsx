@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import Event from './algoolympics';
+import { NavLink } from 'react-router-dom';
 
 const OurEvents = () => {
   
@@ -39,7 +40,7 @@ const OurEvents = () => {
         </div>
         <div className="flex flex-col sm:flex-row gap-5 z-[8]">
           <button className="bg-blue-700  hover:bg-blue-800  transition duration-1000 h-10 w-40 rounded font-semibold">REGISTER</button>
-          <button className="bg-blue-700  hover:bg-blue-800 transition duration-1000 h-10 w-40 rounded font-semibold">KNOW MORE</button>
+          <NavLink to="eve"><button className="bg-blue-700  hover:bg-blue-800 transition duration-1000 h-10 w-40 rounded font-semibold">KNOW MORE</button></NavLink>
         </div>
       </div>
 
@@ -97,7 +98,7 @@ const OurEvents = () => {
         </div>
       </div>
     </div>
-    <Event/>
+    
     </>
   );
 };

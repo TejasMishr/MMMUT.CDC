@@ -37,18 +37,18 @@ const HomeAbout = () => {
   const gradientRefs = useGradientUpdater();
 
   return (
-    <section className="px-4 lg:py-[65px] py-10 h-auto overflow-hidden mx-auto z-20">
-      <div className="max-w-[1200px] mx-auto z-20">
+    <section className="px-4 lg:py-[65px] py-10 h-auto overflow-hidden mx-auto z-50">
+      <div className="max-w-[1200px] mx-auto z-50">
         <div className="flex flex-col items-center justify-center max-w-[1020px] mx-auto text-center font-montserrat flex-1 relative z-20 mt-[20px] px-4 h-auto">
           <h1 className="text-white font-bold xl:text-[54px] lg:text-5xl text-4xl leading-[1.25] h-auto mx-auto">
             About Us
           </h1>
         </div>
         <motion.div
-          className="rounded-3xl p-[3px] mt-10"
+          className="rounded-3xl p-[3px] mt-10 backface-visibility-hidden transform-style-flat will-change-transform"
           initial={{ opacity: 0, y: 80 }}
           whileInView={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.5, ease: "easeInOut" }}
+          transition={{ duration: 1, ease: "easeInOut" }}
           whileHover={{ scale: 1.02 }}
         >
           <div className="rounded-xl flex flex-col justify-center items-center h-full md:min-h-[180px] min-h-auto w-full bg-[rgba(255,255,255,0.1)] py-3 px-2 z-50 mx-auto">

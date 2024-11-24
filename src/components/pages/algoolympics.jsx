@@ -132,7 +132,7 @@ const Event = () => {
 </div>
 
 {/* Venue Card */}
-<div className="bg-gray-800 text-gray-200 p-8 rounded-lg shadow-lg transition-transform transform hover:scale-101 hover:shadow-2xl hover:border-4 hover:border-red-500 hover:shadow-red-500/50 duration-1000 ease-in-out">
+<div className="bg-gray-800 text-gray-200 p-8 rounded-lg shadow-lg transition-transform transform hover:scale-105 hover:shadow-2xl hover:border-4 hover:border-red-500 hover:shadow-red-500/50 duration-1000 ease-in-out">
   <div className="flex items-center mb-6">
     <FaMapMarkerAlt className="text-red-400 text-5xl mr-4" />
     <h3 className="text-2xl md:text-3xl font-semibold text-red-400">
