@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import Event from './algoolympics';
+import { NavLink } from 'react-router-dom';
 
 const eventDetails = [
   {
@@ -35,7 +36,7 @@ const eventDetails = [
 ];
 
 const OurEvents = () => {
-  const [selectedEvent, setSelectedEvent] = useState('');
+  const [selectedEvent, setSelectedEvent] = useState("");
   const [dropdownOpen, setDropdownOpen] = useState(false);
 
   const handleClick = (eventName) => {
@@ -70,12 +71,16 @@ const OurEvents = () => {
             Register here for our upcoming events
           </h2>
           <div className="flex flex-col sm:flex-row gap-5 z-[8]">
-            <button className="bg-blue-700 h-10 w-40 rounded font-semibold">
+            <button className="bg-blue-700  hover:bg-blue-800 h-10 w-40 rounded font-semibold">
               REGISTER
             </button>
-            <button className="bg-blue-700 h-10 w-40 rounded font-semibold">
+            <NavLink to="eve">
+            <button className="bg-blue-700 hover:bg-blue-800 h-10 w-40 rounded font-semibold">
               KNOW MORE
             </button>
+            </NavLink>
+            
+
           </div>
         </div>
 
