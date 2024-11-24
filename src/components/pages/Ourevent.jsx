@@ -144,7 +144,7 @@ const OurEvents = () => {
           </div>
         </div>
       </div>
-      <Event />
+      
     </>
   );
 };
