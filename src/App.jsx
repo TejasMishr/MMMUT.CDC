@@ -9,6 +9,7 @@ import { createBrowserRouter, RouterProvider } from "react-router-dom"
 import { AppLayout } from "./components/layout/AppLayout"
 import Event from "./components/pages/algoolympics"
 import Team from "./components/pages/Team/Team"
+import LoginForm from "./components/pages/login"
 
 function App() {
   const router = createBrowserRouter([
@@ -41,6 +42,10 @@ function App() {
         {
           path:"/verify",
           element:<DashBoard/>,
+        },
+        {
+          path:"/login",
+          element:<LoginForm/>,
         },
       ]
      },

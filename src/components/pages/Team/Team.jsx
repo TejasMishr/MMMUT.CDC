@@ -21,10 +21,10 @@ function Team() {
   };
 
   return (
-    <div>
-      
+    <div className=' relative  bg-gray-900'>
+       
       <FacultyAdvisor />
-      <div className="team_btn">
+      <div className="team_btn ">
         <ul className='tul'>
           <li className='tli'><button className='tbutton' onClick={() => showTeam(0)}>Alumni(18-22)</button></li>
           <li className='tli'><button className='tbutton' onClick={() => showTeam(1)}>Alumni(19-23)</button></li>

@@ -46,7 +46,7 @@ export const Footer = () => {
             </a>
           </li>
           <li>
-            <a href="https://www.youtube.com/@cdcmmmut" target= "_blank" className="flex items-center text-gray-400 hover:text-white">
+            <a href="https://t.me/+q7L9GAuUxoNiMjZl" target= "_blank" className="flex items-center text-gray-400 hover:text-white">
               <img src="./socialicons/telegram.png" className="h-5 mr-2" alt="Telegram" />
               <span className="text-lg">Telegram</span>
             </a>

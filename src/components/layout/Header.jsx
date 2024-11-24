@@ -92,7 +92,7 @@ export const Navbar = () => {
 
       {/* Login and Dark Mode Toggle - Always Visible */}
       <div className="hidden lg:flex items-center space-x-4">
-        <NavLink to="/"
+        <NavLink to="login"
           className="text-lg font-roboto-slab font-semibold hover:text-gray-300 transition-colors duration-300 block p-2"
         >
           LOGIN
@@ -160,7 +160,7 @@ export const Navbar = () => {
               <NavLink to="verify"
                 className="text-white text-lg font-roboto-slab hover:text-gray-300 transition-colors duration-300 block py-2"
               >
-                Verify
+                Dashboard
               </NavLink>
             </li>
 
@@ -174,7 +174,7 @@ export const Navbar = () => {
 
           {/* ))} */}
           <li>
-             <NavLink to="/"
+             <NavLink to="login"
               className="text-white text-lg font-roboto-slab hover:text-gray-300 transition-colors duration-300 block py-2"
             >
               LOGIN

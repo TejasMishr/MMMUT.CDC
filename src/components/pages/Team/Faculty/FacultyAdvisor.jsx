@@ -2,7 +2,7 @@ import React from "react";
 
 const FacultyAdvisor = () => {
   return (
-    <div id="team" className="py-10 bg-gray-100">
+    <div id="team" className="py-10 bg-gray-900">
       <div className="container mx-auto px-4">
         <div className="flex flex-wrap justify-center team-grp">
           <div className="w-full md:w-1/2 lg:w-1/4 p-5">

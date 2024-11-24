@@ -25,7 +25,7 @@ import { motion } from "framer-motion";
     title: "1.1K+",
     description:
       "Telegram",
-      link:"https://www.instagram.com/cdc.mmmut/",
+      link:"https://t.me/+q7L9GAuUxoNiMjZl",
   },
   {
     id: "up_4",
