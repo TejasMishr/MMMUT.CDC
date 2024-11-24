@@ -2,12 +2,7 @@ import React, { useState } from "react";
 import { Lottie } from "../hooks/lottie/lottie";
 import emailjs from "emailjs-com";
 import RegistrationForm from "./RegistrationForm";
-import lForm from "./login";
-import { Home } from "./Team/Alumanipage";
-import TeamPage from "./Team/Team5/Team5";
-import FacultyAdvisor from "./Team/Faculty/FacultyAdvisor";
-import Team from "./Team/Team";
-
+import LoginForm from "./login";
 const ContactForm = () => {
   const [formData, setFormData] = useState({
     firstName: "",
@@ -85,7 +80,7 @@ const ContactForm = () => {
                     required
                     value={formData.firstName}
                     onChange={handleChange}
-                    className="w-full p-2 bg-gray-700 text-white border border-gray-600 rounded focus:outline-none focus:ring-2 focus:ring-blue-500"
+                    className="mt-1 block w-full px-4 py-2 border-none bg-gray-800 text-white rounded-lg shadow-neumorphism focus:ring focus:ring-blue-300 focus:outline-none focus:ring-offset-gray-900"
                   />
                   <input
                     type="text"
@@ -94,7 +89,7 @@ const ContactForm = () => {
                     required
                     value={formData.lastName}
                     onChange={handleChange}
-                    className="w-full p-2 bg-gray-700 text-white border border-gray-600 rounded focus:outline-none focus:ring-2 focus:ring-blue-500"
+                    className="mt-1 block w-full px-4 py-2 border-none bg-gray-800 text-white rounded-lg shadow-neumorphism focus:ring focus:ring-blue-300 focus:outline-none focus:ring-offset-gray-900"
                   />
                 </div>
                 <div>
@@ -105,7 +100,7 @@ const ContactForm = () => {
                     required
                     value={formData.email}
                     onChange={handleChange}
-                    className="w-full p-2 bg-gray-700 text-white border border-gray-600 rounded focus:outline-none focus:ring-2 focus:ring-blue-500"
+                    className="mt-1 block w-full px-4 py-2 border-none bg-gray-800 text-white rounded-lg shadow-neumorphism focus:ring focus:ring-blue-300 focus:outline-none focus:ring-offset-gray-900"
                   />
                 </div>
                 <div>
@@ -116,7 +111,7 @@ const ContactForm = () => {
                     required
                     value={formData.phone}
                     onChange={handleChange}
-                    className="w-full p-2 bg-gray-700 text-white border border-gray-600 rounded focus:outline-none focus:ring-2 focus:ring-blue-500"
+                    className="mt-1 block w-full px-4 py-2 border-none bg-gray-800 text-white rounded-lg shadow-neumorphism focus:ring focus:ring-blue-300 focus:outline-none focus:ring-offset-gray-900"
                   />
                 </div>
                 <div>
@@ -126,7 +121,7 @@ const ContactForm = () => {
                     required
                     value={formData.message}
                     onChange={handleChange}
-                    className="w-full p-2 bg-gray-700 text-white border border-gray-600 rounded h-36 resize-none focus:outline-none focus:ring-2 focus:ring-blue-500"
+                    className="mt-1 block w-full px-4 py-2 border-none h-36 resize-none bg-gray-800 text-white rounded-lg shadow-neumorphism focus:ring focus:ring-blue-300 focus:outline-none focus:ring-offset-gray-900"
                   />
                 </div>
                 <div className="w-full flex justify-center items-center">
@@ -154,9 +149,7 @@ const ContactForm = () => {
         </div>
       </div>
       <RegistrationForm/>
-      
-      <lForm />
-     
+    <LoginForm/>
     </>
   );
 };
