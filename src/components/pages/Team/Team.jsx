@@ -21,10 +21,17 @@ function Team() {
   };
 
   return (
-    <div className=' relative  bg-gray-900'>
-       
-      <FacultyAdvisor />
-      <div className="team_btn ">
+    <div className="overflow-x-hidden min-h-screen relative bg-gray-900 after:content-[''] relative z-[15]">
+          <div
+            className="absolute  top-0 right-0 w-full h-full blur-3xl z-[0]"
+            style={{
+              // background: "rgb(23,20,27)",
+              background:
+                "radial-gradient(circle, rgba(23,20,27,1) 0%, rgba(58,94,121,1) 66%, rgba(42,58,78,1) 90%)",
+            }}
+          />
+      <FacultyAdvisor /><div className='z-[18] relative'>
+      <div className="team_btn">
         <ul className='tul'>
           <li className='tli'><button className='tbutton' onClick={() => showTeam(0)}>Alumni(18-22)</button></li>
           <li className='tli'><button className='tbutton' onClick={() => showTeam(1)}>Alumni(19-23)</button></li>
@@ -33,7 +40,7 @@ function Team() {
           <li className='tli'><button className='tbutton' onClick={() => showTeam(4)}>2022-26</button></li>
           <li className='tli'><button className='tbutton' onClick={() => showTeam(5)}>2023-27</button></li>
         </ul>
-      </div>
+      </div></div>
       <Suspense fallback={<div className="loading">Loading.....</div>}>
         <div>
           {selectedTeam === 0 && <Home />}
