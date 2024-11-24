@@ -84,12 +84,9 @@ const OurEvents = () => {
           </div>
         </div>
 
-        <div className="flex justify-center items-center h-[30vh] sm:h-[50vh] mt-5 z-[8]">
-          <h1 className="text-3xl sm:text-4xl z-[8]">ONGOING EVENTS</h1>
-        </div>
 
         <div className="h-[80vh] mt-10 sm:mt-20 z-[20]">
-          <h1 className="relative text-center text-3xl sm:text-4xl my-5 z-[20]">
+          <h1 className="relative text-center text-3xl mb-[3%] sm:text-4xl my-5 z-[20]">
             OUR EVENTS
           </h1>
           <div className="flex flex-col sm:flex-row justify-center gap-8 relative z-[15]">
@@ -102,11 +99,11 @@ const OurEvents = () => {
                   Select Event
                 </button>
                 {dropdownOpen && (
-                  <ul className="absolute top-full mt-2 border-2 border-blue-600 rounded-xl w-full z-10 bg-gray-900">
+                  <ul className="absolute top-full  mt-2 border-2 border-blue-600 rounded-xl w-full z-10 bg-gray-900">
                     {eventDetails.map((event) => (
                       <li
                         key={event.EventName}
-                        className="cursor-pointer px-4 py-2 hover:bg-blue-700 rounded-lg"
+                        className="cursor-pointer px-4 text-2xl py-2 hover:bg-blue-700 rounded-lg"
                         onClick={() => handleClick(event.EventName)}
                       >
                         {event.EventName}
@@ -131,20 +128,19 @@ const OurEvents = () => {
               </div>
             </div>
 
-            <div className="sm:flex flex-col justify-center items-center border-2 border-blue-600 lg:bg-black px-4 py-4 rounded-xl w-full">
+            <div className=" border-2 border-blue-600 lg:bg-black px-4 py-4 rounded-xl w-full">
               <h2 className="text-xl text-center">
                 {selectedEventDetails
-                  ? `Details for: ${selectedEventDetails.EventName}`
+                  ? <div className='text-4xl text-bold '>{selectedEventDetails.EventName}</div>
                   : "Select an event to see details"}
               </h2>
               {selectedEventDetails && (
-                <p className="mt-4 text-center">{selectedEventDetails.Description}</p>
+                <p className="mt-4 text-center text-2xl">{selectedEventDetails.Description}</p>
               )}
             </div>
           </div>
         </div>
       </div>
-      
     </>
   );
 };

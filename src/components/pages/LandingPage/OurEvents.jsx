@@ -152,7 +152,7 @@ const OurEvents = () => {
         <span className="gradi-event-text">GENESIS</span>
         </h2>
         <p className="mt-1  text-white  md:text-xl xs:text-sm xxs:text-xs">
-        An exclusive event for first-year students, guided by final-year mentors. It aims to provide insights, skill-building opportunities, and a supportive environment for beginners. The event fosters learning, collaboration, and a strong foundation in coding and technology.
+        An exclusive event for first-year students, guided by accomplished alumni and technical experts.The session helps students understand industry trends, refine their skills, and set clear career goals. The event fosters learning, collaboration, and a strong foundation in coding and technology.
         </p>
       </div>
       <div className="flex-shrink-0">
