@@ -22,7 +22,7 @@ const Event = () => {
         {/* Header Section */}
         <header className="py-6 bg-gray-900 shadow-lg relative z-10">
           <div className="flex justify-between items-center flex-wrap">
-            <h1 className="text-4xl sm:text-5xl lg:text-6xl font-extrabold tracking-wider text-white">
+            <h1 className="text-4xl sm:text-5xl lg:text-6xl font-extrabold tracking-wider  text-white">
               AlgOlympics
             </h1>
             <button className="bg-blue-600 hover:bg-blue-800 text-white py-2 px-4 sm:py-3 sm:px-6 rounded-lg shadow-lg text-sm sm:text-lg font-medium transition duration-300 ease-in-out mt-4 sm:mt-0">
@@ -90,33 +90,35 @@ const Event = () => {
           </section>
 
           {/* Event Details Section */}
-          <section className="grid grid-cols-1 md:grid-cols-3 gap-6">
+          <section className="grid grid-cols-1 md:grid-cols-3 gap-6 my-10" >
             {/* Event Details Card */}
-            <div className="bg-gray-800 text-gray-200 p-6 sm:p-8 rounded-lg shadow-lg hover:scale-105 hover:shadow-2xl hover:border-4 hover:border-blue-500 hover:shadow-blue-500/50 duration-500 ease-in-out">
-              <div className="flex items-center mb-6">
-                <FaTrophy className="text-blue-400 text-5xl sm:text-6xl mr-4" />
-                <h3 className="text-lg sm:text-2xl font-semibold text-blue-400">
-                  Event Details
-                </h3>
-              </div>
-              <ul className="space-y-4">
-                <li className="flex items-center space-x-4">
-                  <HiMiniSquare3Stack3D className="text-blue-400 text-2xl" />
-                  <span className="text-sm sm:text-lg">Max Team Size: 3 members</span>
-                </li>
-                <li className="flex items-center space-x-4">
-                  <HiMiniSquare3Stack3D className="text-blue-400 text-2xl" />
-                  <span className="text-sm sm:text-lg">Registration Fee: ₹120 per team</span>
-                </li>
-                <li className="flex items-center space-x-4">
-                  <HiMiniSquare3Stack3D className="text-blue-400 text-2xl" />
-                  <span className="text-sm sm:text-lg">Exciting Goodies for Winners</span>
-                </li>
-              </ul>
+{/* Event Details Card */}
+          <div className="bg-gray-800 text-gray-200 p-6 sm:p-8 rounded-lg shadow-lg transition-transform duration-300 ease-in-out hover:scale-105 hover:shadow-2xl hover:shadow-blue-500/50 border hover:border-2 border-transparent hover:border-blue-500"
+              style={{ margin: '0.5rem' }}> {/* Added margin */}
+            <div className="flex items-center mb-6">
+              <FaTrophy className="text-blue-400 text-5xl sm:text-6xl mr-4" />
+              <h3 className="text-lg sm:text-2xl font-semibold text-blue-400">
+                Event Details
+              </h3>
             </div>
+            <ul className="space-y-4">
+              <li className="flex items-center space-x-4">
+                <HiMiniSquare3Stack3D className="text-blue-400 text-2xl" />
+                <span className="text-sm sm:text-lg">Max Team Size: 3 members</span>
+              </li>
+              <li className="flex items-center space-x-4">
+                <HiMiniSquare3Stack3D className="text-blue-400 text-2xl" />
+                <span className="text-sm sm:text-lg">Registration Fee: ₹120 per team</span>
+              </li>
+              <li className="flex items-center space-x-4">
+                <HiMiniSquare3Stack3D className="text-blue-400 text-2xl" />
+                <span className="text-sm sm:text-lg">Exciting Goodies for Winners</span>
+              </li>
+            </ul>
+          </div>
 
             {/* Date & Time Card */}
-            <div className="bg-gray-800 text-gray-200 p-6 sm:p-8 rounded-lg shadow-lg hover:scale-105 hover:shadow-2xl hover:border-4 hover:border-green-500 hover:shadow-green-500/50 duration-500 ease-in-out">
+            <div className="bg-gray-800 text-gray-200 p-6 sm:p-8 rounded-lg shadow-lg hover:scale-105 hover:shadow-xl hover:border-2 hover:border-green-500 hover:shadow-green-500/50 duration-300  will-change-transform">
               <div className="flex items-center mb-6">
                 <FaCalendarAlt className="text-green-400 text-5xl sm:text-6xl mr-4" />
                 <h3 className="text-lg sm:text-2xl font-semibold text-green-400">
@@ -128,7 +130,7 @@ const Event = () => {
             </div>
 
             {/* Venue Card */}
-            <div className="bg-gray-800 text-gray-200 p-6 sm:p-8 rounded-lg shadow-lg hover:scale-105 hover:shadow-2xl hover:border-4 hover:border-red-500 hover:shadow-red-500/50 duration-500 ease-in-out">
+            <div className="bg-gray-800 text-gray-200 p-6 sm:p-8 rounded-lg shadow-lg hover:scale-105 hover:shadow-xl hover:border-2 hover:border-red-500 hover:shadow-red-500/50 duration-300  will-change-transform">
               <div className="flex items-center mb-6">
                 <FaMapMarkerAlt className="text-red-400 text-5xl sm:text-6xl mr-4" />
                 <h3 className="text-lg sm:text-2xl font-semibold text-red-400">
