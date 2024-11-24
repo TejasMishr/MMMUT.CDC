@@ -158,7 +158,7 @@ const OurEvents = () => {
       <div className="flex-shrink-0">
         <img
           className="w-28 h-36 rounded-lg"
-          src="https://files.oaiusercontent.com/file-MEVTX4x7v9ifQHYPiTABZAx2?se=2024-11-01T07%3A28%3A19Z&sp=r&sv=2024-08-04&sr=b&rscc=max-age%3D604800%2C%20immutable%2C%20private&rscd=attachment%3B%20filename%3D3228b06d-93ce-41fe-945b-7d81a3548f7a.webp&sig=2SjBBHtqveBY3argt7oQ004bEaIDGu1dK2uYqxjrhtQ%3D" // replace with your image URL
+          src="./events/gen.png" 
           alt="Syntax Siege Logo"
         />
       </div>
