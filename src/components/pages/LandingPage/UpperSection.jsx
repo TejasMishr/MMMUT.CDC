@@ -25,10 +25,10 @@ const UpperSection = () => {
         
         <div className="flex flex-col items-center">
             <h1 className="text-white font-bold xl:text-[64px] lg:text-6xl text-4xl leading-[1.25] z-20 relative whitespace-nowrap">
-              <div className="flex justify-center items-center">
-                <code className="gradi-theme-text">&lt;</code>
+              <div className="flex justify-center items-center w-full">
+             <code className="gradi-theme-text">&lt;</code>
                 <span
-                  className="inline-block w-full animate-typing overflow-hidden border-r-4 border-white"
+                  className="inline-block w-full animate-typing overflow-hidden border-r-4 border-white text-[30px] sm:text-[50px]"
                   onAnimationEnd={(e) => {
                     e.target.classList.remove("animate-typing");
                   }}
@@ -46,7 +46,7 @@ const UpperSection = () => {
         <p className="lg:text-xl md:text-lg font-source-sans text-white mt-[30px] w-2/3 z-20">
                       Welcome to CDC a community of passionate developers and coders.Step into a space where your curiosity drives
                       exploration and your code shapes the future.
-                    </p>
+                     </p>
         <p className="lg:text-2xl md:text-lg  text-white font-semibold text-base my-[46px] z-20">
          {"<Bytes of Brilliance Compiled/>"}
         </p>

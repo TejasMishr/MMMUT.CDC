@@ -1,16 +1,50 @@
 import React, { useState } from "react";
 import { Lottie } from "../hooks/lottie/lottie";
+import emailjs from "emailjs-com";
 
 const ContactForm = () => {
-  const [isSubmitting, setIsSubmitting] = useState(false);
+  const [formData, setFormData] = useState({
+    firstName: "",
+    lastName: "",
+    email: "",
+    phone: "",
+    message: "",
+  });
+
+  const [status, setStatus] = useState("");
+
+  const handleChange = (e) => {
+    const { name, value } = e.target;
+    setFormData((prevData) => ({
+      ...prevData,
+      [name]: value,
+    }));
+  };
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    setIsSubmitting(true);
 
-    setTimeout(() => {
-      setIsSubmitting(false);
-    }, 2000);
+    const serviceID = "service_r1dvjqg"; 
+    const templateID = "template_ochgjah";
+    const userID = "eUMkHS1YtRueH6YcM"; 
+
+    emailjs
+      .send(serviceID, templateID, formData, userID)
+      .then(
+        (response) => {
+          setStatus("Message Delivered Successfully!");
+          setFormData({
+            firstName: "",
+            lastName: "",
+            email: "",
+            phone: "",
+            message: "",
+          });
+        },
+        (error) => {
+          setStatus("Failed to Contact. Please try again.");
+        }
+      );
   };
 
   return (
@@ -35,72 +69,79 @@ const ContactForm = () => {
             <div className="flex flex-col h-4/5 sm:w-2/5 w-full items-center justify-between">
               <form
                 onSubmit={handleSubmit}
-                className="flex flex-col justify-between h-full w-full space-y-4"
+                className="flex flex-col justify-between h-full w-full space-y-4 z-18"
               >
                 <div className="flex space-x-4">
                   <input
                     type="text"
+                    name="firstName"
                     placeholder="First Name"
                     required
+                    value={formData.firstName}
+                    onChange={handleChange}
                     className="w-full p-2 bg-gray-700 text-white border border-gray-600 rounded focus:outline-none focus:ring-2 focus:ring-blue-500"
                   />
                   <input
                     type="text"
+                    name="lastName"
                     placeholder="Last Name"
                     required
+                    value={formData.lastName}
+                    onChange={handleChange}
                     className="w-full p-2 bg-gray-700 text-white border border-gray-600 rounded focus:outline-none focus:ring-2 focus:ring-blue-500"
                   />
                 </div>
                 <div>
                   <input
                     type="email"
+                    name="email"
                     placeholder="Enter your email"
                     required
+                    value={formData.email}
+                    onChange={handleChange}
                     className="w-full p-2 bg-gray-700 text-white border border-gray-600 rounded focus:outline-none focus:ring-2 focus:ring-blue-500"
                   />
                 </div>
                 <div>
                   <input
                     type="text"
+                    name="phone"
                     placeholder="Phone Number"
                     required
+                    value={formData.phone}
+                    onChange={handleChange}
                     className="w-full p-2 bg-gray-700 text-white border border-gray-600 rounded focus:outline-none focus:ring-2 focus:ring-blue-500"
                   />
                 </div>
                 <div>
                   <textarea
+                    name="message"
                     placeholder="Write your message"
                     required
+                    value={formData.message}
+                    onChange={handleChange}
                     className="w-full p-2 bg-gray-700 text-white border border-gray-600 rounded h-36 resize-none focus:outline-none focus:ring-2 focus:ring-blue-500"
                   />
                 </div>
                 <div className="w-full flex justify-center items-center">
-                  {isSubmitting ? (
-                    <div className="w-12 h-12 flex justify-center items-center">
-                      <Lottie
-                        link="https://lottie.host/964260d4-07c9-418f-9347-c395a8315735/F9D6H9L9YV.json"
-                        wid="80%"
-                        hig="30%"
-                      />
-                    </div>
-                  ) : (
-                    <button
-                      type="submit"
-                      className="w-full py-2 mt-4 bg-blue-600 hover:bg-blue-700 text-white rounded-md transition duration-200 sm:mb-[0] mb-[20%]"
-                    >
-                      Submit
-                    </button>
-                  )}
+                  <button
+                    type="submit"
+                    className="w-full h-full py-2 mt-4 bg-blue-600 hover:bg-blue-700 text-white rounded-md transition duration-200"
+                  >
+                    Submit
+                  </button>
                 </div>
               </form>
+              {status && <p className="text-white mt-4">{status}</p>}
             </div>
 
             {/* Image Section */}
-            <div className="flex flex-col h-4/5 sm:w-2/5 w-full items-center justify-center">
+            <div className="flex flex-col h-[300px] sm:w-2/5 w-full items-center justify-center mt-[1%] sm:mt-0 z-[-1]">
               <Lottie
                 link="https://lottie.host/8d3fce25-2155-4ee4-8a7f-d93005ea2de9/NNJYhVZfSe.json"
-                wid="40%"
+                wid="55%"
                 hig=""
+                className="sm:w-[60%] w-[90%]"
               />
             </div>
           </div>
