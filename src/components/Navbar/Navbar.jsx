@@ -112,7 +112,7 @@ export const Navbar = () => {
               LOGIN
             </a>
           </li>
-          <li>
+          {/* <li>
             <label className="flex justify-center items-center cursor-pointer py-2">
               <input
                 type="checkbox"
@@ -142,7 +142,7 @@ export const Navbar = () => {
                 </span>
               </div>
             </label>
-          </li>
+          </li> */}
         </ul>
       )}
     </nav>

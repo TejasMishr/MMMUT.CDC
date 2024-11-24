@@ -65,17 +65,27 @@ const OurEvents = () => {
         />
 
         {/* Upcoming Events Section */}
-        <div className="flex flex-col items-center text-center z-[19]">
+        <div className="flex flex-col items-center text-center z-[19] mb-4">
           <h1 className="text-4xl z-[8] font-bold mt-5">UPCOMING EVENTS</h1>
-          <h2 className="text-xl sm:text-2xl my-5 z-[8]">
+          <div className="mt-8 relative z-[19] w-25 h-60 mx-auto mb-12">
+  <img
+    src="./events/ss.png" // Replace with your actual image path
+    alt="Upcoming Event"
+    className="w-full h-full rounded shadow-lg object-cover"
+  />
+  <h1 className='text-4xl mt-2 mb-3'>AlgOlympics</h1>
+</div>
+
+     
+          <h2 className="text-xl sm:text-2xl my-5 z-[8] mt-4">
             Register here for our upcoming events
           </h2>
           <div className="flex flex-col sm:flex-row gap-5 z-[8]">
-            <button className="bg-blue-700  hover:bg-blue-800 h-10 w-40 rounded font-semibold">
+            <button className="bg-blue-700 text-2xl hover:bg-blue-800 h-10 w-40 rounded font-semibold">
               REGISTER
             </button>
             <NavLink to="eve">
-            <button className="bg-blue-700 hover:bg-blue-800 h-10 w-40 rounded font-semibold">
+            <button className="bg-blue-700 text-2xl hover:bg-blue-800 h-10 w-40 rounded font-semibold">
               KNOW MORE
             </button>
             </NavLink>
@@ -94,7 +104,7 @@ const OurEvents = () => {
               <div className="block lg:hidden justify-center flex relative">
                 <button
                   onClick={toggleDropdown}
-                  className="bg-blue-600 text-white text-center px-4 py-2 rounded-lg mx-auto"
+                  className="bg-blue-600 text-white text-2xl text-center px-4 py-2 rounded-lg mx-auto"
                 >
                   Select Event
                 </button>

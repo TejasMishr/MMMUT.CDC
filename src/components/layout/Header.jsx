@@ -97,7 +97,7 @@ export const Navbar = () => {
         >
           LOGIN
         </NavLink>
-        <label className="relative inline-flex items-center cursor-pointer">
+        {/* <label className="relative inline-flex items-center cursor-pointer">
           <input
             type="checkbox"
             checked={isDarkMode}
@@ -125,7 +125,7 @@ export const Navbar = () => {
               )}
             </span>
           </div>
-        </label>
+        </label> */}
       </div>
 
       {/* Mobile & Tablet Menu - Only visible on smaller screens */}
@@ -180,7 +180,7 @@ export const Navbar = () => {
               LOGIN
             </NavLink>
           </li>
-          <li>
+          {/* <li>
             <label className="flex justify-center items-center cursor-pointer py-2">
               <input
                 type="checkbox"
@@ -210,7 +210,7 @@ export const Navbar = () => {
                 </span>
               </div>
             </label>
-          </li>
+          </li> */}
         </ul>
       )}
     </nav>
