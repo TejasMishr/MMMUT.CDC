@@ -19,13 +19,13 @@ const LoginForm = () => {
         }}
       />
       {/* Login Form Container */}
-      <div className="relative w-[90%] max-w-md bg-white/10 backdrop-blur-md rounded-lg shadow-lg p-6 z-10">
+      <div className="relative w-[90%] max-w-md bg-white/60 backdrop-blur-md rounded-lg shadow-lg p-6 z-10">
         {/* Logo Section */}
         <div className="flex justify-center mb-4">
           <img
-            src="./contactus/image1.jpg"
+            src="./contactus/CDC.png"
             alt="Company Logo"
-            className="h-16 w-16 rounded-full"
+            className="h-20 w-20 rounded-full"
           />
         </div>
         <h2 className="text-4xl font-semibold text-center text-black text-bold mb-4">
@@ -36,7 +36,7 @@ const LoginForm = () => {
           <div className="mb-4">
             <label
               htmlFor="email"
-              className="block text-sm font-medium text-gray-700"
+              className="block text-sm font-medium text-black"
             >
               Email
             </label>
@@ -51,7 +51,7 @@ const LoginForm = () => {
           <div className="mb-4 relative">
             <label
               htmlFor="password"
-              className="block text-sm font-medium text-gray-700"
+              className="block text-sm font-medium text-black"
             >
               Password
             </label>
@@ -73,14 +73,14 @@ const LoginForm = () => {
           <div className="mt-6">
             <button
               type="submit"
-              className="w-full bg-blue-500 text-white py-2 rounded-lg hover:bg-blue-600 focus:outline-none focus:ring focus:ring-blue-300"
+              className="w-full bg-blue-500 text-2xl text-white py-1 text-bold rounded-lg hover:bg-blue-600 focus:outline-none focus:ring focus:ring-blue-300"
             >
               Login
             </button>
           </div>
         </form>
         {/* Footer */}
-        <p className="mt-4 text-sm text-center text-black text-bold">
+        <p className="mt-4 text-sm text-2xl text-center text-black text-bold">
           Don’t have an account?{" "}
           <a href="#" className="text-blue-500 hover:underline text-bold">
             Sign Up
