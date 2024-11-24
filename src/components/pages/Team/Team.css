@@ -1,0 +1,163 @@
+.team_btn {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 40px 0;
+  
+}
+
+.loading {
+  width: 100%;
+  text-align: center;
+  height: 5rem;
+  font-size: 4rem;
+  color: #3498db;
+}
+
+.tul {
+  list-style-type: none;
+  display: flex;
+  gap: 15px;
+  flex-wrap: nowrap; /* Prevent wrapping for small devices */
+  justify-content: center; /* Center-align items */
+  padding: 0;
+  margin: 0;
+  overflow-x: auto; /* Enable horizontal scrolling for smaller screens */
+}
+
+.tbutton {
+  background-color: #3498db;
+  color: #fff;
+  border: none;
+  padding: 8px 12px; /* Compact padding */
+  font-size: 14px; /* Default font size */
+  cursor: pointer;
+  border-radius: 5px; /* Rounded corners */
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+  transition: background-color 0.3s, transform 0.2s, box-shadow 0.2s;
+  white-space: nowrap; /* Prevent text wrapping inside buttons */
+}
+
+.tbutton:hover {
+  background-color: #2980b9;
+  transform: scale(1.01); /* Slight scaling effect on hover */
+  box-shadow: 0 6px 8px rgba(0, 0, 0, 0.15); /* Enhanced shadow on hover */
+}
+
+.tbutton:active {
+  background-color: #1a5980; /* Darker shade on click */
+  transform: scale(0.98); /* Pressed effect */
+}
+
+.tli {
+  list-style: none;
+}
+
+@media (max-width: 768px) {
+  .tul {
+    gap: 10px; /* Reduced spacing for smaller screens */
+    overflow-x: auto; /* Allow horizontal scrolling */
+  }
+
+  .tbutton {
+    flex-wrap: wrap;
+    padding: 6px 10px; /* Smaller padding */
+    font-size: 12px; /* Smaller font size for mobile */
+  }
+}
+
+@media (max-width: 530px) {
+  .tbutton {
+    flex-wrap: wrap;
+    padding: 2px 3px; /* Even smaller padding */
+    font-size: 8px; /* Further reduce font size on very small screens */
+  }
+}
+
+  @media (max-width: 380px) {
+    .tbutton {
+      flex-wrap: wrap;
+      padding: 1px 2px; /* Even smaller padding */
+      font-size: 6px; /* Further reduce font size on very small screens */
+    }
+}
+
+  
+  /* Add more styles as needed */
+  /* Add these styles to your existing CSS */
+
+.team-1 {
+    position: relative;
+    overflow: hidden;
+    border-radius: 10px;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+    transition: transform 0.5s ease-in-out;
+    border: 2px solid rgb(177, 177, 177);
+    
+    background-color: #191f2d;
+    height: 100%;
+  }
+  
+  .team-1:hover {
+    transform: scale(1.05);
+    /* box-shadow: 0 0 30px rgba(241, 238, 238, 0.0); */
+  }
+  
+  .team-1 .pic {
+    position: relative;
+    overflow: hidden;
+    border-radius: 10px 10px 0 0;
+    
+  }
+  
+  .team-1 img {
+    width: 100%;
+    height: auto;
+  
+
+    display: block;
+    transition: .15s ease-in;
+  }
+  
+ 
+  
+  .team-info {
+    padding: 20px;
+    text-align: center;
+  }
+  
+  .team-info h4 {
+    margin-bottom: 10px;
+    font-size: 1.2em;
+  }
+  
+  .team-info span {
+    display: block;
+    margin-bottom: 15px;
+    color: #888;
+    font-size: 0.9em;
+  }
+  
+  .social {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  .social a {
+    margin: 0 8px;
+    color: #b7b7b7;
+    font-size: 1.2em;
+    text-decoration: none;
+    transition: color 0.3s ease-in-out;
+  }
+  
+  .social a:hover {
+    color: #007bff; 
+  }
+  
+  @media (max-width:512px) {
+    button{
+      font-size: 6px;
+    }
+  }

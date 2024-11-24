@@ -7,6 +7,7 @@ import {
   faGraduationCap,
   faBuildingColumns,
 } from "@fortawesome/free-solid-svg-icons";
+import Team from "./Team/Team";
 
 const DashBoard = () => {
   const cardData = [
@@ -108,6 +109,7 @@ const DashBoard = () => {
           <div className="w-full h-[30vh] bg-gray-800 p-10 border border-[#5FA4EA] rounded-md"></div>
         </motion.div>
       </div>
+      
     </>
   );
 };

@@ -3,6 +3,11 @@ import { Lottie } from "../hooks/lottie/lottie";
 import emailjs from "emailjs-com";
 import RegistrationForm from "./RegistrationForm";
 import lForm from "./login";
+import { Home } from "./Team/Alumanipage";
+import TeamPage from "./Team/Team5/Team5";
+import FacultyAdvisor from "./Team/Faculty/FacultyAdvisor";
+import Team from "./Team/Team";
+
 const ContactForm = () => {
   const [formData, setFormData] = useState({
     firstName: "",
@@ -149,7 +154,9 @@ const ContactForm = () => {
         </div>
       </div>
       <RegistrationForm/>
+      
       <lForm />
+     
     </>
   );
 };
