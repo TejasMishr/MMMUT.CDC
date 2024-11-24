@@ -9,7 +9,7 @@ const LoginForm = () => {
   };
 
   return (
-    <div className="relative flex items-center bg-gray-900 justify-center min-h-screen">
+    <div className="relative flex items-center bg-gray-900 justify-center  min-h-screen">
       {/* Radial Gradient Background */}
       <div
         className="absolute inset-0 top-0 right-0 blur-3xl z-[0]"
@@ -19,7 +19,7 @@ const LoginForm = () => {
         }}
       />
       {/* Login Form Container */}
-      <div className="relative w-full max-w-md bg-white/10 backdrop-blur-md rounded-lg shadow-lg p-6 z-10">
+      <div className="relative w-[90%] max-w-md bg-white/10 backdrop-blur-md rounded-lg shadow-lg p-6 z-10">
         {/* Logo Section */}
         <div className="flex justify-center mb-4">
           <img
