@@ -9,7 +9,6 @@ const UPLIFT_DELIVERY_DATA = [
     title: "Aim",
     h: "120px",
     w: "120px",
-
     description:
       "We aim to enhance coding skills and foster innovation through interactive events and workshops. We provide a platform for hands-on learning, collaboration, and preparation for future tech challenges.",
   },
@@ -35,10 +34,17 @@ const UPLIFT_DELIVERY_DATA = [
 
 const HomeAbout = () => {
   const gradientRefs = useGradientUpdater();
-
+ 
   return (
-    <section className="px-4 lg:py-[65px] py-10 h-auto overflow-hidden mx-auto z-50">
-      <div className="max-w-[1200px] mx-auto z-50">
+    <section className="h-auto bg-gray-900 text-white py-10 px-4 mx-auto relative overflow-hidden z-50">
+   
+      <div className="absolute inset-0 z-0 grid grid-cols-7 grid-rows-7 gap-0 opacity-5">
+        {[...Array(49)].map((_, index) => (
+          <div key={index} className="border border-gray-700"></div>
+        ))}
+      </div>
+
+      <div className="max-w-[1200px] mx-auto z-10 relative">
         <div className="flex flex-col items-center justify-center max-w-[1020px] mx-auto text-center font-montserrat flex-1 relative z-20 mt-[20px] px-4 h-auto">
           <h1 className="text-white font-bold xl:text-[54px] lg:text-5xl text-4xl leading-[1.25] h-auto mx-auto">
             About Us
@@ -56,14 +62,14 @@ const HomeAbout = () => {
               The Coders & Developers Club MMMUT fosters a strong coding culture
               by empowering students with continuous learning, tech awareness,
               and active contest involvement. Collaborating with faculty and
-              alumni, we equip members with industry -relevant skills, inspiring
+              alumni, we equip members with industry-relevant skills, inspiring
               innovation, teamwork, and technical excellence.
             </h4>
           </div>
         </motion.div>
       </div>
 
-      <section className="lg:py-[65px] py-10 px-4 mx-auto">
+      <section className="lg:py-[65px] py-10 px-4 mx-auto relative z-10">
         <div className="max-w-[1200px] mx-auto">
           <div className="grid lg:grid-cols-3 md:grid-cols-2 s:grid-cols-2 xxl:gap-10 xl:gap-18 lg:gap-18 gap-28 lg:mt-5 md:mt-3 mt-4">
             {UPLIFT_DELIVERY_DATA?.map(
@@ -79,7 +85,6 @@ const HomeAbout = () => {
                 >
                   <div className="rounded-2xl bg-jet flex flex-col items-center h-full lg:p-4 md:p-2 p-2 pt-0 relative">
                     <div className="absolute -top-16 left-1/2 transform -translate-x-[60%]  w-24 h-24 ">
-                    
                       <Lottie link={icon} wid={w} hig={h} />
                     </div>
                     <h4 className="lg:text-2xl md:text-xl font-extrabold text-base text-center text-blue-100 font-montserrat mt-10 sm:mt-7 mb-3">
