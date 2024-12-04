@@ -31,7 +31,6 @@ function TestimonialsCarousel() {
     handleResize();
     window.addEventListener('resize', handleResize);
 
-
     return () => window.removeEventListener('resize', handleResize);
   }, []);
 
@@ -48,16 +47,15 @@ function TestimonialsCarousel() {
   };
 
   return (
-    <div className="flex flex-col items-center relative text-white p-8 h-auto z-20
-    ">
-      <h3 className="text-center text-white font-bold xl:text-[50px] lg:text-4xl text-3xl leading-[1.25] z-20  lg:mb-16 mb-16">
-          What Other Think About Us
-        </h3>
+    <div className="bg-gray-900 text-white flex flex-col items-center relative text-white p-8 h-auto z-20">
+      <h3 className="text-center text-white font-bold xl:text-[50px] lg:text-4xl text-3xl leading-[1.25] z-20 lg:mb-16 mb-16">
+        What Others Think About Us
+      </h3>
       <div className="flex justify-evenly space-x-20 min-h-72">
         {testimonialsData.slice(currentIndex, currentIndex + visibleTestimonials).map((testimonial, index) => (
           <div
             key={index}
-            className="relative w-72 p-6 rounded-lg bg-[rgba(255,255,255,0.1)]   text-center shadow-lg  border border-blue-500"
+            className="relative w-72 p-6 rounded-lg bg-[rgba(255,255,255,0.1)] text-center shadow-lg border border-blue-500"
             style={{
               clipPath: 'polygon(0 0, 90% 0, 100% 10%, 100% 100%, 10% 100%, 0 90%)',
             }}
