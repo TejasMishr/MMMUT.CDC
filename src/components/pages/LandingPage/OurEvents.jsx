@@ -1,10 +1,11 @@
 import { motion } from "framer-motion";
 import { useState } from "react";
+
 const events = [
   {
-    title: "SYNTAX SIEGE", 
+    title: "SYNTAX SIEGE",
     description:
-      "The seven-day Syntax Siege event features five days of offline coding classes, offering in-depth training in programming fundamentals. On the sixth day, participants compete in an online coding contest to test their skills. The event concludes with an exciting offline coding contest on the final day.",
+      "Syntax Siege is a week-long event featuring five days of offline coding classes to build programming skills. On day six, participants compete in an online contest, culminating in an engaging offline contest on the final day.",
     img: "./events/ss.png",
   },
   {
@@ -26,9 +27,9 @@ const events = [
     img: "./events/gen.png",
   },
   {
-    title: "SYNTAX SIEGE", 
+    title: "SYNTAX SIEGE",
     description:
-      "The seven-day Syntax Siege event features five days of offline coding classes, offering in-depth training in programming fundamentals. On the sixth day, participants compete in an online coding contest to test their skills. The event concludes with an exciting offline coding contest on the final day.",
+      "Syntax Siege is a week-long event featuring five days of offline coding classes to build programming skills. On day six, participants compete in an online contest, culminating in an engaging offline contest on the final day.",
     img: "./events/ss.png",
   },
   {
@@ -50,9 +51,81 @@ const events = [
     img: "./events/gen.png",
   },
   {
-    title: "SYNTAX SIEGE", 
+    title: "SYNTAX SIEGE",
     description:
-      "The seven-day Syntax Siege event features five days of offline coding classes, offering in-depth training in programming fundamentals. On the sixth day, participants compete in an online coding contest to test their skills. The event concludes with an exciting offline coding contest on the final day.",
+      "Syntax Siege is a week-long event featuring five days of offline coding classes to build programming skills. On day six, participants compete in an online contest, culminating in an engaging offline contest on the final day.",
+    img: "./events/ss.png",
+  },
+  {
+    title: "CODE CASCADE",
+    description:
+      "The three-day Code-Cascade event offers online coding classes for juniors, focusing on programming basics in a supportive environment. Participants engage in interactive sessions, exploring key concepts and hands-on activities. The event aims to build coding skills and inspire a passion for technology.",
+    img: "./events/cas.png",
+  },
+  {
+    title: "GAME OF CODES",
+    description:
+      "Game of Codes is an exclusive event for second-year students, organized by the Coders and Developers Club in collaboration with the Computer Engineering Society. It aims to foster programming skills and innovation among participants. The event promises engaging activities tailored for budding coders.",
+    img: "./events/goc.png",
+  },
+  {
+    title: "GENESIS",
+    description:
+      "An exclusive event for first-year students, guided by accomplished alumni and technical experts. The session helps students understand industry trends, refine their skills, and set clear career goals. The event fosters learning, collaboration, and a strong foundation in coding and technology.",
+    img: "./events/gen.png",
+  },
+  {
+    title: "SYNTAX SIEGE",
+    description:
+      "Syntax Siege is a week-long event featuring five days of offline coding classes to build programming skills. On day six, participants compete in an online contest, culminating in an engaging offline contest on the final day.",
+    img: "./events/ss.png",
+  },
+  {
+    title: "CODE CASCADE",
+    description:
+      "The three-day Code-Cascade event offers online coding classes for juniors, focusing on programming basics in a supportive environment. Participants engage in interactive sessions, exploring key concepts and hands-on activities. The event aims to build coding skills and inspire a passion for technology.",
+    img: "./events/cas.png",
+  },
+  {
+    title: "GAME OF CODES",
+    description:
+      "Game of Codes is an exclusive event for second-year students, organized by the Coders and Developers Club in collaboration with the Computer Engineering Society. It aims to foster programming skills and innovation among participants. The event promises engaging activities tailored for budding coders.",
+    img: "./events/goc.png",
+  },
+  {
+    title: "GENESIS",
+    description:
+      "An exclusive event for first-year students, guided by accomplished alumni and technical experts. The session helps students understand industry trends, refine their skills, and set clear career goals. The event fosters learning, collaboration, and a strong foundation in coding and technology.",
+    img: "./events/gen.png",
+  },
+  {
+    title: "SYNTAX SIEGE",
+    description:
+      "Syntax Siege is a week-long event featuring five days of offline coding classes to build programming skills. On day six, participants compete in an online contest, culminating in an engaging offline contest on the final day.",
+    img: "./events/ss.png",
+  },
+  {
+    title: "CODE CASCADE",
+    description:
+      "The three-day Code-Cascade event offers online coding classes for juniors, focusing on programming basics in a supportive environment. Participants engage in interactive sessions, exploring key concepts and hands-on activities. The event aims to build coding skills and inspire a passion for technology.",
+    img: "./events/cas.png",
+  },
+  {
+    title: "GAME OF CODES",
+    description:
+      "Game of Codes is an exclusive event for second-year students, organized by the Coders and Developers Club in collaboration with the Computer Engineering Society. It aims to foster programming skills and innovation among participants. The event promises engaging activities tailored for budding coders.",
+    img: "./events/goc.png",
+  },
+  {
+    title: "GENESIS",
+    description:
+      "An exclusive event for first-year students, guided by accomplished alumni and technical experts. The session helps students understand industry trends, refine their skills, and set clear career goals. The event fosters learning, collaboration, and a strong foundation in coding and technology.",
+    img: "./events/gen.png",
+  },
+  {
+    title: "SYNTAX SIEGE",
+    description:
+      "Syntax Siege is a week-long event featuring five days of offline coding classes to build programming skills. On day six, participants compete in an online contest, culminating in an engaging offline contest on the final day.",
     img: "./events/ss.png",
   },
   {
@@ -75,8 +148,6 @@ const events = [
   },
 ];
 
-
-
 const OurEvents = () => {
   const [currentIndex, setCurrentIndex] = useState(5);
 
@@ -90,16 +161,18 @@ const OurEvents = () => {
 
   const getClassNames = (index) => {
     const difference = (index - currentIndex + events.length) % events.length;
-    if (difference === 0 ) return "center"; // Card in the center
-    if (difference ==1 || difference == events.length - 1) return "adjacent"; // Adjacent cards
-    return "hidden"; // Cards outside focus
+    if (difference === 0) return "center";
+    if (difference === 1 || difference === events.length - 1) return "adjacent";
+    return "hidden";
   };
 
   return (
-    <section className="relative text-white h-auto px-4 pb-20 mx-auto">
+    <section className="relative text-white min-h-screen bg-gradient-to-b from-gray-900 via-gray-800 to-black px-4 pb-20">
       <h3 className="text-center font-bold text-3xl lg:text-4xl xl:text-5xl mb-16">
         Our Events
       </h3>
+
+      {/* Carousel Section */}
       <div className="relative w-full max-w-4xl mx-auto overflow-hidden">
         <div className="flex items-center justify-center space-x-6">
           {events.map((event, index) => {
@@ -123,9 +196,9 @@ const OurEvents = () => {
                   ease: "easeInOut",
                 }}
               >
-                <div className="p-4 rounded-xl bg-gradient-to-r from-steelblue to-gray-800">
+                <div className="p-5 rounded-2xl bg-gradient-to-r from-steelblue to-gray-800 overflow-hidden">
                   <img
-                    className="w-full h-36 rounded-t-xl object-cover"
+                    className="w-full h-36 rounded-t-2xl object-cover"
                     src={event.img}
                     alt={event.title}
                   />
@@ -141,7 +214,7 @@ const OurEvents = () => {
         <div className="absolute top-1/2 left-4 transform -translate-y-1/2 z-30">
           <button
             onClick={handlePrev}
-            className="bg-gradient-to-r from-steelblue to-gray-800 text-white p-6 rounded-full shadow-md text-2xl"
+            className="bg-gradient-to-r from-steelblue to-gray-800 text-white p-3.5 rounded-full shadow-md text-xl"
           >
             ◀
           </button>
@@ -149,8 +222,8 @@ const OurEvents = () => {
         <div className="absolute top-1/2 right-4 transform -translate-y-1/2 z-30">
           <button
             onClick={handleNext}
-            className="bg-gradient-to-r from-steelblue to-gray-800 text-white p-6 rounded-full shadow-md text-2xl"
-          >
+            className="bg-gradient-to-r from-steelblue to-gray-800 text-white p-3.5 rounded-full shadow-md text-2xl"
+          > 
             ▶
           </button>
         </div>

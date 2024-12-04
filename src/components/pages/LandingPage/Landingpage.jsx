@@ -1,9 +1,9 @@
 import { useGradientUpdater } from "../../hooks/useGradientUpdater"
 import Carousel from './Glimpse'
  import HomeAbout from './HomeAbout'
-import JoinOur from './JoinOur'
+// import JoinOur from './JoinOur'
 import OurEvents from './OurEvents'
-import SocialIcons from "./socialmedia"
+
 import TestimonialsCarousel from './Testimonials'
  import UpperSection from './UpperSection'
 function LandingPage() {
@@ -24,10 +24,10 @@ function LandingPage() {
           <UpperSection/>
            <HomeAbout/>
           <OurEvents/>
-          <TestimonialsCarousel/>
+       
            <Carousel/>
-          <JoinOur/>
-          <SocialIcons/>
+           <TestimonialsCarousel/>
+        
         </div>
     </>
   )
