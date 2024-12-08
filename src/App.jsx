@@ -1,17 +1,33 @@
+import { useEffect, useState } from "react";
+import { createBrowserRouter, RouterProvider, Navigate } from "react-router-dom";
 import DashBoard from "./components/pages/dashboard"
 import ContactForm from "./components/pages/contactus"
 import LandingPage from "./components/pages/LandingPage/Landingpage"
-import RegistrationForm from "./components/pages/RegistrationForm"
+//import RegistrationForm from "./components/pages/RegistrationForm"
 import OurEvents from "./components/pages/Ourevent"
 import { Navbar } from "./components/Navbar/Navbar"
 import { Footer } from "./components/Footer/Footer"
-import { createBrowserRouter, RouterProvider } from "react-router-dom"
+import Registration  from "./components/pages/RegistrationForm"
+import CreateTeam  from "./components/pages/CreateTeam"
+import Admin  from "./components/pages/Admin/AdminPanel"
+import AddMember  from "./components/pages/AddMembers"
+//import { createBrowserRouter, RouterProvider } from "react-router-dom"
 import { AppLayout } from "./components/layout/AppLayout"
 import Event from "./components/pages/algoolympics"
-import Team from "./components/pages/Team/Team"
+import Teamsa from "./components/pages/Team/Team"
 import LoginForm from "./components/pages/login"
+import RoleProtectedRoute from "./ProtectedRoute";
+import Profile from "./components/pages/Profile";
+
 
 function App() {
+  const [isLoggedIn, setIsLoggedIn] = useState(false);
+
+  useEffect(() => {
+    // Check login status
+    const user = JSON.parse(localStorage.getItem("user"));
+    setIsLoggedIn(!!user); // If user exists, set to true
+  }, []);
   const router = createBrowserRouter([
     {
       path:"/",
@@ -31,8 +47,41 @@ function App() {
           element:<Event/>
         },
         {
-          path:"/team",
-          element:<Team/>,
+          path:"/cdcteam",
+          element:<Teamsa/>
+        },
+        {
+          path: "/admin",
+          element: (
+            <RoleProtectedRoute requiredRole={["Superadmin"]}>
+              <Admin />
+            </RoleProtectedRoute>
+          ),
+        },
+        {
+          path: "/team",
+          element: (
+            <RoleProtectedRoute requiredRole={["Team Leader"]}>
+              <LandingPage />
+            </RoleProtectedRoute>
+          ),
+        },
+        {
+          path: "/createTeam",
+          element: (
+            <RoleProtectedRoute requiredRole={["Team Leader"]}>
+              <CreateTeam />
+            </RoleProtectedRoute>
+          ),
+        },
+        {
+          path:"/addmem",
+          element:<AddMember/>,
+          // loader:getmovieData,
+        },
+        {
+          path:"/signup",
+          element:<Registration/>,
           // loader:getmovieData,
         },
         {
@@ -40,7 +89,11 @@ function App() {
           element:<ContactForm/> 
         },
         {
-          path:"/verify",
+          path: "/profile",
+          element: <Profile />,
+        },
+        {
+          path:"/dashboard",
           element:<DashBoard/>,
         },
         {
