@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import API_BASE_URL from "../../config/apiConfig";
-import { useNavigate } from 'react-router-dom'; 
+import { useNavigate } from 'react-router-dom';
 
 const RegistrationForm = () => {
   const [formData, setFormData] = useState({
@@ -9,25 +9,51 @@ const RegistrationForm = () => {
     email: '',
     phone: '',
     password: '',
-    role: 'User', // Default role
-    college: 'MMMUT', // Default college
-    universityRollNo: '', // University roll number
+    role: 'User',
+    college: '',
+    customCollege: '', // For user-provided college
+    universityRollNo: '',
   });
   const [message, setMessage] = useState('');
   const [error, setError] = useState('');
+  const [showPassword, setShowPassword] = useState(false);
   const navigate = useNavigate();
+
+  const colleges = ['MMMUT', 'ITM', 'BIT', 'KIPM', 'SUYANSH', 'Other'];
 
   const handleChange = (e) => {
     const { name, value } = e.target;
     setFormData({ ...formData, [name]: value });
+
+    if (name === 'college' && value !== 'Other') {
+      setFormData((prev) => ({ ...prev, customCollege: '' }));
+    }
   };
 
   const handleRoleChange = (e) => {
     setFormData({ ...formData, role: e.target.value });
   };
 
+  const togglePasswordVisibility = () => {
+    setShowPassword((prevState) => !prevState);
+  };
+
+  const validateForm = () => {
+    const { phone, universityRollNo } = formData;
+    if (phone && !/^\d{10}$/.test(phone)) {
+      setError('Phone number must be 10 digits');
+      return false;
+    }
+    if (universityRollNo && !/^\d+$/.test(universityRollNo)) {
+      setError('University Roll Number must be numeric');
+      return false;
+    }
+    return true;
+  };
+
   const handleSubmit = async (e) => {
     e.preventDefault();
+    if (!validateForm()) return;
 
     try {
       const response = await fetch(`${API_BASE_URL}/api/auth/signup`, {
@@ -41,7 +67,7 @@ const RegistrationForm = () => {
           phone: formData.phone,
           password: formData.password,
           role: formData.role,
-          college: formData.college,
+          college: formData.college === 'Other' ? formData.customCollege : formData.college,
           universityRollNo: formData.universityRollNo,
         }),
       });
@@ -51,22 +77,9 @@ const RegistrationForm = () => {
         throw new Error(errorData.message || 'Failed to register');
       }
 
-      setMessage('Registration successful!');
+      setMessage('Registration successful! Redirecting to login...');
       setError('');
-      setFormData({
-        firstName: '',
-        lastName: '',
-        email: '',
-        phone: '',
-        password: '',
-        role: 'User',
-        college: 'MMMUT', // Reset default college
-        universityRollNo: '',
-      });
-
-      setTimeout(() => {
-        navigate('/login');
-      }, 2000);
+      setTimeout(() => navigate('/login'), 2000);
 
     } catch (err) {
       setMessage('');
@@ -76,137 +89,154 @@ const RegistrationForm = () => {
 
   return (
     <div className="bg-gray-900 min-h-screen flex flex-col items-center">
-      <div className="flex flex-col justify-evenly items-center h-auto w-full p-2">
-        <h1 className="text-white text-4xl font-extrabold text-center mt-4 mb-6">
-          REGISTER HERE
-        </h1>
-        <div className="flex flex-col sm:flex-row justify-evenly items-center w-3/4 h-auto p-3">
-          <form className="space-y-6 w-full" onSubmit={handleSubmit}>
-            <div className="flex items-center space-x-4">
-              <label className="text-gray-300 w-1/4">NAME:</label>
-              <div className="flex gap-4 w-3/4">
-                <input
-                  type="text"
-                  name="firstName"
-                  value={formData.firstName}
-                  onChange={handleChange}
-                  placeholder="First Name"
-                  className="w-1/2 px-3 py-2 border border-gray-600 bg-transparent rounded-md text-white focus:outline-none focus:border-blue-500"
-                  required
-                />
-                <input
-                  type="text"
-                  name="lastName"
-                  value={formData.lastName}
-                  onChange={handleChange}
-                  placeholder="Last Name"
-                  className="w-1/2 px-3 py-2 border border-gray-600 bg-transparent rounded-md text-white focus:outline-none focus:border-blue-500"
-                  required
-                />
-              </div>
-            </div>
-
-            <div className="flex items-center space-x-4">
-              <label className="text-gray-300 w-1/4">EMAIL:</label>
+      <div className="w-full max-w-3xl p-8 mt-10 bg-gray-800 rounded-lg shadow-md">
+        <h1 className="text-4xl font-bold text-white text-center mb-6">Register Here</h1>
+        <form className="space-y-6" onSubmit={handleSubmit}>
+          <div className="flex space-x-4">
+            <div className="w-1/2">
+              <label className="block text-gray-300 mb-2">First Name</label>
               <input
-                type="email"
-                name="email"
-                value={formData.email}
+                type="text"
+                name="firstName"
+                value={formData.firstName}
                 onChange={handleChange}
-                placeholder="Email"
-                className="w-3/4 px-3 py-2 border border-gray-600 bg-transparent rounded-md text-white focus:outline-none focus:border-blue-500"
+                placeholder="First Name"
+                className="w-full px-4 py-2 bg-gray-700 text-white rounded-md"
                 required
               />
             </div>
-            
-            <div className="flex items-center space-x-4">
-              <label className="text-gray-300 w-1/4">PASSWORD:</label>
+            <div className="w-1/2">
+              <label className="block text-gray-300 mb-2">Last Name</label>
               <input
-                type="password"
-                name="password"
-                value={formData.password}
+                type="text"
+                name="lastName"
+                value={formData.lastName}
                 onChange={handleChange}
-                placeholder="Password"
-                className="w-3/4 px-3 py-2 border border-gray-600 bg-transparent rounded-md text-white focus:outline-none focus:border-blue-500"
+                placeholder="Last Name"
+                className="w-full px-4 py-2 bg-gray-700 text-white rounded-md"
                 required
               />
             </div>
-
-            <div className="flex items-center space-x-4">
-              <label className="text-gray-300 w-1/4">PHONE NO:</label>
-              <input
-                type="text"
-                name="phone"
-                value={formData.phone}
-                onChange={handleChange}
-                placeholder="Phone No:"
-                className="w-3/4 px-3 py-2 border border-gray-600 bg-transparent rounded-md text-white focus:outline-none focus:border-blue-500"
-              />
-            </div>
-
-            <div className="flex items-center space-x-4">
-              <label className="text-gray-300 w-1/4">COLLEGE:</label>
-              <input
-                type="text"
-                name="college"
-                value={formData.college}
-                onChange={handleChange}
-                placeholder="College"
-                className="w-3/4 px-3 py-2 border border-gray-600 bg-transparent rounded-md text-white focus:outline-none focus:border-blue-500"
-              />
-            </div>
-
-            <div className="flex items-center space-x-4">
-              <label className="text-gray-300 w-1/4">UNIVERSITY ROLL NO:</label>
-              <input
-                type="text"
-                name="universityRollNo"
-                value={formData.universityRollNo}
-                onChange={handleChange}
-                placeholder="University Roll Number"
-                className="w-3/4 px-3 py-2 border border-gray-600 bg-transparent rounded-md text-white focus:outline-none focus:border-blue-500"
-              />
-            </div>
-
-            <div className="flex items-center space-x-4">
-              <label className="text-gray-300 w-1/4">ROLE:</label>
-              <div className="flex w-3/4 items-center space-x-4">
-                <label className="flex items-center text-gray-300">
-                  <input
-                    type="radio"
-                    name="role"
-                    value="User"
-                    checked={formData.role === 'User'}
-                    onChange={handleRoleChange}
-                    className="mr-2"
-                  />
-                  User
-                </label>
-                <label className="flex items-center text-gray-300">
-                  <input
-                    type="radio"
-                    name="role"
-                    value="Team Leader"
-                    checked={formData.role === 'Team Leader'}
-                    onChange={handleRoleChange}
-                    className="mr-2"
-                  />
-                  Team Leader
-                </label>
-              </div>
-            </div>
-
-            {message && <p className="text-green-500">{message}</p>}
-            {error && <p className="text-red-500">{error}</p>}
-
+          </div>
+          <div>
+            <label className="block text-gray-300 mb-2">Email</label>
+            <input
+              type="email"
+              name="email"
+              value={formData.email}
+              onChange={handleChange}
+              placeholder="Email"
+              className="w-full px-4 py-2 bg-gray-700 text-white rounded-md"
+              required
+            />
+          </div>
+          <div className="relative">
+            <label className="block text-gray-300 mb-2">Password</label>
+            <input
+              type={showPassword ? 'text' : 'password'}
+              name="password"
+              value={formData.password}
+              onChange={handleChange}
+              placeholder="Password"
+              className="w-full px-4 py-2 bg-gray-700 text-white rounded-md"
+              required
+            />
             <button
-              type="submit"
-              className="w-full py-2 mt-4 bg-blue-600 hover:bg-blue-700 text-white rounded-md transition duration-200"
+              type="button"
+              onClick={togglePasswordVisibility}
+              className="absolute right-3 top-9 text-gray-400"
             >
-              Submit
+              {showPassword ? 'Hide' : 'Show'}
             </button>
-          </form>
-        </div>
+          </div>
+          <div>
+            <label className="block text-gray-300 mb-2">Phone Number</label>
+            <input
+              type="text"
+              name="phone"
+              value={formData.phone}
+              onChange={handleChange}
+              placeholder="Phone Number"
+              className="w-full px-4 py-2 bg-gray-700 text-white rounded-md"
+            />
+          </div>
+          <div>
+            <label className="block text-gray-300 mb-2">College</label>
+            <select
+              name="college"
+              value={formData.college}
+              onChange={handleChange}
+              className="w-full px-4 py-2 bg-gray-700 text-white rounded-md"
+            >
+              <option value="">Select your college</option>
+              {colleges.map((college) => (
+                <option key={college} value={college}>
+                  {college}
+                </option>
+              ))}
+            </select>
+          </div>
+          {formData.college === 'Other' && (
+            <div>
+              <label className="block text-gray-300 mb-2">Custom College</label>
+              <input
+                type="text"
+                name="customCollege"
+                value={formData.customCollege}
+                onChange={handleChange}
+                placeholder="Enter your college"
+                className="w-full px-4 py-2 bg-gray-700 text-white rounded-md"
+                required
+              />
+            </div>
+          )}
+          <div>
+            <label className="block text-gray-300 mb-2">University Roll Number</label>
+            <input
+              type="text"
+              name="universityRollNo"
+              value={formData.universityRollNo}
+              onChange={handleChange}
+              placeholder="University Roll Number"
+              className="w-full px-4 py-2 bg-gray-700 text-white rounded-md"
+            />
+          </div>
+          <div>
+            <label className="block text-gray-300 mb-2">Role</label>
+            <div className="flex space-x-4">
+              <label className="flex items-center text-gray-300">
+                <input
+                  type="radio"
+                  name="role"
+                  value="User"
+                  checked={formData.role === 'User'}
+                  onChange={handleRoleChange}
+                  className="mr-2"
+                />
+                User
+              </label>
+              <label className="flex items-center text-gray-300">
+                <input
+                  type="radio"
+                  name="role"
+                  value="Team Leader"
+                  checked={formData.role === 'Team Leader'}
+                  onChange={handleRoleChange}
+                  className="mr-2"
+                />
+                Team Leader
+              </label>
+            </div>
+          </div>
+          {message && <p className="text-green-500">{message}</p>}
+          {error && <p className="text-red-500">{error}</p>}
+          <button
+            type="submit"
+            className="w-full py-2 bg-blue-600 hover:bg-blue-700 text-white rounded-md"
+          >
+            Register
+          </button>
+        </form>
       </div>
     </div>
   );

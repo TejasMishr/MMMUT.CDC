@@ -71,6 +71,14 @@ const LoginForm = () => {
         <h2 className="text-4xl font-semibold text-center text-black text-bold mb-4">
           Login
         </h2>
+        <div className="flex justify-center mb-4">
+          <img
+    
+            src="./contactus/CDC.png"
+            alt="Company Logo"
+            className="h-16 w-16 rounded-full"
+       
+          /></div>
         <form onSubmit={handleSubmit}>
           <div className="mb-4">
             <label htmlFor="email" className="block text-sm font-medium text-black">
@@ -109,7 +117,12 @@ const LoginForm = () => {
           </div>
           {message && <p className="text-green-500 text-center">{message}</p>}
           {error && <p className="text-red-500 text-center">{error}</p>}
-         <p className='d-flex justify-center'><a href="/signup">Create a new account</a></p> 
+          <p className="mt-4 text-sm text-2xl text-center text-black text-bold">
+          Don’t have an account?{" "}
+          <a href="/signup" className="text-blue-500 hover:underline text-bold">
+            Sign Up
+          </a>
+        </p>
           <div className="mt-6">
             <button
               type="submit"
