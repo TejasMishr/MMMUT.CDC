@@ -154,6 +154,16 @@ const CreateTeam = () => {
       setError(err.message || "An error occurred");
     }
   };
+  const handleProceedToPayment = () => {
+    if (!team || team.members.length < 3) {
+      const confirmProceed = window.confirm(
+        "Your team has less than 3 members. Are you sure you want to proceed to payment?"
+      );
+      if (!confirmProceed) return;
+    }
+    // Redirect to the payment page
+    navigate("/payment");
+  };
 
   const handleMemberUpdate = async (e) => {
     e.preventDefault();
@@ -262,8 +272,16 @@ const CreateTeam = () => {
                 >
                   Edit
                 </button>
+            
               </li>
+           
             ))}
+                <button
+               onClick={handleProceedToPayment}
+               className="w-full py-2 mt-4 bg-purple-600 hover:bg-purple-700 text-white rounded-md"
+             >
+               Proceed to Payment
+             </button>
           </ul>
 
           {/* Add Member Form */}
@@ -340,6 +358,7 @@ const CreateTeam = () => {
               >
                 Add Member
               </button>
+           
             </form>
           )}
         </div>
