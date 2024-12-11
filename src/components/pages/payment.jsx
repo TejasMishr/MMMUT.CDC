@@ -4,7 +4,7 @@ import API_BASE_URL from "../../config/apiConfig";
 
 const PaymentPage = () => {
   const [transactionId, setTransactionId] = useState("");
-  const [teamName, setTeamName] = useState("");
+  var teamName = JSON.parse(localStorage.getItem("teamData")).name;
   const [loading, setLoading] = useState(false);
 
   // EmailJS configuration
@@ -39,7 +39,9 @@ const PaymentPage = () => {
       }
 
       const teamData = await teamResponse.json();
-      const teamId = teamData._id;
+      console.log("team", teamData);
+      const teamId = teamData.team._id;
+      // const teamId = JSON.parse(localStorage.getItem("user")).userId;
 
       if (!teamId) {
         throw new Error("Team ID could not be retrieved.");
@@ -51,6 +53,8 @@ const PaymentPage = () => {
         team_name: teamName,
       };
 
+      console.log(templateParams);
+
       // Send email using EmailJS
       const emailResponse = await emailjs.send(
         serviceID,
@@ -58,11 +62,13 @@ const PaymentPage = () => {
         templateParams,
         userID
       );
-      console.log("Email Sent Successfully:", emailResponse);
+      console.log("Sending PUT request...");
+      console.log("teamId:", teamId);
+      console.log("paymentStatus:", "pending");
+      console.log("token",token);
 
-      // Update payment status in backend
       const response = await fetch(`${API_BASE_URL}/api/teams/paymentStatus`, {
-        method: "PUT",
+        method: "POST",
         headers: {
           "Content-Type": "application/json",
           Authorization: `Bearer ${token}`,
@@ -73,24 +79,29 @@ const PaymentPage = () => {
         }),
       });
 
+      console.log("Response:", response);
+
       if (!response.ok) {
         const errorData = await response.json();
+        console.log("Error data:", errorData);
         throw new Error(errorData.message || "Failed to update payment status.");
       }
 
       alert("Form submitted successfully! Payment status updated to pending.");
       resetForm();
+
     } catch (error) {
-      console.error("Error:", error);
+      console.error("Error:", error); // Log the full error message
       alert(`An error occurred: ${error.message}`);
     } finally {
       setLoading(false);
     }
+
   };
 
   const resetForm = () => {
     setTransactionId("");
-    setTeamName("");
+    teamName = "";
   };
 
   return (
@@ -127,18 +138,10 @@ const PaymentPage = () => {
 
           {/* Team Name Input */}
           <div>
-            <label htmlFor="teamName" className="block text-gray-300 mb-2">
-              Team Name
-            </label>
-            <input
-              type="text"
-              id="teamName"
-              value={teamName}
-              onChange={(e) => setTeamName(e.target.value)}
-              placeholder="Enter Team Name"
-              className="w-full px-4 py-2 border border-gray-600 bg-gray-700 text-white rounded-md"
-              required
-            />
+            <label className="block text-gray-300 mb-2">Team Name</label>
+            <div className="w-full px-4 py-2 border border-gray-600 bg-gray-700 text-white rounded-md">
+              {teamName || "Team Name Not Found"}
+            </div>
           </div>
 
           {/* Submit Button */}
