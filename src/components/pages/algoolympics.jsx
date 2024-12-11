@@ -9,7 +9,7 @@ import {
   FaKeyboard,
 } from 'react-icons/fa';
 import { HiMiniSquare3Stack3D } from "react-icons/hi2";
-
+import { NavLink } from "react-router-dom";
 const Event = () => {
   return (
     <div className="bg-gray-900 min-h-screen text-white relative overflow-hidden">
@@ -125,8 +125,8 @@ const Event = () => {
       Date & Time
     </h3>
   </div>
-              <p className="text-sm sm:text-lg">December 15, 2024</p>
-              <p className="text-sm sm:text-lg">10:00 AM - 4:00 PM</p>
+             <div><h1 className="text-lg sm:text-xl">Online Round:-</h1> <p className="text-sm sm:text-lg">December 22, 2024</p></div>
+             <div className='mt-2'><h1 className="text-lg sm:text-xl">Offline Round</h1> <p className="text-sm sm:text-lg">10:00 AM - 4:00 PM</p> </div>
 </div>
 
 {/* Venue Card */}
@@ -137,7 +137,8 @@ const Event = () => {
       Venue
     </h3>
   </div>
-              <p className="text-sm sm:text-lg">Computer Science Department, ABC College</p>
+  <div><h1 className="text-lg sm:text-xl">Online Round:-</h1> <p className="text-sm sm:text-lg">CodeForces</p></div>
+  <div className='mt-2'><h1 className="text-lg text-bold sm:text-xl">Offline Round</h1> <p className="text-sm sm:text-lg">ITRC Lab ,MMMUT Gorakhpur</p> </div>
 </div>
         </section>
         {/* Call to Action */}
@@ -145,9 +146,15 @@ const Event = () => {
           <h3 className="text-2xl md:text-3xl font-semibold mb-6 text-gray-300">
             Don’t miss out on this exciting opportunity!
           </h3>
-          <button className="bg-blue-600 hover:bg-blue-800 text-white py-4 px-8 rounded-lg text-lg font-medium shadow-lg transition duration-300 ease-in-out">
+          <NavLink
+                  to="/createTeam"
+                  className="block px-4 py-2 "
+                >
+                <button className="bg-blue-600 hover:bg-blue-800 text-white py-4 px-8 rounded-lg text-lg font-medium shadow-lg transition duration-300 ease-in-out">
             Register Now
           </button>
+                </NavLink>
+        
         </section>
      
         </main>

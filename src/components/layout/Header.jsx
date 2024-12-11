@@ -86,22 +86,12 @@ export const Navbar = () => {
             to="/cdcteam"
             className="hover:text-gray-300 transition-colors duration-300 block p-2"
           >
-            Teams
+            Members
           </NavLink>
         </li>
 
         {/* Conditionally Render 'Team' Section Based on Role */}
-        {userRole == 'Team Leader' && (
-          <li className="group">
-            <NavLink
-              to="team"
-              className="hover:text-gray-300 transition-colors duration-300 block p-2"
-            >
-              Team
-            </NavLink>
-          </li>
-        )}
-
+ 
         <li className="group">
           <NavLink
             to="contact"
@@ -172,7 +162,7 @@ export const Navbar = () => {
       {/* Mobile Menu Button */}
       <button
         onClick={toggleMobileMenu}
-        className="lg:hidden text-white text-2xl focus:outline-none"
+        className="lg:hidden text-white  text-2xl focus:outline-none"
       >
         {isMobileMenuOpen ? <FaTimes /> : <FaBars />}
       </button>
@@ -201,10 +191,10 @@ export const Navbar = () => {
           {userRole !== "User" && (
             <li className="group">
               <NavLink
-                to="team"
+                to="cdcteam"
                 className="text-white text-lg font-roboto-slab hover:text-gray-300 transition-colors duration-300 block py-2"
               >
-                Team
+                Members
               </NavLink>
             </li>
           )}
@@ -228,9 +218,27 @@ export const Navbar = () => {
                 </NavLink>
               </li>
               <li>
+              <NavLink
+                  to="/profile"
+                  className="text-white text-lg font-roboto-slab hover:text-gray-300 transition-colors duration-300 block py-2"
+                >
+                  Profile
+                </NavLink>
+              </li>
+              <li>
+              {userRole == 'Team Leader' &&
+                  <NavLink
+                    to="/createTeam"
+                    className="text-white text-lg font-roboto-slab hover:text-gray-300 transition-colors duration-300 block py-2"
+                  >
+                    Team
+                  </NavLink>
+                }
+              </li>
+              <li className="flex justify-center">
                 <button
                   onClick={handleLogout}
-                  className="text-white text-lg font-roboto-slab hover:text-gray-300 transition-colors duration-300 block py-2 w-full text-left"
+                  className="text-white text-lg w-20 p-2 text-center rounded-full bg-red-500 hover:bg-red-700 font-roboto-slab hover:text-gray-300 transition-colors duration-300 block py-2 w-full text-center"
                 >
                   Logout
                 </button>
@@ -238,14 +246,15 @@ export const Navbar = () => {
             </>
           )}
           {!isLoggedIn && (
-            <li>
-              <NavLink
-                to="/login"
-                className="text-white text-lg font-roboto-slab hover:text-gray-300 transition-colors duration-300 block py-2"
-              >
-                LOGIN
-              </NavLink>
-            </li>
+         <li className="flex justify-center ">
+         <NavLink
+           to="/login"
+           className="text-white text-lg w-20 p-2 text-center font-roboto-slab rounded-full bg-green-500 hover:bg-green-700 transition-colors duration-300 block "
+         >
+           LOGIN
+         </NavLink>
+       </li>
+       
           )}
         </ul>
       )}

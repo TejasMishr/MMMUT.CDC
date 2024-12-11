@@ -81,9 +81,15 @@ const OurEvents = () => {
             Register here for our upcoming events
           </h2>
           <div className="flex flex-col sm:flex-row gap-5 z-[8]">
-            <button className="bg-blue-700 text-2xl hover:bg-blue-800 h-10 w-40 rounded font-semibold">
+          <NavLink
+                  to="/createTeam"
+                  className="block  "
+                >
+                  <button className="bg-blue-700 text-2xl hover:bg-blue-800 h-10 w-40 rounded font-semibold">
               REGISTER
             </button>
+                </NavLink>
+          
             <NavLink to="eve">
             <button className="bg-blue-700 text-2xl hover:bg-blue-800 h-10 w-40 rounded font-semibold">
               KNOW MORE
@@ -93,7 +99,7 @@ const OurEvents = () => {
 
           </div>
         </div>
-
+{/* 
 
         <div className="h-[80vh] mt-10 sm:mt-20 z-[20]">
           <h1 className="relative text-center text-3xl mb-[3%] sm:text-4xl my-5 z-[20]">
@@ -149,7 +155,7 @@ const OurEvents = () => {
               )}
             </div>
           </div>
-        </div>
+        </div> */}
       </div>
  
     </>

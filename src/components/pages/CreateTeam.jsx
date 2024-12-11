@@ -247,7 +247,7 @@ const CreateTeam = () => {
           {error && <p className="text-red-500 mb-4">{error}</p>}
           <button
             type="submit"
-            className="w-full py-2 bg-blue-600 hover:bg-blue-700 text-white rounded-md transition duration-200"
+            className="w-full py-2 bg-blue-600 text-sm hover:bg-blue-700 text-white rounded-md transition duration-200"
           >
             Create Team
           </button>
@@ -269,7 +269,7 @@ const CreateTeam = () => {
                 </div>
                 <button
                   onClick={() => handleEditMember(member)}
-                  className="px-4 py-2 bg-yellow-600 text-white rounded-md hover:bg-yellow-700"
+                  className="px-4 py-2 text-sm bg-yellow-600 text-white rounded-md hover:bg-yellow-700"
                 >
                   Edit
                 </button>
@@ -280,7 +280,7 @@ const CreateTeam = () => {
                 {team.payment?.status === "incomplete" ? (
   <button
     onClick={handleProceedToPayment}
-    className="w-full py-2 mt-4 bg-purple-600 hover:bg-purple-700 text-white rounded-md"
+    className="w-full py-2 mt-4 text-sm bg-purple-600 hover:bg-purple-700 text-white rounded-md"
   >
     Proceed to Payment
   </button>
@@ -454,14 +454,14 @@ const CreateTeam = () => {
               </div>
               <button
                 type="submit"
-                className="w-full py-2 bg-blue-600 hover:bg-blue-700 text-white rounded-md"
+                className="w-full py-2 mt-2 text-sm bg-blue-600 hover:bg-blue-700 text-white rounded-md"
               >
                 Update Member
               </button>
             </form>
             <button
               onClick={() => setShowModal(false)}
-              className="mt-4 w-full py-2 bg-red-600 hover:bg-red-700 text-white rounded-md"
+              className="mt-4 w-full text-sm py-2 bg-red-600 hover:bg-red-700 text-white rounded-md"
             >
               Close
             </button>

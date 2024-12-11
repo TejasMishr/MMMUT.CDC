@@ -92,10 +92,10 @@ const AdminProfile = () => {
   };
 
   return (
-    <div className="p-6 bg-gray-100">
-      <h1 className="text-2xl font-semibold mb-4">Admin Profile</h1>
+    <div className="p-6 bg-gray-900">
+      <h1 className="text-2xl font-semibold text-white mb-4">Admin Profile</h1>
       {admin ? (
-        <div className="bg-white p-6 rounded shadow-md">
+        <div className=" bg-gray-800 text-white p-6 rounded shadow-md">
           {!isEditing ? (
             <>
               <div className="mb-4">
@@ -126,7 +126,7 @@ const AdminProfile = () => {
 
               <button
                 onClick={() => setIsEditing(true)}
-                className="bg-blue-500 text-white px-4 py-2 rounded hover:bg-blue-600"
+                className="bg-blue-500 text-sm text-white px-2 py-2 rounded hover:bg-blue-600"
               >
                 Edit Profile
               </button>
