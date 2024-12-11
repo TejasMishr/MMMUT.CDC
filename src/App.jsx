@@ -18,7 +18,7 @@ import Teamsa from "./components/pages/Team/Team"
 import LoginForm from "./components/pages/login"
 import RoleProtectedRoute from "./ProtectedRoute";
 import Profile from "./components/pages/Profile";
-
+import PaymentPage from "./components/pages/payment";
 
 function App() {
   const [isLoggedIn, setIsLoggedIn] = useState(false);
@@ -41,6 +41,10 @@ function App() {
         {
           path:"/events",
           element:<OurEvents/>
+        },
+        {
+          path:"/payment",
+          element:<PaymentPage/>
         },
         {
           path:"/events/eve",

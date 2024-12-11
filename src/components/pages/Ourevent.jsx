@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import Event from './algoolympics';
 import { NavLink } from 'react-router-dom';
-
+import PaymentPage from './payment';
 const eventDetails = [
   {
     EventName: "Game of Codes",
@@ -147,10 +147,11 @@ const OurEvents = () => {
               {selectedEventDetails && (
                 <p className="mt-4 text-center lg:text-2xl md:text-xs sm:text-xs">{selectedEventDetails.Description}</p>
               )}
-            </div>
+            </div>ygyug
           </div>
         </div>
       </div>
+      <PaymentPage/>
     </>
   );
 };
