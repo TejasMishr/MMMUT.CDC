@@ -161,9 +161,18 @@ const CreateTeam = () => {
       );
       if (!confirmProceed) return;
     }
+  
+    // Store team data in local storage
+    const teamData = {
+      name: team.name,
+      members: team.members,
+    };
+    localStorage.setItem("teamData", JSON.stringify(teamData));
+  
     // Redirect to the payment page
     navigate("/payment");
   };
+  
 
   const handleMemberUpdate = async (e) => {
     e.preventDefault();
