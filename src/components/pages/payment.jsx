@@ -1,20 +1,18 @@
 import React, { useState } from "react";
-import { useNavigate } from "react-router-dom"; // Import useNavigate
 import emailjs from "@emailjs/browser";
 import API_BASE_URL from "../../config/apiConfig";
 
 const PaymentPage = () => {
   const [transactionId, setTransactionId] = useState("");
-  const [loading, setLoading] = useState(false);
-  const navigate = useNavigate(); // Initialize navigate function
-
   var teamName = JSON.parse(localStorage.getItem("teamData")).name;
+  const [loading, setLoading] = useState(false);
 
   // EmailJS configuration
   const serviceID = "service_0nrni1x";
   const templateID = "template_n4s5myd";
   const userID = "3b3sPYto0voKhRyYj";
 
+  // Constant image URL
   const constantImage = "/path/to/your/image.jpg"; // Update with the actual path
 
   const handleSubmit = async (e) => {
@@ -41,7 +39,9 @@ const PaymentPage = () => {
       }
 
       const teamData = await teamResponse.json();
+      console.log("team", teamData);
       const teamId = teamData.team._id;
+      // const teamId = JSON.parse(localStorage.getItem("user")).userId;
 
       if (!teamId) {
         throw new Error("Team ID could not be retrieved.");
@@ -52,11 +52,21 @@ const PaymentPage = () => {
         transaction_id: transactionId,
         team_name: teamName,
       };
-//test
-      // Send email using EmailJS
-      await emailjs.send(serviceID, templateID, templateParams, userID);
 
-      // Update payment status
+      console.log(templateParams);
+
+      // Send email using EmailJS
+      const emailResponse = await emailjs.send(
+        serviceID,
+        templateID,
+        templateParams,
+        userID
+      );
+      console.log("Sending PUT request...");
+      console.log("teamId:", teamId);
+      console.log("paymentStatus:", "pending");
+      console.log("token",token);
+
       const response = await fetch(`${API_BASE_URL}/api/teams/paymentStatus`, {
         method: "POST",
         headers: {
@@ -69,22 +79,24 @@ const PaymentPage = () => {
         }),
       });
 
+      console.log("Response:", response);
+
       if (!response.ok) {
         const errorData = await response.json();
+        console.log("Error data:", errorData);
         throw new Error(errorData.message || "Failed to update payment status.");
       }
 
       alert("Form submitted successfully! Payment status updated to pending.");
       resetForm();
 
-      // Redirect to /createteam
-      navigate("/createTeam");
     } catch (error) {
-      console.error("Error:", error);
+      console.error("Error:", error); // Log the full error message
       alert(`An error occurred: ${error.message}`);
     } finally {
       setLoading(false);
     }
+
   };
 
   const resetForm = () => {
@@ -108,6 +120,7 @@ const PaymentPage = () => {
 
         {/* Form */}
         <form onSubmit={handleSubmit} className="space-y-4">
+          {/* Transaction ID Input */}
           <div>
             <label htmlFor="transactionId" className="block text-gray-300 mb-2">
               Transaction ID
@@ -123,6 +136,7 @@ const PaymentPage = () => {
             />
           </div>
 
+          {/* Team Name Input */}
           <div>
             <label className="block text-gray-300 mb-2">Team Name</label>
             <div className="w-full px-4 py-2 border border-gray-600 bg-gray-700 text-white rounded-md">
@@ -130,6 +144,7 @@ const PaymentPage = () => {
             </div>
           </div>
 
+          {/* Submit Button */}
           <button
             type="submit"
             className="w-full py-2 bg-blue-600 hover:bg-blue-700 text-white font-semibold rounded-md transition duration-200"

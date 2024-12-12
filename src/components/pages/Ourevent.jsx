@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import Event from './algoolympics';
 import { NavLink } from 'react-router-dom';
-
+import PaymentPage from './payment';
 const eventDetails = [
   {
     EventName: "Game of Codes",
@@ -157,7 +157,7 @@ const OurEvents = () => {
           </div>
         </div> */}
       </div>
- 
+ <PaymentPage/>
     </>
   );
 };
