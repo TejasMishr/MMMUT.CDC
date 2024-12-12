@@ -126,7 +126,7 @@ const Event = () => {
     </h3>
   </div>
              <div><h1 className="text-lg sm:text-xl">Online Round:-</h1> <p className="text-sm sm:text-lg">December 22, 2024</p></div>
-             <div className='mt-2'><h1 className="text-lg sm:text-xl">Offline Round</h1> <p className="text-sm sm:text-lg">10:00 AM - 4:00 PM</p> </div>
+             <div className='mt-2'><h1 className="text-lg sm:text-xl">Offline Round</h1> <p className="text-sm sm:text-lg">December 29, 2024</p> </div>
 </div>
 
 {/* Venue Card */}

@@ -229,11 +229,11 @@ const CreateTeam = () => {
   };
 
   return (
-    <div className="bg-gray-900 min-h-screen flex flex-col items-center justify-center">
+    <div className="bg-gray-900 min-h-screen flex flex-col items-center  justify-center">
       {showForm && !team ? (
         <form
           onSubmit={handleTeamSubmit}
-          className="w-3/4 max-w-md bg-gray-800 p-6 rounded-lg shadow-md mb-6"
+          className="w-3/4 max-w-md bg-gray-800 p-6 mt-6 rounded-lg shadow-md mb-6"
         >
           <h1 className="text-white text-4xl font-extrabold text-center mb-6">
             Create a Team
