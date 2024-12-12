@@ -90,7 +90,7 @@ const OurEvents = () => {
             </button>
                 </NavLink>
           
-            <NavLink to="eve">
+            <NavLink to="/events/algOlympics">
             <button className="bg-blue-700 text-2xl hover:bg-blue-800 h-10 w-40 rounded font-semibold">
               KNOW MORE
             </button>

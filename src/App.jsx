@@ -47,7 +47,7 @@ function App() {
           element:<PaymentPage/>
         },
         {
-          path:"/events/eve",
+          path:"/events/algOlympics",
           element:<Event/>
         },
         {

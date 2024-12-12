@@ -286,17 +286,25 @@ const CreateTeam = () => {
               </li>
            
             ))}
-               {team.payment && team.payment.status ? (
+              {team.payment && team.payment.status ? (
   team.payment.status === "incomplete" ? (
     <button
       onClick={handleProceedToPayment}
-      className="w-full text-lg py-2 mt-4 bg-purple-600 hover:bg-purple-700 text-white rounded-md"
+      className="w-full text-lg py-2 mt-4 bg-blue-600 hover:bg-blue-700 text-white rounded-md"
     >
       Proceed to Payment
     </button>
-  ) : (
+  ) : team.payment.status === "accepted" ? (
     <p className="text-green-400 text-center mt-4">
-      Your payment status is: <strong>{team.payment.status}</strong>
+      Your payment status is: <strong className="uppercase">{team.payment.status}</strong>
+    </p>
+  ) : team.payment.status === "pending" ? (
+    <p className="text-blue-400 text-center mt-4">
+      Your payment status is: <strong className="uppercase">{team.payment.status}</strong>
+    </p>
+  ) :(
+    <p className="text-red-400 text-center mt-4">
+      Your payment status is: <strong className="uppercase">{team.payment.status}</strong>
     </p>
   )
 ) : (
@@ -304,6 +312,7 @@ const CreateTeam = () => {
     Payment details not available.
   </p>
 )}
+
           </ul>
 
           {/* Add Member Form */}
