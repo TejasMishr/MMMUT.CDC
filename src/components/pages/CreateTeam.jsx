@@ -36,6 +36,7 @@ const CreateTeam = () => {
         if (response.ok) {
           const data = await response.json();
           setTeam(data.team);
+          console.log(data.team.payment);
         }
       } catch (err) {
         console.error("Error fetching team:", err);
@@ -285,12 +286,24 @@ const CreateTeam = () => {
               </li>
            
             ))}
-                <button
-               onClick={handleProceedToPayment}
-               className="w-full py-2 mt-4 bg-purple-600 hover:bg-purple-700 text-white rounded-md"
-             >
-               Proceed to Payment
-             </button>
+               {team.payment && team.payment.status ? (
+  team.payment.status === "incomplete" ? (
+    <button
+      onClick={handleProceedToPayment}
+      className="w-full py-2 mt-4 bg-purple-600 hover:bg-purple-700 text-white rounded-md"
+    >
+      Proceed to Payment
+    </button>
+  ) : (
+    <p className="text-green-400 text-center mt-4">
+      Your payment status is: <strong>{team.payment.status}</strong>
+    </p>
+  )
+) : (
+  <p className="text-red-400 text-center mt-4">
+    Payment details not available.
+  </p>
+)}
           </ul>
 
           {/* Add Member Form */}
