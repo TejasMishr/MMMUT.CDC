@@ -36,7 +36,6 @@ const CreateTeam = () => {
         if (response.ok) {
           const data = await response.json();
           setTeam(data.team);
-          console.log(data.team);
         }
       } catch (err) {
         console.error("Error fetching team:", err);
@@ -162,9 +161,18 @@ const CreateTeam = () => {
       );
       if (!confirmProceed) return;
     }
+  
+    // Store team data in local storage
+    const teamData = {
+      name: team.name,
+      members: team.members,
+    };
+    localStorage.setItem("teamData", JSON.stringify(teamData));
+  
     // Redirect to the payment page
     navigate("/payment");
   };
+  
 
   const handleMemberUpdate = async (e) => {
     e.preventDefault();
@@ -247,7 +255,7 @@ const CreateTeam = () => {
           {error && <p className="text-red-500 mb-4">{error}</p>}
           <button
             type="submit"
-            className="w-full py-2 bg-blue-600 text-sm hover:bg-blue-700 text-white rounded-md transition duration-200"
+            className="w-full py-2 bg-blue-600 hover:bg-blue-700 text-white rounded-md transition duration-200"
           >
             Create Team
           </button>
@@ -269,7 +277,7 @@ const CreateTeam = () => {
                 </div>
                 <button
                   onClick={() => handleEditMember(member)}
-                  className="px-4 py-2 text-sm bg-yellow-600 text-white rounded-md hover:bg-yellow-700"
+                  className="px-4 py-2 bg-yellow-600 text-white rounded-md hover:bg-yellow-700"
                 >
                   Edit
                 </button>
@@ -277,18 +285,12 @@ const CreateTeam = () => {
               </li>
            
             ))}
-                {team.payment?.status === "pending" ? (
-  <button
-    onClick={handleProceedToPayment}
-    className="w-full py-2 mt-4 text-sm bg-purple-600 hover:bg-purple-700 text-white rounded-md"
-  >
-    Proceed to Payment
-  </button>
-) : (
-  <p className="mt-4 text-green-500">
-    Your payment status is: <strong>{team.payment?.status}</strong>
-  </p>
-)}
+                <button
+               onClick={handleProceedToPayment}
+               className="w-full py-2 mt-4 bg-purple-600 hover:bg-purple-700 text-white rounded-md"
+             >
+               Proceed to Payment
+             </button>
           </ul>
 
           {/* Add Member Form */}
@@ -454,14 +456,14 @@ const CreateTeam = () => {
               </div>
               <button
                 type="submit"
-                className="w-full py-2 mt-2 text-sm bg-blue-600 hover:bg-blue-700 text-white rounded-md"
+                className="w-full py-2 bg-blue-600 hover:bg-blue-700 text-white rounded-md"
               >
                 Update Member
               </button>
             </form>
             <button
               onClick={() => setShowModal(false)}
-              className="mt-4 w-full text-sm py-2 bg-red-600 hover:bg-red-700 text-white rounded-md"
+              className="mt-4 w-full py-2 bg-red-600 hover:bg-red-700 text-white rounded-md"
             >
               Close
             </button>
