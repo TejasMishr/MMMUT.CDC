@@ -52,7 +52,7 @@ const PaymentPage = () => {
         transaction_id: transactionId,
         team_name: teamName,
       };
-
+//test
       // Send email using EmailJS
       await emailjs.send(serviceID, templateID, templateParams, userID);
 
