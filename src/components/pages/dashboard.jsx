@@ -2,8 +2,9 @@ import React, { useEffect, useState } from "react";
 import { motion } from "framer-motion";
 import API_BASE_URL from "../../config/apiConfig";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faPhone, faEnvelope, faGraduationCap, faBuildingColumns } from "@fortawesome/free-solid-svg-icons";
+import { faPhone, faEnvelope, faGraduationCap, faBuildingColumns,faUser } from "@fortawesome/free-solid-svg-icons";
 import axios from "axios";
+import {  FaUser } from "react-icons/fa";
 
 const DashBoard = () => {
   const [adminProfile, setAdminProfile] = useState(null);
@@ -44,7 +45,7 @@ const DashBoard = () => {
     { icon: faPhone, label: "Contact", value: adminProfile?.phone || "N/A" },
     { icon: faEnvelope, label: "Email", value: adminProfile?.email || "N/A" },
     { icon: faBuildingColumns, label: "College", value: adminProfile?.college || "N/A" },
-    { icon: faGraduationCap, label: "Graduation Year", value: adminProfile?.universityRollNo || "N/A" },
+    { icon: faGraduationCap, label: "Roll No.", value: adminProfile?.universityRollNo || "N/A" },
   ];
 
   return (
@@ -70,12 +71,8 @@ const DashBoard = () => {
           transition={{ duration: 0.5, delay: 0.2 }}
           className="flex flex-col items-center p-4 justify-around bg-custom-blue-gray rounded-lg sm:w-[30%] w-full h-[250px] sm:h-[300px] z-[8]"
         >
-          <img
-            src="contactus/image1.jpg"
-            className="sm:h-36 sm:w-36 h-[100px] w-[100px] rounded-full"
-            alt="Profile"
-          />
-          <h1 className="sm:text-2xl text-xl text-white">{adminProfile?.name || "Anonymous"}</h1>
+         <FaUser className="h-[130px] w-[130px] text-white" />
+          <h1 className="sm:text-2xl text-xl text-black font-bold">{adminProfile?.name || "Anonymous"}</h1>
         </motion.div>
 
         <motion.div
@@ -87,18 +84,18 @@ const DashBoard = () => {
           {cardData.map((item, index) => (
            <div
            key={index}
-           className="text-white bg-custom-gray  border-2 border-black w-full flex items-center p-3 z-[8]"
+           className="text-white text-sm bg-custom-gray  border-2 border-black w-full flex items-center p-3 z-[8]"
            style={{
              borderRadius: '48px',
              background: '#1d4c9a',
              boxShadow: 'inset -5px 5px 11px #1d4c9a, inset 11px -11px 22px #1d4c9a'
            }}
          >
-           <div className="bg-black  h-[30px] w-[30px] rounded-full flex items-center justify-center z-[8]">
+           <div className="bg-black h-[30px] w-[30px] rounded-full flex items-center justify-center z-[8]">
                 <FontAwesomeIcon icon={item.icon} className="text-white" />
               </div>
-              <div className="ml-3 text-xl">{item.label}:</div>
-              <div className="ml-2 text-xl">{item.value}</div>
+              <div className="ml-3 text-sm sm:text-xl">{item.label}:</div>
+              <div className="ml-2 text-sm sm:text-xl">{item.value}</div>
             </div>
           ))}
         </motion.div>

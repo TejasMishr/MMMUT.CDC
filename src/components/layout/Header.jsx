@@ -1,6 +1,6 @@
 
 import { useState, useEffect } from "react";
-import { FaMoon, FaSun, FaBars, FaTimes } from "react-icons/fa";
+import { FaMoon, FaSun, FaBars, FaTimes, FaUser } from "react-icons/fa";
 import { NavLink } from "react-router-dom";
 import decodeTokenAndGetRole from '../../config/decodeToken'; // Adjust the import path
 
@@ -118,12 +118,7 @@ export const Navbar = () => {
       <div className="hidden lg:flex items-center space-x-4">
         {isLoggedIn ? (
           <div className="relative">
-            <img
-              src="https://th.bing.com/th/id/OIP.lcdOc6CAIpbvYx3XHfoJ0gHaF3?w=259&h=205&c=7&r=0&o=5&pid=1.7" // Replace with actual image path
-              alt="Profile"
-              className="w-10 h-10 rounded-full cursor-pointer"
-              onClick={toggleDropdown}
-            />
+          <FaUser className="h-8 w-8" onClick={toggleDropdown}/>
             {showDropdown && (
               <div className="absolute right-0 mt-2 w-48 bg-white text-black rounded shadow-lg">
                 <NavLink

@@ -271,7 +271,7 @@ const CreateTeam = () => {
           </div>
           <ul className="space-y-2">
             {team.members.map((member) => (
-              <li key={member._id} className="text-gray-300 flex justify-between items-center">
+              <li key={member._id} className="text-gray-300 py-2 px-2 flex justify-between items-center">
                 <div>
                   <strong>{member.name}</strong> - {member.email} - {member.phone}{" "}
                   - {member.universityRollNo} - {member.codeforceHandle}
