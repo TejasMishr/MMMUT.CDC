@@ -72,11 +72,26 @@ const RegistrationForm = () => {
         }),
       });
 
-      if (!response.ok) {
-        const errorData = await response.json();
-        throw new Error(errorData.message || 'Failed to register');
-      }
+      // if (!response.ok) {
+      //   const errorData = await response.json();
+      //   throw new Error(errorData.message || 'Failed to register');
+      // }
+      const responseBody = await response.text(); // Read response as text first
 
+      if (!response.ok) {
+        let errorMessage = 'Failed to register'; // Default error message
+        try {
+          // Attempt to parse JSON from response
+          const errorData = JSON.parse(responseBody);
+          errorMessage = errorData.message || errorMessage;
+        } catch {
+          // If parsing fails, use plain text and check for specific errors
+          if (responseBody.includes('Email')) {
+            errorMessage = 'Email already exists';
+          }
+        }
+        throw new Error(errorMessage);
+      }
       setMessage('Registration successful! Redirecting to login...');
       setError('');
       setTimeout(() => navigate('/login'), 2000);
