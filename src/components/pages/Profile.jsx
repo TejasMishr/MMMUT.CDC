@@ -39,7 +39,7 @@ const AdminProfile = () => {
 
       const adminData = response.data;
       setAdmin(adminData);
-   console.log(adminData);
+ 
    
       setFormData({
         name: adminData.name,
@@ -49,7 +49,7 @@ const AdminProfile = () => {
 
       // Fetch team details if admin has a team
       if (adminData.teamId) {
-        console.log(adminData.teamId);
+
         
         fetchTeamDetails(adminData.teamId);
       }

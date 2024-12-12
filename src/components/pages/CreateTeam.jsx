@@ -36,7 +36,7 @@ const CreateTeam = () => {
         if (response.ok) {
           const data = await response.json();
           setTeam(data.team);
-          console.log(data.team.payment);
+      
         }
       } catch (err) {
         console.error("Error fetching team:", err);
@@ -278,7 +278,7 @@ const CreateTeam = () => {
                 </div>
                 <button
                   onClick={() => handleEditMember(member)}
-                  className="px-4 py-2 bg-yellow-600 text-white rounded-md hover:bg-yellow-700"
+                  className="px-4 py-2 bg-yellow-600 text-sm text-white rounded-md hover:bg-yellow-700"
                 >
                   Edit
                 </button>
@@ -290,7 +290,7 @@ const CreateTeam = () => {
   team.payment.status === "incomplete" ? (
     <button
       onClick={handleProceedToPayment}
-      className="w-full py-2 mt-4 bg-purple-600 hover:bg-purple-700 text-white rounded-md"
+      className="w-full text-lg py-2 mt-4 bg-purple-600 hover:bg-purple-700 text-white rounded-md"
     >
       Proceed to Payment
     </button>
@@ -376,7 +376,7 @@ const CreateTeam = () => {
               </div>
               <button
                 type="submit"
-                className="w-full py-2 bg-green-600 hover:bg-green-700 text-white rounded-md"
+                className="w-full text-lg py-2 bg-green-600 hover:bg-green-700 text-white rounded-md"
               >
                 Add Member
               </button>
@@ -469,14 +469,14 @@ const CreateTeam = () => {
               </div>
               <button
                 type="submit"
-                className="w-full py-2 bg-blue-600 hover:bg-blue-700 text-white rounded-md"
+                className="w-full text-lg py-2 bg-blue-600 hover:bg-blue-700 text-white rounded-md"
               >
                 Update Member
               </button>
             </form>
             <button
               onClick={() => setShowModal(false)}
-              className="mt-4 w-full py-2 bg-red-600 hover:bg-red-700 text-white rounded-md"
+              className="mt-4 w-full py-2 text-lg bg-red-600 hover:bg-red-700 text-white rounded-md"
             >
               Close
             </button>

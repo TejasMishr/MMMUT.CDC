@@ -24,10 +24,10 @@ export const Footer = () => {
           </h4>
           <ul className="space-y-2">
             {[
-              { name: "Home", icon: "fa-house", link: "#" },
+              { name: "Home", icon: "fa-house", link: "/" },
               { name: "Event", icon: "fa-calendar-days", link: "/events" },
-              { name: "Team", icon: "fa-user-plus", link: "" },
-              { name: "Contact Us", icon: "fa-address-book", link: "report.html" },
+              { name: "Members", icon: "fa-user-plus", link: "/cdcteam" },
+              { name: "Contact Us", icon: "fa-address-book", link: "/contact" },
             ].map((item, index) => (
               <li
                 key={index}

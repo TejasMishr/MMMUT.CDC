@@ -1,11 +1,11 @@
 const UpperSection = () => {
   return (
-    <div className="h-screen flex flex-row items-center bg-gray-900 text-white relative">
+    <div className="h-full flex flex-row items-center bg-gray-900  text-white relative">
     
     
-      <div className="w-3/5 px-8 md:px-16 lg:px-24 animate-fade-in">
+      <div className="w-3/5 px-8 md:px-16 lg:px-24 mt-[10%] animate-fade-in">
      
-      <span className="lg:text-6xl text-4xl font-bold font-poppins tracking-wide">
+      <span className="lg:text-6xl text-4xl  font-bold font-poppins tracking-wide">
             CODERS & DEVELOPERS CLUB
 
           </span>
@@ -34,7 +34,7 @@ const UpperSection = () => {
       <div className="w-2/5 flex justify-center items-center animate-slide-in-right">
         <div className="relative flex justify-center items-center">
          
-          <div className="w-[280px] h-[280px] rounded-full overflow-hidden border-4 border-blue-500 animate-bounce-slow shadow-lg">
+          <div className="w-[150px] h-[150px] sm:w-[280px]  sm:h-[280px] rounded-full overflow-hidden border-4 border-blue-500 animate-bounce-slow shadow-lg">
             <img
               src="./events/img3.jpeg"
               alt="Coding Illustration"

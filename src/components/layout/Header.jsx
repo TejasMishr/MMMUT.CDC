@@ -58,7 +58,7 @@ export const Navbar = () => {
     <nav className="flex items-center justify-between py-4 px-6 w-full bg-black text-white relative z-50">
       {/* Title */}
       <div className="flex items-center space-x-4">
-        <span className="lg:text-2xl text-xl font-bold font-poppins tracking-wide">
+        <span className="lg:text-2xl text-lg font-bold font-poppins tracking-wide">
           CODERS & DEVELOPERS CLUB
         </span>
       </div>
@@ -235,14 +235,15 @@ export const Navbar = () => {
                   </NavLink>
                 }
               </li>
-              <li className="flex justify-center">
-                <button
-                  onClick={handleLogout}
-                  className="text-white text-lg w-20 p-2 text-center rounded-full bg-red-500 hover:bg-red-700 font-roboto-slab hover:text-gray-300 transition-colors duration-300 block py-2 w-full text-center"
-                >
-                  Logout
-                </button>
-              </li>
+              <li className="flex justify-center items-center w-full">
+  <button
+    onClick={handleLogout}
+    className="text-white text-lg p-2 rounded-full bg-red-500 hover:bg-red-700 font-roboto-slab hover:text-gray-300 transition-colors duration-300 w-32 text-center"
+  >
+    Logout
+  </button>
+</li>
+
             </>
           )}
           {!isLoggedIn && (

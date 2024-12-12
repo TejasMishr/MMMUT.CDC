@@ -39,7 +39,7 @@ const PaymentPage = () => {
       }
 
       const teamData = await teamResponse.json();
-      console.log("team", teamData);
+     
       const teamId = teamData.team._id;
       // const teamId = JSON.parse(localStorage.getItem("user")).userId;
 
@@ -53,7 +53,7 @@ const PaymentPage = () => {
         team_name: teamName,
       };
 
-      console.log(templateParams);
+   
 
       // Send email using EmailJS
       const emailResponse = await emailjs.send(
@@ -62,10 +62,7 @@ const PaymentPage = () => {
         templateParams,
         userID
       );
-      console.log("Sending PUT request...");
-      console.log("teamId:", teamId);
-      console.log("paymentStatus:", "pending");
-      console.log("token",token);
+  
 
       const response = await fetch(`${API_BASE_URL}/api/teams/paymentStatus`, {
         method: "POST",
@@ -79,11 +76,11 @@ const PaymentPage = () => {
         }),
       });
 
-      console.log("Response:", response);
+  
 
       if (!response.ok) {
         const errorData = await response.json();
-        console.log("Error data:", errorData);
+       
         throw new Error(errorData.message || "Failed to update payment status.");
       }
 
@@ -147,7 +144,7 @@ const PaymentPage = () => {
           {/* Submit Button */}
           <button
             type="submit"
-            className="w-full py-2 bg-blue-600 hover:bg-blue-700 text-white font-semibold rounded-md transition duration-200"
+            className="w-full py-2 bg-blue-600 text-lg hover:bg-blue-700 text-white font-semibold rounded-md transition duration-200"
             disabled={loading}
           >
             {loading ? "Submitting..." : "Submit"}

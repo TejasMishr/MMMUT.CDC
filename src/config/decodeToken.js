@@ -17,7 +17,7 @@ const decodeTokenAndGetRole = () => {
 
     // Decode the JWT token
     const decoded = jwtDecode(token);
-    console.log('Decoded Token:', decoded);
+
 
     // Return the decoded token (or just the role if you need only the role)
     return decoded;

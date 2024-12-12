@@ -23,7 +23,7 @@ const DashBoard = () => {
         const response = await axios.get(`${API_BASE_URL}/api/superadmin/profile`, {
           headers: { Authorization: `Bearer ${token}` },
         });
-        console.log(response.data); // Log the response to verify the structure
+       
         setAdminProfile(response.data);
         setLoading(false);
       } catch (error) {
