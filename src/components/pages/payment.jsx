@@ -86,6 +86,7 @@ const PaymentPage = () => {
 
       alert("Form submitted successfully! Payment status updated to pending.");
       resetForm();
+      setTimeout(() => navigate('/createTeam'), 2000);
 
     } catch (error) {
       console.error("Error:", error); // Log the full error message
