@@ -72,7 +72,7 @@ const DashBoard = () => {
           className="flex flex-col items-center p-4 justify-around bg-custom-blue-gray rounded-lg sm:w-[30%] w-full h-[250px] sm:h-[300px] z-[8]"
         >
          <FaUser className="h-[130px] w-[130px] text-white" />
-          <h1 className="sm:text-2xl text-xl text-black font-bold">{adminProfile?.name || "Anonymous"}</h1>
+          <h1 className="sm:text-2xl text-xl text-black font-bold uppercase ">{adminProfile?.name || "Anonymous"}</h1>
         </motion.div>
 
         <motion.div

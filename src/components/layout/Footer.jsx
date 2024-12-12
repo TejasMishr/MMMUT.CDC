@@ -3,7 +3,7 @@ import React from "react";
 
 export const Footer = () => {
   return (
-    <footer className="footer-container bg-gradient-to-r from-black via-steel-700 to-gray-800 text-[#E5E7EB] p-6 sm:p-10 font-inter">
+    <footer className="footer-container bg-gradient-to-r from-black via-steel-700 to-gray-800 text-[#E5E7EB] p-6 sm:p-10 z-20 font-inter">
       <div className="flex flex-wrap justify-between items-start gap-8 sm:gap-12">
         <div className="w-full sm:w-1/4 footer-section flex flex-col items-start gap-3">
           <img

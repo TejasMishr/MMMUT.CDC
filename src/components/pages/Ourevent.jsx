@@ -73,7 +73,7 @@ const OurEvents = () => {
     alt="Upcoming Event"
     className="w-full h-full rounded shadow-lg object-cover"
   />
-  <h1 className='text-4xl mt-2 mb-3'>AlgOlympics</h1>
+  <h1 className='text-4xl font-bold mt-3 mb-3'>AlgOlympics</h1>
 </div>
 
      

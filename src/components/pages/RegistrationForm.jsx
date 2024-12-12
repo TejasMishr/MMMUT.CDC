@@ -11,7 +11,7 @@ const RegistrationForm = () => {
     password: '',
     role: 'User',
     college: '',
-    customCollege: '', // For user-provided college
+    customCollege: '',
     universityRollNo: '',
   });
   const [message, setMessage] = useState('');
@@ -72,26 +72,21 @@ const RegistrationForm = () => {
         }),
       });
 
-      // if (!response.ok) {
-      //   const errorData = await response.json();
-      //   throw new Error(errorData.message || 'Failed to register');
-      // }
-      const responseBody = await response.text(); // Read response as text first
+      const responseBody = await response.text();
 
       if (!response.ok) {
-        let errorMessage = 'Failed to register'; // Default error message
+        let errorMessage = 'Registration failed';
         try {
-          // Attempt to parse JSON from response
           const errorData = JSON.parse(responseBody);
           errorMessage = errorData.message || errorMessage;
         } catch {
-          // If parsing fails, use plain text and check for specific errors
           if (responseBody.includes('Email')) {
-            errorMessage = 'Email already exists';
+            errorMessage = 'Email is already registered';
           }
         }
         throw new Error(errorMessage);
       }
+
       setMessage('Registration successful! Redirecting to login...');
       setError('');
       setTimeout(() => navigate('/login'), 2000);
