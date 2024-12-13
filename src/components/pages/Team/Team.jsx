@@ -2,9 +2,7 @@ import React, { useState, useEffect, Suspense, lazy } from "react";
 import "./Team.css";
 import FacultyAdvisor from "./Faculty/FacultyAdvisor.jsx";
 import { Home } from "./Alumanipage.jsx";
-// import { BoxesLoader } from "react-awesome-loaders";
-
-
+import { Lottie } from "../../hooks/lottie/lottie.jsx";
 
 // Lazy-loaded components
 const Team1 = lazy(() => import("./Team1/Team1.jsx"));
@@ -16,27 +14,31 @@ const Team5 = lazy(() => import("./Team5/Team5.jsx"));
 function Team() {
   const [selectedTeam, setSelectedTeam] = useState(0);
   const [isLoading, setIsLoading] = useState(true);
+  const [isTeamLoading, setIsTeamLoading] = useState(false);
 
   useEffect(() => {
     // Show loader for 2 seconds on first page load
     const timer = setTimeout(() => setIsLoading(false), 2000);
-    return () => clearTimeout(timer); // Cleanup timeout
+    return () => clearTimeout(timer);
   }, []);
 
   const showTeam = (teamNumber) => {
     console.log(`Switching to Team: ${teamNumber}`);
-    setSelectedTeam(teamNumber);
+    setIsTeamLoading(true);
+    setTimeout(() => {
+      setSelectedTeam(teamNumber);
+      setIsTeamLoading(false);
+    }, 4000); // 3 seconds loader for switching teams
   };
 
   if (isLoading) {
-    // Display loader while loading
     return (
-      <div className="flex justify-center items-center min-h-screen bg-gray-900">
-        {/* <BoxesLoader
-          boxColor={"#2563EB"} // Blue color for the boxes
-          shadowColor={"#93C5FD"} // Light blue shadow for a subtle effect
-          style={{ marginBottom: "20px" }}
-        /> */}
+      <div className="flex justify-center items-center min-h-screen bg-gray-800">
+        <Lottie
+          link="https://lottie.host/dbb912fc-058e-4efb-b3ce-078f8b54e9f7/fNAs8nGILX.json"
+          wid="100%"
+          className="sm:w-[60%] w-[90%]"
+        />
       </div>
     );
   }
@@ -87,16 +89,26 @@ function Team() {
           </ul>
         </div>
       </div>
-      <Suspense fallback={<div className="loading">Loading.....</div>}>
-        <div>
-          {selectedTeam === 0 && <Home />}
-          {selectedTeam === 1 && <Team1 />}
-          {selectedTeam === 2 && <Team2 />}
-          {selectedTeam === 3 && <Team3 />}
-          {selectedTeam === 4 && <Team4 />}
-          {selectedTeam === 5 && <Team5 />}
+      {isTeamLoading ? (
+        <div className="flex justify-center items-center min-h-screen bg-gray-900">
+          <Lottie
+            link="https://lottie.host/dbb912fc-058e-4efb-b3ce-078f8b54e9f7/fNAs8nGILX.json"
+            wid="100%"
+            className="sm:w-[60%] w-[90%]"
+          />
         </div>
-      </Suspense>
+      ) : (
+        <Suspense fallback={<div className="loading">Loading.....</div>}>
+          <div>
+            {selectedTeam === 0 && <Home />}
+            {selectedTeam === 1 && <Team1 />}
+            {selectedTeam === 2 && <Team2 />}
+            {selectedTeam === 3 && <Team3 />}
+            {selectedTeam === 4 && <Team4 />}
+            {selectedTeam === 5 && <Team5 />}
+          </div>
+        </Suspense>
+      )}
     </div>
   );
 }
