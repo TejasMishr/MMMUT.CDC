@@ -1,3 +1,4 @@
+import { Lottie } from "../../hooks/lottie/lottie";
 const UpperSection = () => {
   return (
     <div className="h-full flex flex-row items-center bg-gray-900  text-white relative">
@@ -37,15 +38,15 @@ const UpperSection = () => {
       </div>
 
 
-      <div className="w-2/5 flex justify-center items-center animate-slide-in-right">
-        <div className="relative flex justify-center items-center">
+      <div className="w-2/5 flex justify-center items-center animate-slide-in-right z-0">
+        <div className="relative flex justify-center items-center z-3">
          
-          <div className="w-[150px] h-[150px] sm:w-[280px]  sm:h-[280px] rounded-full overflow-hidden border-4 border-blue-500 animate-bounce-slow shadow-lg">
-            <img
-              src="./events/code.gif"
-              alt="Coding Illustration"
-              className="w-full h-full object-cover"
-            />
+          <div className="relative right-[10%] top-[20%] w-[150px] h-[150px] sm:w-[400px] z-2 sm:h-[400px] rounded-full overflow-hidden border-4 border-blue-500 animate-bounce-slow shadow-lg">
+            <Lottie
+                         link="https://lottie.host/2fa4a83b-52bb-48ac-97c2-f20c40bcab8d/qUb4kbltH4.json"
+                         wid="100%"
+                         className="sm:w-[60%] w-[90%]"
+                       />
           </div>
         </div>
       </div>
