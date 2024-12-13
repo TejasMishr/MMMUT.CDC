@@ -58,6 +58,7 @@ const testimonialsData = [
   }
 ];
 
+
 function TestimonialsCarousel() {
   const [currentIndex, setCurrentIndex] = useState(0);
   const [visibleTestimonials, setVisibleTestimonials] = useState(3);
@@ -109,17 +110,44 @@ function TestimonialsCarousel() {
       <h3 className="text-center text-white font-bold xl:text-[50px] lg:text-4xl text-3xl leading-[1.25] z-20 lg:mb-16 mb-16">
         What Others Think About Us
       </h3>
-      <div className="flex justify-evenly space-x-20 min-h-72">
+      <div className="flex justify-evenly space-x-20 min-h-72 cursor-pointer ">
         {testimonialsData.slice(currentIndex, currentIndex + visibleTestimonials).map((testimonial, index) => (
-          <div
-            key={index}
-            className="relative w-72 p-6 rounded-lg bg-[rgba(255,255,255,0.1)] text-center shadow-lg border border-blue-500"
-            style={{
-              clipPath: 'polygon(0 0, 90% 0, 100% 10%, 100% 100%, 10% 100%, 0 90%)',
-            }}
-          >
-            <div className="flex flex-col items-center">
-              <div className="w-16 h-16 bg-gray-600 rounded-full mb-4 flex items-center justify-center">
+      <div
+      key={index}
+      className="relative w-72 p-6 rounded-lg bg-[rgba(255,255,255,0.1)] text-center shadow-lg border border-blue-500 hover:bg-white/20 transition-all duration-500 clip-card"
+    >
+      <style jsx>
+{`
+  .clip-card {
+    clip-path: polygon(0 0, 90% 0, 100% 10%, 100% 100%, 10% 100%, 0 90%);
+    transition: background-color 0.5s ease;
+  }
+
+  .clip-card:hover {
+    animation: clipChange 0.5s ease-in-out forwards;
+  }
+
+  @keyframes clipChange {
+    0% {
+      clip-path: polygon(0 0, 90% 0, 100% 10%, 100% 100%, 10% 100%, 0 90%);
+    }
+    25% {
+      clip-path: polygon(0 0, 95% 0, 100% 5%, 100% 100%, 5% 100%, 0 95%);
+    }
+    50% {
+      clip-path: polygon(0 0, 98% 0, 100% 2%, 100% 100%, 2% 100%, 0 98%);
+    }
+    75% {
+      clip-path: polygon(0 0, 99% 0, 100% 1%, 100% 100%, 1% 100%, 0 99%);
+    }
+    100% {
+      clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%);
+    }
+  }
+`}
+</style>
+            <div className="flex flex-col items-center ">
+              <div className="w-16 h-16 bg-gray-600 rounded-full mb-4 flex items-center justify-center ">
               {testimonial.image ? (
       <img
         src={testimonial.image}
