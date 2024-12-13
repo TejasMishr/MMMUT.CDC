@@ -42,7 +42,7 @@ const UpperSection = () => {
          
           <div className="w-[150px] h-[150px] sm:w-[280px]  sm:h-[280px] rounded-full overflow-hidden border-4 border-blue-500 animate-bounce-slow shadow-lg">
             <img
-              src="./events/img3.jpeg"
+              src="./events/code.gif"
               alt="Coding Illustration"
               className="w-full h-full object-cover"
             />

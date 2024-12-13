@@ -2,15 +2,60 @@ import React, { useState, useEffect } from 'react';
 import { FaChevronLeft, FaChevronRight } from 'react-icons/fa';
 
 const testimonialsData = [
-  { name: "Priyanshu Mishra", title: "B.Tech, Second Year", feedback: "The Coders and Developers Club is an excellent place for anyone eager to learn coding and technology. It’s a welcoming environment where you can grow your skills and connect with others." },
-  { name: "Aryan Verma", title: "B.Tech, Second Year", feedback: "This club encourages collaboration and learning, offering a great opportunity for developers to share ideas and work on projects together, helping each other improve along the way." },
-  { name: "Aditi Gupta", title: "B.Tech, Second Year", feedback: "If you're looking for a place to improve your coding skills, the Coders and Developers Club is the perfect community. It’s full of passionate people who are always willing to help." },
-  { name: "Harshit Mishra", title: "B.Tech, Second Year", feedback: "The club offers a space where beginners and experienced developers can come together, learn new things, and work on projects that push their skills to the next level." },
-  { name: "Ayush Ashutosh", title: "B.Tech, Second Year", feedback: "I’ve seen how the Coders and Developers Club helps people grow in their coding journey. It’s a great community for learning, sharing ideas, and getting hands-on experience." },
-  { name: "Ayushi Sahu", title: "B.Tech, Second Year", feedback: "This club is a great place for anyone interested in tech. It provides resources, guidance, and a collaborative atmosphere where members can develop their coding skills and work on real projects." },
-  { name: "Harshit Tiwari", title: "B.Tech, Second Year", feedback: "I love how the club brings together people from all levels of experience, allowing everyone to learn from each other and work together to solve coding challenges and create amazing projects." },
-  { name: "Dravin Bhardwaj", title: "B.Tech, Second Year", feedback: "The Coders and Developers Club offers a unique opportunity to work with like-minded individuals, learn from experts, and take your coding skills to new heights through practical experience." },
-  { name: "Piyush Pal", title: "B.Tech, Second Year", feedback: "The Coders and Developers Club gave me hands-on experience and the chance to work on real-world projects. It’s been an incredible journey of growth and teamwork." }
+  {
+    name: "Priyanshu Mishra",
+    title: "B.Tech, Second Year",
+    feedback: "The Coders and Developers Club is an excellent place for anyone eager to learn coding and technology. It’s a welcoming environment where you can grow your skills and connect with others.",
+    image: "" 
+  },
+  {
+    name: "Aryan Verma",
+    title: "B.Tech, Second Year",
+    feedback: "This club encourages collaboration and learning, offering a great opportunity for developers to share ideas and work on projects together, helping each other improve along the way.",
+    image: "" 
+  },
+  {
+    name: "Aditi Gupta",
+    title: "B.Tech, Second Year",
+    feedback: "If you're looking for a place to improve your coding skills, the Coders and Developers Club is the perfect community. It’s full of passionate people who are always willing to help.",
+    image: "" 
+  },
+  {
+    name: "Harshit Mishra",
+    title: "B.Tech, Second Year",
+    feedback: "The club offers a space where beginners and experienced developers can come together, learn new things, and work on projects that push their skills to the next level.",
+    image: "" 
+  },
+  {
+    name: "Ayush Ashutosh",
+    title: "B.Tech, Second Year",
+    feedback: "I’ve seen how the Coders and Developers Club helps people grow in their coding journey. It’s a great community for learning, sharing ideas, and getting hands-on experience.",
+    image: "" 
+  },
+  {
+    name: "Ayushi Sahu",
+    title: "B.Tech, Second Year",
+    feedback: "This club is a great place for anyone interested in tech. It provides resources, guidance, and a collaborative atmosphere where members can develop their coding skills and work on real projects.",
+    image: "./testimonial/Ayushi Sahu.jpg" 
+  },
+  {
+    name: "Harshit Tiwari",
+    title: "B.Tech, Second Year",
+    feedback: "I love how the club brings together people from all levels of experience, allowing everyone to learn from each other and work together to solve coding challenges and create amazing projects.",
+    image: ""
+  },
+  {
+    name: "Dravin Bhardwaj",
+    title: "B.Tech, Second Year",
+    feedback: "The Coders and Developers Club offers a unique opportunity to work with like-minded individuals, learn from experts, and take your coding skills to new heights through practical experience.",
+    image: "" 
+  },
+  {
+    name: "Piyush Pal",
+    title: "B.Tech, Second Year",
+    feedback: "The Coders and Developers Club gave me hands-on experience and the chance to work on real-world projects. It’s been an incredible journey of growth and teamwork.",
+    image: "./testimonial/piyush pal.jpg" 
+  }
 ];
 
 function TestimonialsCarousel() {
@@ -20,11 +65,11 @@ function TestimonialsCarousel() {
   useEffect(() => {
     const handleResize = () => {
       if (window.innerWidth < 640) {
-        setVisibleTestimonials(1); 
+        setVisibleTestimonials(1);
       } else if (window.innerWidth < 1024) {
         setVisibleTestimonials(2);
       } else {
-        setVisibleTestimonials(3); 
+        setVisibleTestimonials(3);
       }
     };
 
@@ -33,6 +78,19 @@ function TestimonialsCarousel() {
 
     return () => window.removeEventListener('resize', handleResize);
   }, []);
+
+  // Auto change testimonials every 3 seconds
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setCurrentIndex((prevIndex) =>
+        prevIndex === testimonialsData.length - visibleTestimonials
+          ? 0
+          : prevIndex + 1
+      );
+    }, 3000); 
+
+    return () => clearInterval(interval);
+  }, [visibleTestimonials]);
 
   const handlePrev = () => {
     setCurrentIndex((prevIndex) =>
@@ -62,21 +120,14 @@ function TestimonialsCarousel() {
           >
             <div className="flex flex-col items-center">
               <div className="w-16 h-16 bg-gray-600 rounded-full mb-4 flex items-center justify-center">
-                <svg
-                  className="w-8 h-8 text-gray-300"
-                  xmlns="http://www.w3.org/2000/svg"
-                  viewBox="0 0 24 24"
-                  fill="currentColor"
-                >
-                  <path
-                    fillRule="evenodd"
-                    d="M12 2a10 10 0 110 20 10 10 0 010-20zm0 18a8 8 0 100-16 8 8 0 000 16zm-1-10a1 1 0 112 0v2a1 1 0 01-2 0v-2zm-3 7a4 4 0 118 0H8z"
-                    clipRule="evenodd"
-                  />
-                </svg>
+                <img
+                  src={testimonial.image}
+                  alt={`${testimonial.name}'s image`}
+                  className="w-full h-full object-cover rounded-full"
+                />
               </div>
               <h3 className="text-lg font-semibold">{testimonial.name}</h3>
-              <p className="text-blue-400">{testimonial.title}</p>
+              <p className="text-gray-400">{testimonial.title}</p>
               <p className="text-sm text-blue-400 mt-2">{testimonial.feedback}</p>
             </div>
           </div>
