@@ -9,10 +9,10 @@ const testimonialsData = [
     image: "" 
   },
   {
-    name: "Aryan Verma",
+    name: "Sahil Kumar Singh",
     title: "B.Tech, Second Year",
     feedback: "This club encourages collaboration and learning, offering a great opportunity for developers to share ideas and work on projects together, helping each other improve along the way.",
-    image: "" 
+    image: "./testimonial/sahil.jpeg" 
   },
   {
     name: "Aditi Gupta",
