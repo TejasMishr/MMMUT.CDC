@@ -15,7 +15,7 @@ const AdminProfile = () => {
         setUserId(user.id); // Set the current user's ID for comparison
 
         const response = await fetch(`${API_BASE_URL}/api/teams`, {
-          method: "GET",
+          method: "GET",  
           headers: {
             Authorization: `Bearer ${token}`,
           },
@@ -58,20 +58,20 @@ const AdminProfile = () => {
           </div>
 
           {/* Members Section */}
-          <div className="mb-6">
+          <div className="mb-6 ">
             <h2 className="text-white text-2xl font-semibold">Team Members:</h2>
             {team.members.length === 0 ? (
-              <p className="text-gray-300 text-lg">No members in your team yet.</p>
+              <p className="text-gray-300 text-lg ">No members in your team yet.</p>
             ) : (
-              <ul className="space-y-4">
+              <ul className="space-y-4 ">
                 {team.members.map((member) => (
                   <li
                     key={member._id}
-                    className={`bg-gray-700 p-4 rounded-md ${
+                    className={`p-4 rounded-md bg-white/50 ${
                       member._id === userId ? "border border-yellow-400" : ""
                     }`}
                   >
-                    <p>
+                    <p >
                       <strong>Name:</strong> {member.name}{" "}
                       {member._id === userId && (
                         <span className="text-yellow-400">(You)</span>
