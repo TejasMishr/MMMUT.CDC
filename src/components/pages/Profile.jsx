@@ -2,8 +2,9 @@ import React, { useState, useEffect } from "react";
 import API_BASE_URL from "../../config/apiConfig";
 
 const AdminProfile = () => {
-  const [team, setTeam] = useState(null);
+  const [team, setTeam] = useState(null); // Team the user belongs to
   const [error, setError] = useState("");
+  const [userId, setUserId] = useState("");
 
   useEffect(() => {
     const fetchTeam = async () => {
@@ -11,6 +12,7 @@ const AdminProfile = () => {
         const localdata = localStorage.getItem("user");
         const user = JSON.parse(localdata);
         const token = user.token;
+        setUserId(user.id); // Set the current user's ID for comparison
 
         const response = await fetch(`${API_BASE_URL}/api/teams`, {
           method: "GET",
@@ -21,7 +23,10 @@ const AdminProfile = () => {
 
         if (response.ok) {
           const data = await response.json();
-          setTeam(data.team);
+
+          // Find the team the user belongs to
+          const userTeam = data.team;
+          setTeam(userTeam);
         } else {
           const errorData = await response.json();
           throw new Error(errorData.message || "Failed to fetch team data");
@@ -45,7 +50,7 @@ const AdminProfile = () => {
         <div className="w-full max-w-3xl bg-gray-800 p-6 rounded-lg shadow-md">
           {/* Team Details */}
           <h1 className="text-white text-4xl font-bold text-center mb-6">
-            Team Profile
+            Your Team
           </h1>
           <div className="mb-6">
             <h2 className="text-white text-2xl font-semibold">Team Name:</h2>
@@ -54,18 +59,23 @@ const AdminProfile = () => {
 
           {/* Members Section */}
           <div className="mb-6">
-            <h2 className="text-white text-2xl font-semibold">Members:</h2>
+            <h2 className="text-white text-2xl font-semibold">Team Members:</h2>
             {team.members.length === 0 ? (
-              <p className="text-gray-300 text-lg">No members added yet.</p>
+              <p className="text-gray-300 text-lg">No members in your team yet.</p>
             ) : (
               <ul className="space-y-4">
                 {team.members.map((member) => (
                   <li
                     key={member._id}
-                    className="bg-gray-700 p-4 rounded-md text-gray-300"
+                    className={`bg-gray-700 p-4 rounded-md ${
+                      member._id === userId ? "border border-yellow-400" : ""
+                    }`}
                   >
                     <p>
-                      <strong>Name:</strong> {member.name}
+                      <strong>Name:</strong> {member.name}{" "}
+                      {member._id === userId && (
+                        <span className="text-yellow-400">(You)</span>
+                      )}
                     </p>
                     <p>
                       <strong>Email:</strong> {member.email}
