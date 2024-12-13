@@ -17,9 +17,15 @@ const UpperSection = () => {
           into a space where your curiosity drives exploration and your code
           shapes the future.
         </p>
-        <p className="text-base lg:text-lg font-semibold mb-6">
-          {"Bytes of Brilliance, Compiled ✨"}
-        </p>
+        <h2 className="md:text-3xl sm:text-xl xs:text-xl font-bold text-transparent bg-clip-text bg-gradient-to-r">
+        <span className="gradi-event-text">  {"Bytes of Brilliance, Compiled ✨"}</span>
+        </h2>
+        {/* <p
+  className="text-base gradi-event-text text-lg lg:text-xl inline font-semibold mb-6 px-4 py-2 rounded-lg bg-white/10 backdrop-blur-md shadow-lg"
+>
+
+</p> */}
+
         <div className="flex flex-col md:flex-row gap-4 mt-8">
           <button className="px-6 py-3 bg-blue-500 hover:bg-blue-700 rounded-md text-lg transition-all duration-300 shadow-lg">
             Get Started
