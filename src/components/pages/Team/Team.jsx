@@ -2,7 +2,9 @@ import React, { useState, useEffect, Suspense, lazy } from "react";
 import "./Team.css";
 import FacultyAdvisor from "./Faculty/FacultyAdvisor.jsx";
 import { Home } from "./Alumanipage.jsx";
-import { BoxesLoader } from "react-awesome-loaders";
+// import { BoxesLoader } from "react-awesome-loaders";
+
+
 
 // Lazy-loaded components
 const Team1 = lazy(() => import("./Team1/Team1.jsx"));
@@ -30,11 +32,11 @@ function Team() {
     // Display loader while loading
     return (
       <div className="flex justify-center items-center min-h-screen bg-gray-900">
-        <BoxesLoader
+        {/* <BoxesLoader
           boxColor={"#2563EB"} // Blue color for the boxes
           shadowColor={"#93C5FD"} // Light blue shadow for a subtle effect
           style={{ marginBottom: "20px" }}
-        />
+        /> */}
       </div>
     );
   }
