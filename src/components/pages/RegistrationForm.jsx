@@ -16,6 +16,8 @@ const RegistrationForm = () => {
   });
   const [message, setMessage] = useState('');
   const [error, setError] = useState('');
+  const [emailError, setEmailError] = useState('');
+  const [passwordError, setPasswordError] = useState('');
   const [showPassword, setShowPassword] = useState(false);
   const navigate = useNavigate();
 
@@ -23,6 +25,13 @@ const RegistrationForm = () => {
 
   const handleChange = (e) => {
     const { name, value } = e.target;
+    if (name === 'email') {
+      setEmailError(/\S+@\S+\.\S+/.test(value) ? '' : 'Invalid email format');
+    }
+
+    if (name === 'password') {
+      setPasswordError(value.length >= 8 ? '' : 'Password must be at least 8 characters');
+    }
     setFormData({ ...formData, [name]: value });
 
     if (name === 'college' && value !== 'Other') {
@@ -37,9 +46,13 @@ const RegistrationForm = () => {
   const togglePasswordVisibility = () => {
     setShowPassword((prevState) => !prevState);
   };
-
   const validateForm = () => {
-    const { phone, universityRollNo } = formData;
+    const { firstName, phone, universityRollNo } = formData;
+  
+    if (firstName.length < 2) {
+      setError('First name must be at least 2 characters');
+      return false;
+    }
     if (phone && !/^\d{10}$/.test(phone)) {
       setError('Phone number must be 10 digits');
       return false;
@@ -48,8 +61,33 @@ const RegistrationForm = () => {
       setError('University Roll Number must be numeric');
       return false;
     }
+    if (emailError || passwordError) {
+      setError('Please fix validation errors before submitting');
+      return false;
+    }
+    setError('');
     return true;
   };
+  //   const { phone, universityRollNo } = formData;
+  //   if (firstName.length < 2) {
+  //     setError('First name must be at least 2 characters');
+  //     return false;
+  //   }
+  //   if (phone && !/^\d{10}$/.test(phone)) {
+  //     setError('Phone number must be 10 digits');
+  //     return false;
+  //   }
+
+  //   if (universityRollNo && !/^\d+$/.test(universityRollNo)) {
+  //     setError('University Roll Number must be numeric');
+  //     return false;
+  //   }
+  //   if (emailError || passwordError) {
+  //     setError('Please fix validation errors before submitting');
+  //     return false;
+  //   }
+  //   return true;
+  // };
 
   const handleSubmit = async (e) => {
     e.preventDefault();
@@ -127,19 +165,21 @@ const RegistrationForm = () => {
                 required
               />
             </div>
+            
           </div>
           <div>
-            <label className="block text-gray-300 mb-2">Email</label>
-            <input
-              type="email"
-              name="email"
-              value={formData.email}
-              onChange={handleChange}
-              placeholder="Email"
-              className="w-full px-4 py-2 bg-gray-700 text-white rounded-md"
-              required
-            />
-          </div>
+              <label className="block text-gray-300 mb-2">Email</label>
+              <input
+                type="email"
+                name="email"
+                value={formData.email}
+                onChange={handleChange}
+                placeholder="email@gmail.com"
+                className="w-full px-4 py-2 bg-gray-700 text-white rounded-md"
+                required
+              />
+              {emailError && <p className="text-red-500">{emailError}</p>}
+            </div>
           <div className="relative">
             <label className="block text-gray-300 mb-2">Password</label>
             <input
@@ -158,6 +198,7 @@ const RegistrationForm = () => {
             >
               {showPassword ? 'Hide' : 'Show'}
             </button>
+            {passwordError && <p className="text-red-500">{passwordError}</p>}
           </div>
           <div>
             <label className="block text-gray-300 mb-2">Phone Number</label>
