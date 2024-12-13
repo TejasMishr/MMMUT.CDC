@@ -13,7 +13,7 @@ const PaymentPage = () => {
   const userID = "3b3sPYto0voKhRyYj";
 
   // Constant image URL
-  const constantImage = "/path/to/your/image.jpg"; // Update with the actual path
+  const constantImage = "./payment/manya.png"; // Update with the actual path
 
   const handleSubmit = async (e) => {
     e.preventDefault();
