@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { FaChevronLeft, FaChevronRight } from 'react-icons/fa';
+import { FaChevronLeft, FaChevronRight, FaUser } from 'react-icons/fa';
 
 const testimonialsData = [
   {
@@ -120,11 +120,15 @@ function TestimonialsCarousel() {
           >
             <div className="flex flex-col items-center">
               <div className="w-16 h-16 bg-gray-600 rounded-full mb-4 flex items-center justify-center">
-                <img
-                  src={testimonial.image}
-                  alt={`${testimonial.name}'s image`}
-                  className="w-full h-full object-cover rounded-full"
-                />
+              {testimonial.image ? (
+      <img
+        src={testimonial.image}
+        alt="User"
+        className="w-full h-full object-cover rounded-full"
+      />
+    ) : (
+      <FaUser className="w-10 h-10 text-white" />
+    )}
               </div>
               <h3 className="text-lg font-semibold">{testimonial.name}</h3>
               <p className="text-gray-400">{testimonial.title}</p>

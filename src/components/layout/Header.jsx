@@ -91,7 +91,10 @@ export const Navbar = () => {
       <div className="hidden lg:flex items-center space-x-4">
         {isLoggedIn ? (
           <div className="relative">
-            <FaUser className="h-8 w-8" onClick={toggleDropdown} />
+         <FaUser 
+  className="h-8 w-8 cursor-pointer" 
+  onClick={toggleDropdown} 
+/>
             {showDropdown && (
               <div className="absolute right-0 mt-2 w-48 bg-white text-black rounded shadow-lg">
                 <NavLink to="dashboard" className="block px-4 py-2 hover:bg-gray-200">
