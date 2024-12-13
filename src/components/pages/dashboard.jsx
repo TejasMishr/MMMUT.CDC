@@ -57,7 +57,7 @@ const DashBoard = () => {
             "radial-gradient(circle, rgba(23,20,27,1) 0%, rgba(58,94,121,1) 66%, rgba(42,58,78,1) 90%)",
         }}
       />
-      <h1 className="text-center text-4xl font-bold mt-2 text-white mb-4 z-[8]">DASHBOARD</h1>
+      <h1 className="text-center text-4xl font-bold mt-2 text-white mb-4 z-[8]">PROFILE</h1>
 
       <motion.div
         initial={{ opacity: 0, y: 80 }}

@@ -50,11 +50,11 @@ const LoginForm = () => {
       setFormData({ email: '', password: '' });
 
       // Redirect to dashboard
-      window.location.href = '/';
+      window.location.href = '/profile';
       
     } catch (err) {
       setMessage('');
-      setError('Invalid credentials');
+      setError('Invalid Username or Password');
     }
   };
 

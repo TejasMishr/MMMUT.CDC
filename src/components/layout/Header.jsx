@@ -81,8 +81,8 @@ export const Navbar = () => {
         </li>
         {isLoggedIn && (
           <li>
-            <NavLink to="dashboard" className="hover:text-gray-300 transition-colors duration-300 block p-2">
-              Dashboard
+            <NavLink to="profile" className="hover:text-gray-300 transition-colors duration-300 block p-2">
+              Profile
             </NavLink>
           </li>
         )}
@@ -94,12 +94,12 @@ export const Navbar = () => {
             <FaUser className="h-8 w-8" onClick={toggleDropdown} />
             {showDropdown && (
               <div className="absolute right-0 mt-2 w-48 bg-white text-black rounded shadow-lg">
-                <NavLink to="/profile" className="block px-4 py-2 hover:bg-gray-200">
-                  Profile
+                <NavLink to="dashboard" className="block px-4 py-2 hover:bg-gray-200">
+                  Team Dashboard
                 </NavLink>
                 {userRole === 'Team Leader' && (
                   <NavLink to="/createTeam" className="block px-4 py-2 hover:bg-gray-200">
-                    Team
+                   Create Team
                   </NavLink>
                 )}
                 <button onClick={handleLogout} className="block w-full text-left px-4 py-2 hover:bg-gray-200">
@@ -147,19 +147,19 @@ export const Navbar = () => {
           {isLoggedIn && (
             <>
               <li onClick={closeMobileMenu}>
-                <NavLink to="dashboard" className="text-white text-lg font-roboto-slab hover:text-gray-300 transition-colors duration-300 block py-2">
-                  Dashboard
+                <NavLink to="profile" className="text-white text-lg font-roboto-slab hover:text-gray-300 transition-colors duration-300 block py-2">
+                  Profile
                 </NavLink>
               </li>
               <li onClick={closeMobileMenu}>
-                <NavLink to="/profile" className="text-white text-lg font-roboto-slab hover:text-gray-300 transition-colors duration-300 block py-2">
-                  Profile
+                <NavLink to="/dashboard" className="text-white text-lg font-roboto-slab hover:text-gray-300 transition-colors duration-300 block py-2">
+                  Team Dashboard
                 </NavLink>
               </li>
               {userRole === 'Team Leader' && (
                 <li onClick={closeMobileMenu}>
                   <NavLink to="/createTeam" className="text-white text-lg font-roboto-slab hover:text-gray-300 transition-colors duration-300 block py-2">
-                    Team
+                   Create Team
                   </NavLink>
                 </li>
               )}

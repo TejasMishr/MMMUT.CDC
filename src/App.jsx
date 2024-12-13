@@ -94,11 +94,11 @@ function App() {
         },
         {
           path: "/profile",
-          element: <Profile />,
+          element: <DashBoard/>,
         },
         {
           path:"/dashboard",
-          element:<DashBoard/>,
+          element:<Profile />,
         },
         {
           path:"/login",

@@ -6,6 +6,7 @@ const CreateTeam = () => {
   const [teamName, setTeamName] = useState("");
   const [team, setTeam] = useState(null);
   const [message, setMessage] = useState("");
+  const [isAddMemberFormVisible, setIsAddMemberFormVisible] = useState(false);
   const [error, setError] = useState("");
   const [member, setMember] = useState({
     name: "",
@@ -106,7 +107,7 @@ const CreateTeam = () => {
       setError("A team cannot have more than 3 members.");
       return;
     }
-
+     
     try {
       const localdata = localStorage.getItem("user");
       const user = JSON.parse(localdata);
@@ -154,7 +155,7 @@ const CreateTeam = () => {
     } catch (err) {
       setError(err.message || "An error occurred");
     }
-  };
+      };
   const handleProceedToPayment = () => {
     if (!team || team.members.length < 3) {
       const confirmProceed = window.confirm(
@@ -221,6 +222,28 @@ const CreateTeam = () => {
       setError(err.message || "An error occurred");
     }
   };
+  useEffect(() => {
+    if (isAddMemberFormVisible) {
+      document.body.style.overflow = "hidden";
+    } else {
+      document.body.style.overflow = "auto";
+    }
+    return () => {
+      document.body.style.overflow = "auto";
+    };
+  }, [isAddMemberFormVisible]);
+  
+  useEffect(() => {
+    if (showModal) {
+      document.body.style.overflow = "hidden";
+    } else {
+      document.body.style.overflow = "auto";
+    }
+    // Clean up effect
+    return () => {
+      document.body.style.overflow = "auto";
+    };
+  }, [showModal]);
 
   // Handle edit button click
   const handleEditMember = (member) => {
@@ -314,10 +337,22 @@ const CreateTeam = () => {
 )}
 
           </ul>
-
-          {/* Add Member Form */}
           {team.members.length < 3 && (
-            <form onSubmit={handleAddMember} className="space-y-4 mt-6">
+          <button
+  onClick={() => setIsAddMemberFormVisible(!isAddMemberFormVisible)}
+  className={`w-full text-lg py-2 mt-4 text-white rounded-md ${
+    isAddMemberFormVisible ? "bg-red-600 hover:bg-red-700" : "bg-green-600 hover:bg-green-700"
+  }`}
+>
+  {isAddMemberFormVisible ? "Close" : "Add Member"}
+</button>
+)}
+          {/* Add Member Form */}
+          {team.members.length < 3 && isAddMemberFormVisible && (
+          <div className="fixed inset-0 flex items-center justify-center bg-black bg-opacity-50 z-50">
+          <div className="bg-gray-800 p-6 rounded-lg w-96 shadow-md">
+            <h2 className="text-white text-2xl font-extrabold mb-4">Add Member</h2>
+            <form onSubmit={handleAddMember} className="space-y-4">
               <div>
                 <label htmlFor="name" className="block text-gray-300 mb-2">
                   Name
@@ -387,17 +422,24 @@ const CreateTeam = () => {
                 type="submit"
                 className="w-full text-lg py-2 bg-green-600 hover:bg-green-700 text-white rounded-md"
               >
-                Add Member
+                Submit
               </button>
-           
             </form>
+            <button
+              onClick={() => setIsAddMemberFormVisible(false)}
+              className="mt-4 w-full py-2 text-lg bg-red-600 hover:bg-red-700 text-white rounded-md"
+            >
+              Close
+            </button>
+          </div>
+        </div>
           )}
         </div>
       )}
 
       {/* Floating Modal for Editing Member */}
       {showModal && selectedMember && (
-        <div className="fixed inset-0 flex items-center justify-center bg-black bg-opacity-50">
+        <div className="fixed inset-0 flex items-center justify-center bg-black bg-opacity-50 z-20">
           <div className="bg-gray-800 p-6 rounded-lg w-96 shadow-md">
             <h2 className="text-white text-2xl font-extrabold mb-4">Edit Member</h2>
             <form onSubmit={handleMemberUpdate}>
@@ -478,7 +520,7 @@ const CreateTeam = () => {
               </div>
               <button
                 type="submit"
-                className="w-full text-lg py-2 bg-blue-600 hover:bg-blue-700 text-white rounded-md"
+                className="w-full text-lg py-2 mt-4  bg-blue-600 hover:bg-blue-700 text-white rounded-md"
               >
                 Update Member
               </button>
