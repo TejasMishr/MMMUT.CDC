@@ -155,6 +155,7 @@ const CreateTeam = () => {
     } catch (err) {
       setError(err.message || "An error occurred");
     }
+    setIsAddMemberFormVisible(false);
       };
   const handleProceedToPayment = () => {
     if (!team || team.members.length < 3) {

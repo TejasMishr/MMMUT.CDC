@@ -94,6 +94,7 @@ const PaymentPage = () => {
     } finally {
       setLoading(false);
     }
+    window.location.href = '/createTeam';
 
   };
 
