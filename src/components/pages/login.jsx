@@ -63,13 +63,13 @@ const LoginForm = () => {
   return (
     <div className="bg-gray-900 min-h-screen flex items-center justify-center">
     <div className="w-full max-w-md bg-gray-800 rounded-lg shadow-md p-8">
-      <div className="flex justify-center mb-4">
+      {/* <div className="flex justify-center mb-4">
         <img
           src="./contactus/CDC.png"
           alt="Company Logo"
           className="h-16 w-16 rounded-full"
         />
-      </div>
+      </div> */}
       <h2 className="text-4xl font-bold text-center text-white mb-6">
         Login
       </h2>

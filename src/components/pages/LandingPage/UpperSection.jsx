@@ -1,5 +1,6 @@
 import { BiArrowBack, BiArrowFromRight, BiArrowToRight } from "react-icons/bi";
 import { Lottie } from "../../hooks/lottie/lottie";
+import { NavLink } from "react-router-dom";
 const UpperSection = () => {
   return (
     <div className="h-full flex flex-row items-center bg-gray-900  text-white relative">
@@ -43,7 +44,8 @@ const UpperSection = () => {
             {"Algorithms, Unleashed ✨"}
           </span>
         </h2>
-
+        <NavLink
+                  to="/events">
         <div className="flex flex-col md:flex-row gap-4 mt-8">
           <div className="px-6 py-3 border-[1px] border-blue-500 hover:border-blue-700 rounded-full text-lg transition-all duration-300 flex gap-2 items-center justify-center hover:text-clip-to-r from-blue-500 to-purple-500 hover:cursor-pointer z-50">
             <span className="text-red-500 animate-blink text-lg">⦿ </span>
@@ -55,6 +57,7 @@ const UpperSection = () => {
             <span className="text-2xl animate-pulse pr-4">✨</span>
           </div>
         </div>
+        </NavLink>
       </div>
 
       <div className="hidden sm:flex sm:w-2/5 justify-center items-center animate-slide-in-right z-0">
