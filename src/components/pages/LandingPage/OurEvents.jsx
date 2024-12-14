@@ -223,7 +223,7 @@
 //           <button
 //             onClick={handleNext}
 //             className="bg-gradient-to-r from-steelblue to-gray-800 text-white p-3.5 rounded-full shadow-md text-2xl"
-//           > 
+//           >
 //             ▶
 //           </button>
 //         </div>
@@ -234,17 +234,11 @@
 
 // export default OurEvents;
 
-
-
-
-
-
-
 import { motion } from "framer-motion";
 import { useState } from "react";
 
 const events = [
-    {
+  {
     title: "SYNTAX SIEGE",
     description:
       "Syntax Siege is a week-long event featuring five days of offline coding classes to build programming skills. On day six, participants compete in an online contest, culminating in an engaging offline contest on the final day.",
@@ -408,10 +402,9 @@ const OurEvents = () => {
     return "hidden";
   };
 
-
   return (
     <section className="h-auto bg-gray-900 text-white py-10 px-4 mx-auto relative overflow-hidden z-50">
-        <div className="absolute inset-0 z-0 grid grid-cols-7 grid-rows-7 gap-0 opacity-5">
+      <div className="absolute inset-0 z-0 grid grid-cols-7 grid-rows-7 gap-0 opacity-5">
         {[...Array(49)].map((_, index) => (
           <div key={index} className="border border-gray-700"></div>
         ))}
@@ -420,118 +413,118 @@ const OurEvents = () => {
         Our Events
       </h3>
 
-{/* Mobile View Carousel */}
-<div className="block sm:hidden">
-  <div className="relative w-full overflow-hidden">
-    {/* Events Loop */}
-    <div className="flex items-center justify-center">
-      {events.map((event, index) => (
-        <motion.div
-          key={index}
-          className={`w-full flex-shrink-0 transition-all duration-500 ${
-            index === currentIndex ? "block" : "hidden"
-          }`}
-          animate={{
-            opacity: index === currentIndex ? 1 : 0,
-            scale: index === currentIndex ? 1 : 0.8,
-          }}
-          transition={{
-            duration: 0.6,
-            ease: "easeInOut",
-          }}
-        >
-          <div className="p-5 rounded-2xl bg-gradient-to-r from-steelblue to-gray-800">
-            <img
-              className="w-full h-52 rounded-t-2xl object-cover"
-              src={event.img}
-              alt={event.title}
-            />
-            <div className="p-4 text-center">
-              <h4 className="text-lg font-bold">{event.title}</h4>
-              <p className="mt-2 text-sm">{event.description}</p>
-            </div>
+      {/* Mobile View Carousel */}
+      <div className="block sm:hidden">
+        <div className="relative w-full overflow-hidden">
+          {/* Events Loop */}
+          <div className="flex items-center justify-center">
+            {events.map((event, index) => (
+              <motion.div
+                key={index}
+                className={`w-full flex-shrink-0 transition-all duration-500 ${
+                  index === currentIndex ? "block" : "hidden"
+                }`}
+                animate={{
+                  opacity: index === currentIndex ? 1 : 0,
+                  scale: index === currentIndex ? 1 : 0.8,
+                }}
+                transition={{
+                  duration: 0.6,
+                  ease: "easeInOut",
+                }}
+              >
+                <div className="p-5 rounded-2xl bg-gradient-to-r from-steelblue to-gray-800">
+                  <img
+                    className="w-full h-52 rounded-t-2xl object-cover"
+                    src={event.img}
+                    alt={event.title}
+                  />
+                  <div className="p-4 text-center">
+                    <h4 className="text-lg font-bold">{event.title}</h4>
+                    <p className="mt-2 text-sm">{event.description}</p>
+                  </div>
+                </div>
+              </motion.div>
+            ))}
           </div>
-        </motion.div>
-      ))}
-    </div>
 
-    {/* Navigation Buttons */}
-    <div className="absolute top-1/2 left-4 transform -translate-y-1/2">
-      <button
-        onClick={handlePrev}
-        className="bg-gradient-to-r from-steelblue to-gray-800 text-white p-1.5 rounded-full shadow-md text-xl"
-      >
-        ◀
-      </button>
-    </div>
-    <div className="absolute top-1/2 right-4 transform -translate-y-1/2">
-      <button
-        onClick={handleNext}
-        className="bg-gradient-to-r from-steelblue to-gray-800 text-white p-1.5 rounded-full shadow-md text-xl"
-      >
-        ▶
-      </button>
-    </div>
-  </div>
-</div>
+          {/* Navigation Buttons */}
+          <div className="absolute top-1/2 left-4 transform -translate-y-1/2">
+            <button
+              onClick={handlePrev}
+              className="bg-gradient-to-r from-steelblue to-gray-800 text-white p-1.5 rounded-full shadow-md text-xl"
+            >
+              ◀
+            </button>
+          </div>
+          <div className="absolute top-1/2 right-4 transform -translate-y-1/2">
+            <button
+              onClick={handleNext}
+              className="bg-gradient-to-r from-steelblue to-gray-800 text-white p-1.5 rounded-full shadow-md text-xl"
+            >
+              ▶
+            </button>
+          </div>
+        </div>
+      </div>
 
       {/* Tablet and Desktop View Carousel */}
       <div className="hidden sm:block">
-       <div className="relative w-full max-w-4xl mx-auto overflow-hidden">
-         <div className="flex items-center justify-center space-x-6">
-           {events.map((event, index) => {
-             const position = getClassNames(index);
-             const isCenter = position === "center";
-             const isAdjacent = position === "adjacent";
+        <div className="relative w-full max-w-4xl mx-auto overflow-hidden">
+          <div className="flex items-center justify-center space-x-6">
+            {events.map((event, index) => {
+              const position = getClassNames(index);
+              const isCenter = position === "center";
+              const isAdjacent = position === "adjacent";
 
-             return (
-               <motion.div
-                 key={index}
-                 className={`w-1/3 flex-shrink-0 transition-all duration-500 ${
-                   isCenter ? "z-20" : isAdjacent ? "z-10" : "z-0 hidden"
-                 }`}
-                 animate={{
-                   scale: isCenter ? 1.05 : isAdjacent ? 0.95 : 0.75,
-                   opacity: isCenter ? 1 : isAdjacent ? 0.5 : 0,
-                   filter: isCenter ? "blur(0px)" : "blur(4px)",
-                 }}
-                 transition={{
-                   duration: 0.6,
-                   ease: "easeInOut",
-                 }}
-               >
-                 <div className="p-5 rounded-2xl bg-gradient-to-r from-steelblue to-gray-800 overflow-hidden">
-                   <img
-                     className="w-full h-36 rounded-t-2xl object-cover"
-                     src={event.img}
-                     alt={event.title}
-                   />
-                   <div className="p-4">
-                     <h4 className="text-lg font-bold">{event.title}</h4>
-                     <p className="mt-2 text-sm ">{event.description}</p>
-                   </div>
-                 </div>
-               </motion.div>
-             );
-           })}
-         </div>
-         <div className="absolute top-1/2 left-4 transform -translate-y-1/2 z-30">
-           <button
-             onClick={handlePrev}
-             className="bg-gradient-to-r from-steelblue to-gray-800 text-white p-3.5 rounded-full shadow-md text-xl"
-           >
-             ◀
-           </button>
-         </div>
-         <div className="absolute top-1/2 right-4 transform -translate-y-1/2 z-30">
-           <button
-             onClick={handleNext}
-             className="bg-gradient-to-r from-steelblue to-gray-800 text-white p-3.5 rounded-full shadow-md text-xl"
-           > 
-             ▶
-           </button>
-         </div>
-       </div>
+              return (
+                <motion.div
+                  key={index}
+                  className={`w-1/3 flex-shrink-0 transition-all duration-500 ${
+                    isCenter ? "z-20" : isAdjacent ? "z-10" : "z-0 hidden"
+                  }`}
+                  animate={{
+                    scale: isCenter ? 1.05 : isAdjacent ? 0.95 : 0.75,
+                    opacity: isCenter ? 1 : isAdjacent ? 0.5 : 0,
+                    filter: isCenter ? "blur(0px)" : "blur(4px)",
+                  }}
+                  transition={{
+                    duration: 0.6,
+                    ease: "easeInOut",
+                  }}
+                >
+                  <div className="p-5 rounded-2xl bg-gradient-to-r from-steelblue to-gray-800 overflow-hidden">
+                    <img
+                      className="w-full h-36 rounded-t-2xl object-cover border-[1px] border-[#2d51d4]"
+                      src={event.img}
+                      alt={event.title}
+                    />
+                    <div className="p-4 border-[1px] border-t-0 border-steelblue rounded-b-xl">
+                      <h4 className="text-lg font-bold">{event.title}</h4>
+                      <p className="mt-2 text-sm ">{event.description}</p>
+                    </div>
+                  </div>
+                </motion.div>
+              );
+            })}
+          </div>
+          <div className="absolute top-1/2 left-4 transform -translate-y-1/2 z-30">
+            <button
+              onClick={handlePrev}
+              className="bg-gradient-to-r from-steelblue to-gray-800 text-white p-3.5 rounded-full shadow-md text-xl"
+            >
+              ◀
+            </button>
+          </div>
+          <div className="absolute top-1/2 right-4 transform -translate-y-1/2 z-30">
+            <button
+              onClick={handleNext}
+              className="bg-gradient-to-r from-steelblue to-gray-800 text-white p-3.5 rounded-full shadow-md text-xl"
+            >
+              ▶
+            </button>
+          </div>
+        </div>
       </div>
     </section>
   );
