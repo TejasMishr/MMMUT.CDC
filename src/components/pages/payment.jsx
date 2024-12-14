@@ -8,9 +8,9 @@ const PaymentPage = () => {
   const [loading, setLoading] = useState(false);
 
   // EmailJS configuration
-  const serviceID = "service_0nrni1x";
-  const templateID = "template_n4s5myd";
-  const userID = "3b3sPYto0voKhRyYj";
+  const serviceID = "service_4401q79";
+  const templateID = "template_k024fij";
+  const userID = "6SYFkuz4yz71tbNLR";
 
   // Constant image URL
   const constantImage = "./payment/manya.png"; // Update with the actual path

@@ -25,10 +25,10 @@ const ContactForm = () => {
   const handleSubmit = (e) => {
     e.preventDefault();
 
-    const serviceID = "service_r1dvjqg";
-    const templateID = "template_ochgjah";
-    const userID = "eUMkHS1YtRueH6YcM";
-
+    const serviceID = "service_4401q79";
+    const templateID = "template_rizf9og";
+    const userID = "6SYFkuz4yz71tbNLR";
+  
     emailjs
       .send(serviceID, templateID, formData, userID)
       .then(
