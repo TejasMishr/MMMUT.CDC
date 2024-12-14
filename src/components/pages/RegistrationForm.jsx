@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import API_BASE_URL from "../../config/apiConfig";
 import { useNavigate } from 'react-router-dom';
+import { IoMdEye, IoMdEyeOff } from 'react-icons/io';
 
 const RegistrationForm = () => {
   const [formData, setFormData] = useState({
@@ -48,7 +49,7 @@ const RegistrationForm = () => {
   };
   const validateForm = () => {
     const { firstName, phone, universityRollNo } = formData;
-  
+
     if (firstName.length < 2) {
       setError('First name must be at least 2 characters');
       return false;
@@ -165,21 +166,21 @@ const RegistrationForm = () => {
                 required
               />
             </div>
-            
+
           </div>
           <div>
-              <label className="block text-gray-300 mb-2">Email</label>
-              <input
-                type="email"
-                name="email"
-                value={formData.email}
-                onChange={handleChange}
-                placeholder="email@gmail.com"
-                className="w-full px-4 py-2 bg-gray-700 text-white rounded-md"
-                required
-              />
-              {emailError && <p className="text-red-500">{emailError}</p>}
-            </div>
+            <label className="block text-gray-300 mb-2">Email</label>
+            <input
+              type="email"
+              name="email"
+              value={formData.email}
+              onChange={handleChange}
+              placeholder="email@gmail.com"
+              className="w-full px-4 py-2 bg-gray-700 text-white rounded-md"
+              required
+            />
+            {emailError && <p className="text-red-500">{emailError}</p>}
+          </div>
           <div className="relative">
             <label className="block text-gray-300 mb-2">Password</label>
             <input
@@ -187,16 +188,16 @@ const RegistrationForm = () => {
               name="password"
               value={formData.password}
               onChange={handleChange}
-              placeholder="Password"
+              placeholder="Enter your password"
               className="w-full px-4 py-2 bg-gray-700 text-white rounded-md"
               required
             />
             <button
               type="button"
               onClick={togglePasswordVisibility}
-              className="absolute right-3 top-9 text-gray-400"
+              className="absolute right-3 top-10 text-gray-400"
             >
-              {showPassword ? 'Hide' : 'Show'}
+              {showPassword ? <IoMdEyeOff size={20} /> : <IoMdEye size={20} />}
             </button>
             {passwordError && <p className="text-red-500">{passwordError}</p>}
           </div>
