@@ -2,7 +2,6 @@ import React, { useState, useEffect, Suspense, lazy } from "react";
 import "./Team.css";
 import FacultyAdvisor from "./Faculty/FacultyAdvisor.jsx";
 import { Home } from "./Alumanipage.jsx";
-import { Lottie } from "../../hooks/lottie/lottie.jsx";
 
 // Lazy-loaded components
 const Team1 = lazy(() => import("./Team1/Team1.jsx"));
@@ -28,16 +27,16 @@ function Team() {
     setTimeout(() => {
       setSelectedTeam(teamNumber);
       setIsTeamLoading(false);
-    }, 4000); // 3 seconds loader for switching teams
+    }, 2000); // 3 seconds loader for switching teams
   };
 
   if (isLoading) {
     return (
       <div className="flex justify-center items-center min-h-screen bg-gray-800">
-        <Lottie
-          link="https://lottie.host/dbb912fc-058e-4efb-b3ce-078f8b54e9f7/fNAs8nGILX.json"
-          wid="100%"
-          className="sm:w-[60%] w-[90%]"
+        <img
+          src="/1004-unscreen.gif"
+          alt="Loading..."
+          className="w-1/2 sm:w-1/3"
         />
       </div>
     );
@@ -89,15 +88,7 @@ function Team() {
           </ul>
         </div>
       </div>
-      {isTeamLoading ? (
-        <div className="flex justify-center items-center min-h-screen bg-gray-900">
-          <Lottie
-            link="https://lottie.host/dbb912fc-058e-4efb-b3ce-078f8b54e9f7/fNAs8nGILX.json"
-            wid="100%"
-            className="sm:w-[60%] w-[90%]"
-          />
-        </div>
-      ) : (
+      
         <Suspense>
           <div>
             {selectedTeam === 0 && <Home />}
@@ -108,7 +99,7 @@ function Team() {
             {selectedTeam === 5 && <Team5 />}
           </div>
         </Suspense>
-      )}
+      
     </div>
   );
 }
