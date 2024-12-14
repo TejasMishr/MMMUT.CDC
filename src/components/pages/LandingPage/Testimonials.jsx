@@ -39,10 +39,10 @@ const testimonialsData = [
     image: "./testimonial/Ayushi Sahu.jpg" 
   },
   {
-    name: "Harshit Tiwari",
+    name: "Yashvardhan Ojha",
     title: "B.Tech, Second Year",
     feedback: "I love how the club brings together people from all levels of experience, allowing everyone to learn from each other and work together to solve coding challenges and create amazing projects.",
-    image: ""
+    image: "./testimonial/yash.jpeg"
   },
   {
     name: "Dravin Bhardwaj",

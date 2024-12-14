@@ -124,7 +124,7 @@ const LoginForm = () => {
 
         <button
            type="submit"
-            className={`w-full py-2 ${
+            className={`w-full py-2 text-lg ${
               isLoading ? 'bg-gray-500' : 'bg-blue-600 hover:bg-blue-700'
             } text-white rounded-md`}
             disabled={isLoading}

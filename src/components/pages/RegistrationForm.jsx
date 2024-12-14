@@ -220,7 +220,7 @@ const RegistrationForm = () => {
             <button
               type="button"
               onClick={verifyEmail}
-              className="ml-4 bg-blue-600 text-white px-4 py-2 rounded-md"
+              className="ml-4 text-lg bg-blue-600 text-white px-4 py-2 rounded-md"
             >
               Verify Email
             </button>
@@ -329,7 +329,7 @@ const RegistrationForm = () => {
           <button
             type="submit"
             disabled={isLoading} // Disable the button while loading
-            className={`w-full py-2 rounded-md ${isLoading ? 'bg-gray-500' : 'bg-blue-600 hover:bg-blue-700'} text-white`}
+            className={`w-full text-lg py-2 rounded-md ${isLoading ? 'bg-gray-500' : 'bg-blue-600 hover:bg-blue-700'} text-white`}
           >
             {isLoading ? 'LOADING...' : 'Register'}
           </button>
