@@ -3,9 +3,9 @@ import { Lottie } from "../../hooks/lottie/lottie";
 const UpperSection = () => {
   return (
     <div className="h-full flex flex-row items-center bg-gray-900  text-white relative">
-      <div className="w-3/5 px-8 md:px-16 lg:px-24 mt-[10%] animate-fade-in">
+      <div className=" px-8 md:px-16 lg:px-24 mt-[10%] animate-fade-in">
         <div className="lg:text-6xl text-4xl font-bold font-poppins tracking-wide flex gap-3 items-start flex-wrap ">
-          <div className="bg-gradient-to-r from-blue-500 to-green-500 text-transparent bg-clip-text ">
+          <div className="bg-gradient-to-r from-blue-500 to-green-500 text-transparent bg-clip-text  ">
             CODERS
           </div>
           <div className="bg-gradient-to-r from-green-500 to-purple-500 text-transparent bg-clip-text">
@@ -28,8 +28,7 @@ const UpperSection = () => {
         </p>
         <h2 className="md:text-3xl sm:text-xl xs:text-xl font-bold text-transparent bg-clip-text bg-gradient-to-r">
           <span className="gradi-event-text">
-            {" "}
-            {"Bytes of Brilliance, Compiled "}
+            {"Bytes of Brilliance, Compiled"}
           </span>
           <span className="text-3xl animate-pulse">✨</span>
         </h2>
@@ -47,15 +46,18 @@ const UpperSection = () => {
 
         <div className="flex flex-col md:flex-row gap-4 mt-8">
           <div className="px-6 py-3 border-[1px] border-blue-500 hover:border-blue-700 rounded-full text-lg transition-all duration-300 flex gap-2 items-center justify-center hover:text-clip-to-r from-blue-500 to-purple-500 hover:cursor-pointer z-50">
-            <span className="text-2xl font-bold tracking-wide text-transparent bg-clip-text bg-gradient-to-r from-blue-500 to-purple-500 ">
-              Continue to AlgOlympics
+            <span className="text-red-500 animate-blink text-lg">⦿ </span>
+            <span className="text-red-500 animate-blink">Live</span>
+
+            <span className="lg:text-2xl font-bold tracking-wide text-transparent bg-clip-text bg-gradient-to-r from-blue-500 to-purple-500 pl-4">
+              AlgOlympics
             </span>
-            <span className="text-3xl animate-pulse ">✨</span>
+            <span className="text-2xl animate-pulse pr-4">✨</span>
           </div>
         </div>
       </div>
 
-      <div className="w-2/5 flex justify-center items-center animate-slide-in-right z-0">
+      <div className="hidden sm:flex sm:w-2/5 justify-center items-center animate-slide-in-right z-0">
         <div className="relative flex justify-center items-center z-3">
           <div className="relative right-[10%] top-[20%] w-[150px] h-[150px] sm:w-[400px] z-2 sm:h-[400px] rounded-full overflow-hidden border-4 border-blue-500 animate-bounce-slow shadow-lg">
             <Lottie

@@ -435,11 +435,11 @@ const OurEvents = () => {
               >
                 <div className="p-5 rounded-2xl bg-gradient-to-r from-steelblue to-gray-800">
                   <img
-                    className="w-full h-52 rounded-t-2xl object-cover"
+                    className="w-full h-52 rounded-t-2xl object-cover border-[1px] border-[#2d51d4]"
                     src={event.img}
                     alt={event.title}
                   />
-                  <div className="p-4 text-center">
+                  <div className="p-4 text-center border-[1px] border-t-0 border-steelblue rounded-b-xl">
                     <h4 className="text-lg font-bold">{event.title}</h4>
                     <p className="mt-2 text-sm">{event.description}</p>
                   </div>
