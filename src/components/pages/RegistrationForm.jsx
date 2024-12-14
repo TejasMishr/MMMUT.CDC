@@ -161,7 +161,8 @@ const RegistrationForm = () => {
       const responseBody = await response.text();
 
       if (!response.ok) {
-        throw new Error(responseBody || 'Invalid OTP');
+        setOtpError('Invalid OTP');
+        throw new Error( 'Invalid OTP');
       }
 
       setEmailVerified(true);
@@ -206,27 +207,35 @@ const RegistrationForm = () => {
           <div className="flex items-center">
             <div className="w-1/2">
               <label className="block text-gray-300 mb-2">Email</label>
-              <input
-                type="email"
-                name="email"
-                value={formData.email}
-                onChange={handleChange}
-                placeholder="email@gmail.com"
-                className="w-full px-4 py-2 bg-gray-700 text-white rounded-md"
-                required
-              />
-              {emailError && <p className="text-red-500">{emailError}</p>}
+              <div className='flex items-center space-x-4'>
+                <div>
+                  <input
+                    type="email"
+                    name="email"
+                    value={formData.email}
+                    onChange={handleChange}
+                    placeholder="email@gmail.com"
+                    className="w-full px-4 py-2 bg-gray-700 text-white rounded-md"
+                    required
+                  />
+                  {/* {emailError && <p className="text-red-500">{emailError}</p>} */}
+                </div>
+                {!emailVerified && (
+                <button
+                  type="button"
+                  onClick={verifyEmail}
+                  className="ml-4 bg-blue-600 text-white px-4 py-2 rounded-md"
+                >
+                  Verify Email
+                </button>
+                )};
+              </div>
             </div>
-            <button
-              type="button"
-              onClick={verifyEmail}
-              className="ml-4 text-lg bg-blue-600 text-white px-4 py-2 rounded-md"
-            >
-              Verify Email
-            </button>
           </div>
+          {emailError && <p className="text-red-500">{emailError}</p>}
+          {error && <p className="text-red-500">{error}</p>}
           {message && <p className="text-green-500">{message}</p>}
-         
+
           <div>
             <label className="block text-gray-300 mb-2">Password</label>
             <input
@@ -338,33 +347,36 @@ const RegistrationForm = () => {
 
       {/* OTP Popup Modal */}
       {showOtpPopup && (
-        <div className="fixed inset-0 flex items-center justify-center bg-black bg-opacity-50">
-          <div className="bg-white p-6 rounded-lg">
-            <h2 className="text-xl mb-4">Enter OTP</h2>
-            <input
-              type="text"
-              value={otp}
-              onChange={(e) => setOtp(e.target.value)}
-              placeholder="Enter OTP"
-              className="w-full px-4 py-2 mb-4 border rounded-md"
-            />
-           {error && <p className="text-red-500">{error}</p>}
-
+        <div className="fixed inset-0 flex items-center justify-center bg-black bg-opacity-50 ">
+        <div className="bg-white p-6 rounded-lg">
+          <h2 className="text-xl mb-4">Enter OTP</h2>
+          <input
+            type="text"
+            value={otp}
+            onChange={(e) => setOtp(e.target.value)}
+            placeholder="Enter OTP"
+            className="w-full px-4 py-2 mb-4 border rounded-md"
+          />
+          <div className='space-y-2'>
+          {error && <p className="text-red-500">{otpError}</p>}
+          </div>
+          <div className="flex items-center justify-between space-x-4">
             <button
               onClick={handleOtpSubmit}
-              className="w-full mt-3 py-2 text-lg bg-blue-600 text-white rounded-md"
+              className="w-full py-2 bg-blue-600 text-white rounded-md"
             >
               Verify OTP
             </button>
             <button
-  onClick={() => setShowOtpPopup(false)}
-  className="py-2 mt-3 px-4 text-lg bg-red-600 hover:bg-gray-500 text-white rounded-md"
->
-  Close
-</button>
-
+              onClick={() => setShowOtpPopup(false)}
+              className="w-full py-2 bg-gray-400 hover:bg-gray-500 text-white rounded-md"
+            >
+              Close
+            </button>
           </div>
+
         </div>
+      </div>
       )}
     </div>
   );

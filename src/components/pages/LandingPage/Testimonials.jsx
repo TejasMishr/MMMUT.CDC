@@ -45,10 +45,10 @@ const testimonialsData = [
     image: "./testimonial/yash.jpeg"
   },
   {
-    name: "Dravin Bhardwaj",
+    name: "Devang Agarwal",
     title: "B.Tech, Second Year",
     feedback: "The Coders and Developers Club offers a unique opportunity to work with like-minded individuals, learn from experts, and take your coding skills to new heights through practical experience.",
-    image: "" 
+    image: "./testimonial/devang.jpeg" 
   },
   {
     name: "Piyush Pal",
