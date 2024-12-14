@@ -4,7 +4,7 @@ const eventDetails = [
   {
     title: "AlgOlympics",
     description:
-      "Add Description Here and Also the Link to Register with poster src and ispastevent",
+      "AlgOlympics is a regional-level coding competition to foster collaboration, competitiveness, and technical excellence. Following the ICPC structure, the event is open to participants from institutions throughout the region and provides an exciting two-round competition that fosters creativity and honors programming talent.",
     img: "./events/ss.png",
     ispastevent: false,
   },
