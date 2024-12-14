@@ -38,11 +38,11 @@ const HomeAbout = () => {
   return (
     <section className="h-auto bg-gray-900 text-white py-10 px-4 mx-auto relative overflow-hidden z-50">
    
-      <div className="absolute inset-0 z-0 grid grid-cols-7 grid-rows-7 gap-0 opacity-5">
+      {/* <div className="absolute inset-0 z-0 grid grid-cols-7 grid-rows-7 gap-0 opacity-5">
         {[...Array(49)].map((_, index) => (
           <div key={index} className="border border-gray-700"></div>
         ))}
-      </div>
+      </div> */}
 
       <div className="max-w-[1200px] mx-auto z-10 relative">
         <div className="flex flex-col items-center justify-center max-w-[1020px] mx-auto text-center font-montserrat flex-1 relative z-20 mt-[20px] px-4 h-auto">

@@ -22,9 +22,8 @@ function LandingPage() {
             }}
           />
           <UpperSection/>
-           <HomeAbout/>
           <OurEvents/>
-       
+           <HomeAbout/>
            <Carousel/>
            <TestimonialsCarousel/>
         

@@ -32,7 +32,7 @@ const Carousel = () => {
   };
 
   return (
-    <div className=" bg-gradient-to-b from-black to-gray-900  text-white flex flex-col items-center p-4 h-auto mx-auto z-20 relative">
+    <div className="h-auto bg-gray-900 text-white py-10 px-4 mx-auto relative overflow-hidden z-50">
        <h3 className="text-center mx-auto text-white font-bold xl:text-[50px] lg:text-4xl text-3xl leading-[1.25] z-20 mb-8 lg:mb-10">
           Glimpses of CDC
         </h3>

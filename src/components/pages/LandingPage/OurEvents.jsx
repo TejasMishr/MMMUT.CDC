@@ -410,7 +410,12 @@ const OurEvents = () => {
 
 
   return (
-    <section className="relative text-white bg-gradient-to-b from-gray-900 via-gray-800 to-black px-4 pb-20">
+    <section className="h-auto bg-gray-900 text-white py-10 px-4 mx-auto relative overflow-hidden z-50">
+        <div className="absolute inset-0 z-0 grid grid-cols-7 grid-rows-7 gap-0 opacity-5">
+        {[...Array(49)].map((_, index) => (
+          <div key={index} className="border border-gray-700"></div>
+        ))}
+      </div>
       <h3 className="text-center font-bold text-3xl lg:text-4xl xl:text-5xl mb-16">
         Our Events
       </h3>
