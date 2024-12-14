@@ -20,6 +20,10 @@ const RegistrationForm = () => {
   const [emailError, setEmailError] = useState('');
   const [passwordError, setPasswordError] = useState('');
   const [showPassword, setShowPassword] = useState(false);
+  const [emailVerified, setEmailVerified] = useState(false);
+  const [otp, setOtp] = useState('');
+  const [otpError, setOtpError] = useState('');
+  const [showOtpPopup, setShowOtpPopup] = useState(false);
   const navigate = useNavigate();
 
   const colleges = ['MMMUT', 'ITM', 'BIT', 'KIPM', 'SUYANSH', 'Other'];
@@ -47,6 +51,7 @@ const RegistrationForm = () => {
   const togglePasswordVisibility = () => {
     setShowPassword((prevState) => !prevState);
   };
+
   const validateForm = () => {
     const { firstName, phone, universityRollNo } = formData;
 
@@ -62,33 +67,13 @@ const RegistrationForm = () => {
       setError('University Roll Number must be numeric');
       return false;
     }
-    if (emailError || passwordError) {
-      setError('Please fix validation errors before submitting');
+    if (emailError || passwordError || !emailVerified) {
+      setError('Please fix validation errors and verify your email before submitting');
       return false;
     }
     setError('');
     return true;
   };
-  //   const { phone, universityRollNo } = formData;
-  //   if (firstName.length < 2) {
-  //     setError('First name must be at least 2 characters');
-  //     return false;
-  //   }
-  //   if (phone && !/^\d{10}$/.test(phone)) {
-  //     setError('Phone number must be 10 digits');
-  //     return false;
-  //   }
-
-  //   if (universityRollNo && !/^\d+$/.test(universityRollNo)) {
-  //     setError('University Roll Number must be numeric');
-  //     return false;
-  //   }
-  //   if (emailError || passwordError) {
-  //     setError('Please fix validation errors before submitting');
-  //     return false;
-  //   }
-  //   return true;
-  // };
 
   const handleSubmit = async (e) => {
     e.preventDefault();
@@ -136,6 +121,54 @@ const RegistrationForm = () => {
     }
   };
 
+  const verifyEmail = async () => {
+    try {
+      const response = await fetch(`${API_BASE_URL}/api/auth/verify-email`, {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({ email: formData.email }),
+      });
+
+      const responseBody = await response.text();
+
+      if (!response.ok) {
+        throw new Error(responseBody || 'Failed to send verification email');
+      }
+
+      setMessage('Verification email sent! Please check your inbox.');
+      setShowOtpPopup(true);
+    } catch (err) {
+      setMessage('');
+      setError(err.message || 'Failed to send verification email');
+    }
+  };
+
+  const handleOtpSubmit = async () => {
+    try {
+      const response = await fetch(`${API_BASE_URL}/api/auth/verify-otp`, {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({ email: formData.email, otp }),
+      });
+
+      const responseBody = await response.text();
+
+      if (!response.ok) {
+        throw new Error(responseBody || 'Invalid OTP');
+      }
+
+      setEmailVerified(true);
+      setShowOtpPopup(false);
+      setMessage('Email verified successfully!');
+    } catch (err) {
+      setError(err.message || 'Failed to verify OTP');
+    }
+  };
+
   return (
     <div className="bg-gray-900 min-h-screen flex flex-col items-center">
       <div className="w-full max-w-3xl p-8 mt-10 bg-gray-800 rounded-lg shadow-md">
@@ -166,22 +199,32 @@ const RegistrationForm = () => {
                 required
               />
             </div>
-
           </div>
+          <div className="flex items-center">
+            <div className="w-1/2">
+              <label className="block text-gray-300 mb-2">Email</label>
+              <input
+                type="email"
+                name="email"
+                value={formData.email}
+                onChange={handleChange}
+                placeholder="email@gmail.com"
+                className="w-full px-4 py-2 bg-gray-700 text-white rounded-md"
+                required
+              />
+              {emailError && <p className="text-red-500">{emailError}</p>}
+            </div>
+            <button
+              type="button"
+              onClick={verifyEmail}
+              className="ml-4 bg-blue-600 text-white px-4 py-2 rounded-md"
+            >
+              Verify Email
+            </button>
+          </div>
+          {message && <p className="text-green-500">{message}</p>}
+         
           <div>
-            <label className="block text-gray-300 mb-2">Email</label>
-            <input
-              type="email"
-              name="email"
-              value={formData.email}
-              onChange={handleChange}
-              placeholder="email@gmail.com"
-              className="w-full px-4 py-2 bg-gray-700 text-white rounded-md"
-              required
-            />
-            {emailError && <p className="text-red-500">{emailError}</p>}
-          </div>
-          <div className="relative">
             <label className="block text-gray-300 mb-2">Password</label>
             <input
               type={showPassword ? 'text' : 'password'}
@@ -280,8 +323,6 @@ const RegistrationForm = () => {
               </label>
             </div>
           </div>
-          {message && <p className="text-green-500">{message}</p>}
-          {error && <p className="text-red-500">{error}</p>}
           <button
             type="submit"
             className="w-full py-2 bg-blue-600 hover:bg-blue-700 text-white rounded-md"
@@ -290,6 +331,37 @@ const RegistrationForm = () => {
           </button>
         </form>
       </div>
+
+      {/* OTP Popup Modal */}
+      {showOtpPopup && (
+        <div className="fixed inset-0 flex items-center justify-center bg-black bg-opacity-50">
+          <div className="bg-white p-6 rounded-lg">
+            <h2 className="text-xl mb-4">Enter OTP</h2>
+            <input
+              type="text"
+              value={otp}
+              onChange={(e) => setOtp(e.target.value)}
+              placeholder="Enter OTP"
+              className="w-full px-4 py-2 mb-4 border rounded-md"
+            />
+           {error && <p className="text-red-500">{error}</p>}
+
+            <button
+              onClick={handleOtpSubmit}
+              className="w-full py-2 bg-blue-600 text-white rounded-md"
+            >
+              Verify OTP
+            </button>
+            <button
+  onClick={() => setShowOtpPopup(false)}
+  className="py-2 px-4 bg-gray-400 hover:bg-gray-500 text-white rounded-md"
+>
+  Close
+</button>
+
+          </div>
+        </div>
+      )}
     </div>
   );
 };
