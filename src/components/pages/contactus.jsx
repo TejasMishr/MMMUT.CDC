@@ -131,7 +131,7 @@ const ContactForm = () => {
           {/* Lottie Animation Section */}
           <div className="flex flex-col h-[300px] sm:w-2/5 w-full items-center justify-center mt-[1%] sm:mt-0 z-[-1]">
             <Lottie
-              link="https://lottie.host/8d3fce25-2155-4ee4-8a7f-d93005ea2de9/NNJYhVZfSe.json"
+              link="https://lottie.host/e6328aed-b731-4b3a-be87-c559a8e86b32/huTVlPDewn.json"
               wid="55%"
               className="sm:w-[60%] w-[90%]"
             />
