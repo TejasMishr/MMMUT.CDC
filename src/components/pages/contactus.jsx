@@ -48,7 +48,7 @@ const ContactForm = () => {
   };
 
   return (
-    <div className="bg-gray-900 min-h-screen flex flex-col items-center relative overflow-hidden">
+    <div className="bg-gray-900 min-h-screen flex flex-col items-center relative justify-center overflow-hidden">
       {/* Radial Gradient Background */}
       <div
         className="absolute inset-0 blur-3xl z-[0]"
