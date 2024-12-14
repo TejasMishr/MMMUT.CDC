@@ -360,16 +360,29 @@ const RegistrationForm = () => {
           <div className="flex items-center justify-between space-x-4">
             <button
               onClick={handleOtpSubmit}
+<<<<<<< HEAD
               className="w-full py-2 bg-blue-600 text-white rounded-md"
+=======
+              className="w-full mt-3 py-2 text-lg bg-blue-600 text-white rounded-md"
+>>>>>>> 5b1cad7f44bc2b2e926108365f19a22f9d076eae
             >
               Verify OTP
             </button>
             <button
+<<<<<<< HEAD
               onClick={() => setShowOtpPopup(false)}
               className="w-full py-2 bg-gray-400 hover:bg-gray-500 text-white rounded-md"
             >
               Close
             </button>
+=======
+  onClick={() => setShowOtpPopup(false)}
+  className="py-2 mt-3 px-4 text-lg bg-red-600 hover:bg-gray-500 text-white rounded-md"
+>
+  Close
+</button>
+
+>>>>>>> 5b1cad7f44bc2b2e926108365f19a22f9d076eae
           </div>
 
         </div>
