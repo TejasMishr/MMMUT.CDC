@@ -9,9 +9,8 @@ const LoginForm = () => {
   });
   const [showPassword, setShowPassword] = useState(false);
   const [message, setMessage] = useState('');
-  const [error, setError] = useState('');
- 
-
+  const [error, setError] = useState(''); 
+  const [isLoading, setIsLoading] = useState(false);
   const handleChange = (e) => {
     const { name, value } = e.target;
     setFormData({ ...formData, [name]: value });
@@ -24,7 +23,7 @@ const LoginForm = () => {
   const handleSubmit = async (e) => {
     e.preventDefault();
     const { email, password } = formData;
-
+    setIsLoading(true); // Start loading state
     try {
       const response = await fetch(
         `${API_BASE_URL}/api/auth/login`,
@@ -55,6 +54,9 @@ const LoginForm = () => {
     } catch (err) {
       setMessage('');
       setError('Invalid Username or Password');
+    }
+    finally {
+      setIsLoading(false); // Stop loading state
     }
   };
 
@@ -121,10 +123,13 @@ const LoginForm = () => {
         </div>
 
         <button
-          type="submit"
-          className="w-full py-2 bg-blue-600 hover:bg-blue-700 text-white rounded-md"
+           type="submit"
+            className={`w-full py-2 ${
+              isLoading ? 'bg-gray-500' : 'bg-blue-600 hover:bg-blue-700'
+            } text-white rounded-md`}
+            disabled={isLoading}
         >
-          Login
+          {isLoading ? 'LOADING...' : 'Login'}
         </button>
       </form>
     </div>

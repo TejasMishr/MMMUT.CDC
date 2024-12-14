@@ -9,28 +9,28 @@ const testimonialsData = [
     image: "" 
   },
   {
+    name: "Aditi Gupta",
+    title: "B.Tech, Second Year",
+    feedback: "If you're looking for a place to improve your coding skills, the Coders and Developers Club is the perfect community. It’s full of passionate people who are always willing to help.",
+    image: "./testimonial/aditi.jpeg" 
+  },
+  {
     name: "Sahil Kumar Singh",
     title: "B.Tech, Second Year",
     feedback: "This club encourages collaboration and learning, offering a great opportunity for developers to share ideas and work on projects together, helping each other improve along the way.",
     image: "./testimonial/sahil.jpeg" 
   },
   {
-    name: "Aditi Gupta",
-    title: "B.Tech, Second Year",
-    feedback: "If you're looking for a place to improve your coding skills, the Coders and Developers Club is the perfect community. It’s full of passionate people who are always willing to help.",
-    image: "" 
-  },
-  {
-    name: "Harshit Mishra",
+    name: "Diksha Jaiswal",
     title: "B.Tech, Second Year",
     feedback: "The club offers a space where beginners and experienced developers can come together, learn new things, and work on projects that push their skills to the next level.",
-    image: "" 
+    image: "./testimonial/Diksha.jpeg" 
   },
   {
-    name: "Ayush Ashutosh",
+    name: "Abhay Kumar Kasaudhan",
     title: "B.Tech, Second Year",
     feedback: "I’ve seen how the Coders and Developers Club helps people grow in their coding journey. It’s a great community for learning, sharing ideas, and getting hands-on experience.",
-    image: "" 
+    image: "./testimonial/abhay.jpeg" 
   },
   {
     name: "Ayushi Sahu",

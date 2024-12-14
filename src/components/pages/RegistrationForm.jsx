@@ -24,6 +24,7 @@ const RegistrationForm = () => {
   const [otp, setOtp] = useState('');
   const [otpError, setOtpError] = useState('');
   const [showOtpPopup, setShowOtpPopup] = useState(false);
+  const [isLoading, setIsLoading] = useState(false); // New loading state
   const navigate = useNavigate();
 
   const colleges = ['MMMUT', 'ITM', 'BIT', 'KIPM', 'SUYANSH', 'Other'];
@@ -63,10 +64,10 @@ const RegistrationForm = () => {
       setError('Phone number must be 10 digits');
       return false;
     }
-    if (universityRollNo && !/^\d+$/.test(universityRollNo)) {
-      setError('University Roll Number must be numeric');
-      return false;
-    }
+    // if (universityRollNo && !/^\d+$/.test(universityRollNo)) {
+    //   setError('University Roll Number must be numeric');
+    //   return false;
+    // }
     if (emailError || passwordError || !emailVerified) {
       setError('Please fix validation errors and verify your email before submitting');
       return false;
@@ -78,7 +79,7 @@ const RegistrationForm = () => {
   const handleSubmit = async (e) => {
     e.preventDefault();
     if (!validateForm()) return;
-
+    setIsLoading(true);
     try {
       const response = await fetch(`${API_BASE_URL}/api/auth/signup`, {
         method: 'POST',
@@ -118,6 +119,8 @@ const RegistrationForm = () => {
     } catch (err) {
       setMessage('');
       setError(err.message || 'Failed to register');
+    } finally {
+      setIsLoading(false); // Reset loading state
     }
   };
 
@@ -325,9 +328,10 @@ const RegistrationForm = () => {
           </div>
           <button
             type="submit"
-            className="w-full py-2 bg-blue-600 hover:bg-blue-700 text-white rounded-md"
+            disabled={isLoading} // Disable the button while loading
+            className={`w-full py-2 rounded-md ${isLoading ? 'bg-gray-500' : 'bg-blue-600 hover:bg-blue-700'} text-white`}
           >
-            Register
+            {isLoading ? 'LOADING...' : 'Register'}
           </button>
         </form>
       </div>

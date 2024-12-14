@@ -1,4 +1,6 @@
 import React, { useState, useEffect, Suspense, lazy } from "react";
+import {LazyLoadImage} from 'react-lazy-load-image-component';
+import 'react-lazy-load-image-component/src/effects/blur.css';
 import "./Team.css";
 import FacultyAdvisor from "./Faculty/FacultyAdvisor.jsx";
 import { Home } from "./Alumanipage.jsx";
