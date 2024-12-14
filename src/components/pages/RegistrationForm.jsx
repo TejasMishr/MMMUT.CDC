@@ -352,13 +352,13 @@ const RegistrationForm = () => {
 
             <button
               onClick={handleOtpSubmit}
-              className="w-full py-2 bg-blue-600 text-white rounded-md"
+              className="w-full py-2 text-lg bg-blue-600 text-white rounded-md"
             >
               Verify OTP
             </button>
             <button
   onClick={() => setShowOtpPopup(false)}
-  className="py-2 px-4 bg-gray-400 hover:bg-gray-500 text-white rounded-md"
+  className="py-2 px-4 text-lg bg-gray-400 hover:bg-gray-500 text-white rounded-md"
 >
   Close
 </button>
