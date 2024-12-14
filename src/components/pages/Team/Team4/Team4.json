@@ -16,9 +16,17 @@
     "linkedin": "https://www.linkedin.com/in/prabhat-yadav-404b7727a"
   },
   {
+    "imgLink": "https://firebasestorage.googleapis.com/v0/b/test1-80c19.appspot.com/o/Codechef_team%2FTeam_2022-26%2Ftejas.jpg?alt=media&token=b5e678b3-e460-46a4-80d0-fa525d8c1fba",
+    "name": "Tejas Mishra",
+    "position": "Joint Secretary",
+    "gmail": "tejasmishra72@gmail.com",
+    "insta": "https://www.instagram.com/tejas_mishr/",
+    "linkedin": "https://www.linkedin.com/in/tejasmishr"
+  },
+  {
     "imgLink": "https://firebasestorage.googleapis.com/v0/b/cdc-website2023.appspot.com/o/create%2F2022-26%2FIMG_20240903_001215%20-%20Samriddhi%20Srivastava.jpg?alt=media&token=37ddeb1c-8b51-4853-97bb-28817bc8b3fb",
     "name": "Samriddhi Srivastava",
-    "position": "Secretary",
+    "position": "Joint Secretary",
     "gmail": null,
     "insta": null,
     "linkedin": null
@@ -26,7 +34,7 @@
   {
     "imgLink": "https://firebasestorage.googleapis.com/v0/b/cdc-website2023.appspot.com/o/create%2F2022-26%2FIMG_20240831_211522922_HDR%20-%20Yashvardhan%20Gond.jpg?alt=media&token=7bd4375b-bc2e-4b5d-a39e-a33f376fbf75",
     "name": "Yash Vardhan Gond",
-    "position": "Secretary",
+    "position": "",
     "gmail": "yashvardhangond95@gmail.com",
     "insta": "https://instagram.com/grand_master601?igshid=ZDc4ODBmNjlmNQ==",
     "linkedin": "https://www.linkedin.com/in/yash-vardhan-593562265"
@@ -87,14 +95,7 @@
     "instagram": "https://instagram.com/__aditya_gaur_090?igshid=MzNlNGNkZWQ4Mg==",
     "linkedin": "https://www.linkedin.com/in/aditya-gaur-mmmut"
   },
-  {
-    "imgLink": "https://firebasestorage.googleapis.com/v0/b/test1-80c19.appspot.com/o/Codechef_team%2FTeam_2022-26%2Ftejas.jpg?alt=media&token=b5e678b3-e460-46a4-80d0-fa525d8c1fba",
-    "name": "Tejas Mishra",
-    "position": "Publicity & Outreach Lead",
-    "gmail": "tejasmishra72@gmail.com",
-    "insta": "https://www.instagram.com/tejas_mishr/",
-    "linkedin": "https://www.linkedin.com/in/tejasmishr"
-  },
+
   {
     "imgLink": "https://firebasestorage.googleapis.com/v0/b/test1-80c19.appspot.com/o/Codechef_team%2FTeam_2022-26%2Fmanmeet.jpg?alt=media&token=145a77a3-f9ce-4144-b7e3-fcc0ac46077d",
     "name": "Manmeet Kishore Maurya",
