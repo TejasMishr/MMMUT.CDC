@@ -7,7 +7,7 @@ export const Footer = () => {
       <div className="flex flex-wrap justify-between items-start gap-8 sm:gap-12">
         <div className="w-full sm:w-1/4 footer-section flex flex-col items-start gap-3">
           <img
-            src="/contactus/CDC.png"
+            src="/events/CDC_logo.png"
             alt="Logo"
             className="h-16 w-auto animated-element hover:scale-105 transition-transform duration-300"
           />
