@@ -69,7 +69,7 @@ const OurEvents = () => {
                       )
                       .replace(
                         /AlgOlympics/g,
-                        '<span class="text-red-500 px-1 rounded-sm">AlgoOlympics</span>'
+                        '<span class="text-red-500 px-1 rounded-sm">AlgOlympics</span>'
                       )
                       .replace(
                         /Syntax Siege/g,
