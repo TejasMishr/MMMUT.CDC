@@ -129,7 +129,7 @@ const Event = () => {
                 <li className="flex items-center space-x-4">
                   <HiMiniSquare3Stack3D className="text-blue-400 text-2xl" />
                   <span className="text-sm sm:text-lg">
-                    Registration Fee: ₹120 per team
+                    Registration Fee: ₹150 per team
                   </span>
                 </li>
                 <li className="flex items-center space-x-4">
@@ -151,11 +151,11 @@ const Event = () => {
               </div>
               <div>
                 <h1 className="text-lg sm:text-xl">Online Round:-</h1>{" "}
-                <p className="text-sm sm:text-lg">December 22, 2024</p>
+                <p className="text-sm sm:text-lg">December 25, 2024</p>
               </div>
               <div className="mt-2">
                 <h1 className="text-lg sm:text-xl">Offline Round</h1>{" "}
-                <p className="text-sm sm:text-lg">December 29, 2024</p>{" "}
+                <p className="text-sm sm:text-lg">January 4, 2025</p>{" "}
               </div>
             </div>
 

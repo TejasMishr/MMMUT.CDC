@@ -3,10 +3,10 @@ import { FaChevronLeft, FaChevronRight, FaUser } from 'react-icons/fa';
 
 const testimonialsData = [
   {
-    name: "Priyanshu Mishra",
+    name: "Abhishek Kumar",
     title: "B.Tech, Second Year",
     feedback: "The Coders and Developers Club is an excellent place for anyone eager to learn coding and technology. It’s a welcoming environment where you can grow your skills and connect with others.",
-    image: "" 
+    image: "./testimonial/abhishek.jpeg" 
   },
   {
     name: "Aditi Gupta",
