@@ -1,0 +1,73 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+		<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+<url>
+	<loc>https://cdc.mmmut.xyz/</loc>
+	<lastmod>2024-12-16T01:28:33+01:00</lastmod>
+	<priority>0.8</priority>
+</url>
+<url>
+	<loc>https://cdc.mmmut.xyz/events</loc>
+	<lastmod>2024-12-16T01:28:33+01:00</lastmod>
+	<priority>1.0</priority>
+</url>
+<url>
+	<loc>https://cdc.mmmut.xyz/cdcteam</loc>
+	<lastmod>2024-12-16T01:28:33+01:00</lastmod>
+	<priority>1.0</priority>
+</url>
+<url>
+	<loc>https://cdc.mmmut.xyz/contact</loc>
+	<lastmod>2024-12-16T01:28:33+01:00</lastmod>
+	<priority>1.0</priority>
+</url>
+<url>
+	<loc>https://cdc.mmmut.xyz/profile</loc>
+	<lastmod>2024-12-16T01:28:33+01:00</lastmod>
+	<priority>1.0</priority>
+</url>
+<url>
+	<loc>https://cdc.mmmut.xyz/dashboard</loc>
+	<lastmod>2024-12-16T01:28:33+01:00</lastmod>
+	<priority>1.0</priority>
+</url>
+<url>
+	<loc>https://cdc.mmmut.xyz/createTeam</loc>
+	<lastmod>2024-12-16T01:28:33+01:00</lastmod>
+	<priority>1.0</priority>
+</url>
+<url>
+	<loc>https://cdc.mmmut.xyz/login</loc>
+	<lastmod>2024-12-16T01:28:33+01:00</lastmod>
+	<priority>1.0</priority>
+</url>
+<url>
+	<loc>https://cdc.mmmut.xyz/signup</loc>
+	<lastmod>2024-12-16T01:28:33+01:00</lastmod>
+	<priority>1.0</priority>
+</url>
+<url>
+	<loc>https://cdc.mmmut.xyz/payment</loc>
+	<lastmod>2024-12-16T01:28:33+01:00</lastmod>
+	<priority>1.0</priority>
+</url>
+<url>
+	<loc>https://cdc.mmmut.xyz/events/algOlympics</loc>
+	<lastmod>2024-12-16T01:28:33+01:00</lastmod>
+	<priority>0.8</priority>
+</url>
+<url>
+	<loc>https://cdc.mmmut.xyz/admin</loc>
+	<lastmod>2024-12-16T01:28:33+01:00</lastmod>
+	<priority>1.0</priority>
+</url>
+<url>
+	<loc>https://cdc.mmmut.xyz/team</loc>
+	<lastmod>2024-12-16T01:28:33+01:00</lastmod>
+	<priority>1.0</priority>
+</url>
+<url>
+	<loc>https://cdc.mmmut.xyz/addmem</loc>
+	<lastmod>2024-12-16T01:28:33+01:00</lastmod>
+	<priority>1.0</priority>
+</url>
+</urlset>
