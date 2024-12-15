@@ -37,7 +37,7 @@ const CreateTeam = () => {
         if (response.ok) {
           const data = await response.json();
           setTeam(data.team);
-      
+
         }
       } catch (err) {
         console.error("Error fetching team:", err);
@@ -66,7 +66,7 @@ const CreateTeam = () => {
 
       if (!response.ok) {
         console.log(response);
-        
+
         const errorData = await response.json();
         throw new Error(errorData.message || "Failed to create team");
       }
@@ -107,7 +107,7 @@ const CreateTeam = () => {
       setError("A team cannot have more than 3 members.");
       return;
     }
-     
+
     try {
       const localdata = localStorage.getItem("user");
       const user = JSON.parse(localdata);
@@ -122,13 +122,17 @@ const CreateTeam = () => {
         body: JSON.stringify({ teamId: team._id, members: [member] }),
       });
 
+      setMessage("");
+      setError("");
       if (!response.ok) {
         const errorData = await response.json();
+        setError(errorData.message);
+        console.log("again");
         throw new Error(errorData.message || "Failed to add member");
       }
-
+      
       setMessage("Member added successfully!");
-      setError("");
+      
       setMember({
         name: "",
         email: "",
@@ -156,7 +160,7 @@ const CreateTeam = () => {
       setError(err.message || "An error occurred");
     }
     setIsAddMemberFormVisible(false);
-      };
+  };
   const handleProceedToPayment = () => {
     if (!team || team.members.length < 3) {
       const confirmProceed = window.confirm(
@@ -164,18 +168,18 @@ const CreateTeam = () => {
       );
       if (!confirmProceed) return;
     }
-  
+
     // Store team data in local storage
     const teamData = {
       name: team.name,
       members: team.members,
     };
     localStorage.setItem("teamData", JSON.stringify(teamData));
-  
+
     // Redirect to the payment page
     navigate("/payment");
   };
-  
+
 
   const handleMemberUpdate = async (e) => {
     e.preventDefault();
@@ -233,7 +237,7 @@ const CreateTeam = () => {
       document.body.style.overflow = "auto";
     };
   }, [isAddMemberFormVisible]);
-  
+
   useEffect(() => {
     if (showModal) {
       document.body.style.overflow = "hidden";
@@ -276,8 +280,7 @@ const CreateTeam = () => {
               required
             />
           </div>
-          {message && <p className="text-green-500 mb-4">{message}</p>}
-          {error && <p className="text-red-500 mb-4">{error}</p>}
+          
           <button
             type="submit"
             className="w-full py-2 bg-blue-600 hover:bg-blue-700 text-white rounded-md transition duration-200"
@@ -293,6 +296,7 @@ const CreateTeam = () => {
           <div className="flex justify-between items-center mb-6">
             <h2 className="text-white text-2xl">{team.name}</h2>
           </div>
+          
           <ul className="space-y-2">
             {team.members.map((member) => (
               <li key={member._id} className="text-gray-300 py-2 px-2 flex justify-between items-center">
@@ -306,134 +310,141 @@ const CreateTeam = () => {
                 >
                   Edit
                 </button>
-            
-              </li>
-           
-            ))}
-              {team.payment && team.payment.status ? (
-  team.payment.status === "incomplete" ? (
-    <button
-      onClick={handleProceedToPayment}
-      className="w-full text-lg py-2 mt-4 bg-blue-600 hover:bg-blue-700 text-white rounded-md"
-    >
-      Proceed to Payment
-    </button>
-  ) : team.payment.status === "accepted" ? (
-    <p className="text-green-400 text-center mt-4">
-      Your payment status is: <strong className="uppercase">{team.payment.status}</strong>
-    </p>
-  ) : team.payment.status === "pending" ? (
-    <p className="text-blue-400 text-center mt-4">
-      Your payment status is: <strong className="uppercase">{team.payment.status}</strong>
-    </p>
-  ) :(
-    <p className="text-red-400 text-center mt-4">
-      Your payment status is: <strong className="uppercase">{team.payment.status}</strong>
-    </p>
-  )
-) : (
-  <p className="text-red-400 text-center mt-4">
-    Payment details not available.
-  </p>
-)}
 
+              </li>
+
+            ))}
+
+          {message && <p className="text-green-500 mb-4">{message}</p>}
+          {error && <p className="text-red-500 mb-4">{error}</p>}
+
+
+
+            {team.payment && team.payment.status ? (
+              team.payment.status === "incomplete" ? (
+                <button
+                  onClick={handleProceedToPayment}
+                  className="w-full text-lg py-2 mt-4 bg-blue-600 hover:bg-blue-700 text-white rounded-md"
+                >
+                  Proceed to Payment
+                </button>
+              ) : team.payment.status === "accepted" ? (
+                <p className="text-green-400 text-center mt-4">
+                  Your payment status is: <strong className="uppercase">{team.payment.status}</strong>
+                </p>
+              ) : team.payment.status === "pending" ? (
+                <p className="text-blue-400 text-center mt-4">
+                  Your payment status is: <strong className="uppercase">{team.payment.status}</strong>
+                </p>
+              ) : (
+                <p className="text-red-400 text-center mt-4">
+                  Your payment status is: <strong className="uppercase">{team.payment.status}</strong>
+                </p>
+              )
+            ) : (
+              <p className="text-red-400 text-center mt-4">
+                Payment details not available.
+              </p>
+            )}
+            
           </ul>
+          
           {team.members.length < 3 && (
-          <button
-  onClick={() => setIsAddMemberFormVisible(!isAddMemberFormVisible)}
-  className={`w-full text-lg py-2 mt-4 text-white rounded-md ${
-    isAddMemberFormVisible ? "bg-red-600 hover:bg-red-700" : "bg-green-600 hover:bg-green-700"
-  }`}
->
-  {isAddMemberFormVisible ? "Close" : "Add Member"}
-</button>
-)}
+            <button
+              onClick={() => setIsAddMemberFormVisible(!isAddMemberFormVisible)}
+              className={`w-full text-lg py-2 mt-4 text-white rounded-md ${isAddMemberFormVisible ? "bg-red-600 hover:bg-red-700" : "bg-green-600 hover:bg-green-700"
+                }`}
+            >
+              {isAddMemberFormVisible ? "Close" : "Add Member"}
+            </button>
+          )}
           {/* Add Member Form */}
           {team.members.length < 3 && isAddMemberFormVisible && (
-          <div className="fixed inset-0 flex items-center justify-center bg-black bg-opacity-50 z-50">
-          <div className="bg-gray-800 p-6 rounded-lg w-96 shadow-md">
-            <h2 className="text-white text-2xl font-extrabold mb-4">Add Member</h2>
-            <form onSubmit={handleAddMember} className="space-y-4">
-              <div>
-                <label htmlFor="name" className="block text-gray-300 mb-2">
-                  Name
-                </label>
-                <input
-                  type="text"
-                  id="name"
-                  name="name"
-                  value={member.name}
-                  onChange={(e) => setMember({ ...member, name: e.target.value })}
-                  className="w-full px-4 py-2 border border-gray-600 bg-transparent rounded-md text-white"
-                />
+            <div className="fixed inset-0 flex items-center justify-center bg-black bg-opacity-50 z-50">
+              <div className="bg-gray-800 p-6 rounded-lg w-96 shadow-md">
+                <h2 className="text-white text-2xl font-extrabold mb-4">Add Member</h2>
+                <form onSubmit={handleAddMember} className="space-y-4">
+                  <div>
+                    <label htmlFor="name" className="block text-gray-300 mb-2">
+                      Name
+                    </label>
+                    <input
+                      type="text"
+                      id="name"
+                      name="name"
+                      value={member.name}
+                      onChange={(e) => setMember({ ...member, name: e.target.value })}
+                      className="w-full px-4 py-2 border border-gray-600 bg-transparent rounded-md text-white"
+                    />
+                  </div>
+                  <div>
+                    <label htmlFor="email" className="block text-gray-300 mb-2">
+                      Email
+                    </label>
+                    <input
+                      type="email"
+                      id="email"
+                      name="email"
+                      value={member.email}
+                      onChange={(e) => setMember({ ...member, email: e.target.value })}
+                      className="w-full px-4 py-2 border border-gray-600 bg-transparent rounded-md text-white"
+                    />
+                  </div>
+                  <div>
+                    <label htmlFor="phone" className="block text-gray-300 mb-2">
+                      Phone
+                    </label>
+                    <input
+                      type="number"
+                      id="phone"
+                      name="phone"
+                      value={member.phone}
+                      onChange={(e) => setMember({ ...member, phone: e.target.value })}
+                      className="w-full px-4 py-2 border border-gray-600 bg-transparent rounded-md text-white"
+                    />
+                  </div>
+                  <div>
+                    <label htmlFor="universityRollNo" className="block text-gray-300 mb-2">
+                      University Roll No.
+                    </label>
+                    <input
+                      type="text"
+                      id="universityRollNo"
+                      name="universityRollNo"
+                      value={member.universityRollNo}
+                      onChange={(e) => setMember({ ...member, universityRollNo: e.target.value })}
+                      className="w-full px-4 py-2 border border-gray-600 bg-transparent rounded-md text-white"
+                    />
+                  </div>
+                  <div>
+                    <label htmlFor="codeforceHandle" className="block text-gray-300 mb-2">
+                      Codeforces Handle
+                    </label>
+                    <input
+                      type="text"
+                      id="codeforceHandle"
+                      name="codeforceHandle"
+                      value={member.codeforceHandle}
+                      onChange={(e) => setMember({ ...member, codeforceHandle: e.target.value })}
+                      className="w-full px-4 py-2 border border-gray-600 bg-transparent rounded-md text-white"
+                    />
+                  </div>
+
+                  <button
+                    type="submit"
+                    className="w-full text-lg py-2 bg-green-600 hover:bg-green-700 text-white rounded-md"
+                  >
+                    Submit
+                  </button>
+                </form>
+                <button
+                  onClick={() => setIsAddMemberFormVisible(false)}
+                  className="mt-4 w-full py-2 text-lg bg-red-600 hover:bg-red-700 text-white rounded-md"
+                >
+                  Close
+                </button>
               </div>
-              <div>
-                <label htmlFor="email" className="block text-gray-300 mb-2">
-                  Email
-                </label>
-                <input
-                  type="email"
-                  id="email"
-                  name="email"
-                  value={member.email}
-                  onChange={(e) => setMember({ ...member, email: e.target.value })}
-                  className="w-full px-4 py-2 border border-gray-600 bg-transparent rounded-md text-white"
-                />
-              </div>
-              <div>
-                <label htmlFor="phone" className="block text-gray-300 mb-2">
-                  Phone
-                </label>
-                <input
-                  type="number"
-                  id="phone"
-                  name="phone"
-                  value={member.phone}
-                  onChange={(e) => setMember({ ...member, phone: e.target.value })}
-                  className="w-full px-4 py-2 border border-gray-600 bg-transparent rounded-md text-white"
-                />
-              </div>
-              <div>
-                <label htmlFor="universityRollNo" className="block text-gray-300 mb-2">
-                  University Roll No.
-                </label>
-                <input
-                  type="text"
-                  id="universityRollNo"
-                  name="universityRollNo"
-                  value={member.universityRollNo}
-                  onChange={(e) => setMember({ ...member, universityRollNo: e.target.value })}
-                  className="w-full px-4 py-2 border border-gray-600 bg-transparent rounded-md text-white"
-                />
-              </div>
-              <div>
-                <label htmlFor="codeforceHandle" className="block text-gray-300 mb-2">
-                  Codeforces Handle
-                </label>
-                <input
-                  type="text"
-                  id="codeforceHandle"
-                  name="codeforceHandle"
-                  value={member.codeforceHandle}
-                  onChange={(e) => setMember({ ...member, codeforceHandle: e.target.value })}
-                  className="w-full px-4 py-2 border border-gray-600 bg-transparent rounded-md text-white"
-                />
-              </div>
-              <button
-                type="submit"
-                className="w-full text-lg py-2 bg-green-600 hover:bg-green-700 text-white rounded-md"
-              >
-                Submit
-              </button>
-            </form>
-            <button
-              onClick={() => setIsAddMemberFormVisible(false)}
-              className="mt-4 w-full py-2 text-lg bg-red-600 hover:bg-red-700 text-white rounded-md"
-            >
-              Close
-            </button>
-          </div>
-        </div>
+            </div>
           )}
         </div>
       )}
@@ -537,6 +548,7 @@ const CreateTeam = () => {
       )}
     </div>
   );
+  
 };
 
 export default CreateTeam;
