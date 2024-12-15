@@ -279,7 +279,7 @@ const RegistrationForm = () => {
                 </button>
                 )}
               </div>
-              {emailVerified && <p className="text-green-500 mt-2">Email verified</p>}
+              {/* {emailVerified && <p className="text-green-500 mt-2">Email verified</p>} */}
             </div>
           </div>
           {emailError && <p className="text-red-500">{emailError}</p>}
