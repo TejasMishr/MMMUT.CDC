@@ -1,4 +1,4 @@
-import { useState, useEffect } from "react";
+import { useState, useEffect,useRef } from "react";
 import { FaMoon, FaSun, FaBars, FaTimes, FaUser } from "react-icons/fa";
 import { NavLink } from "react-router-dom";
 import decodeTokenAndGetRole from '../../config/decodeToken'; // Adjust the import path
@@ -42,13 +42,31 @@ export const Navbar = () => {
     window.location.href = "/";
   };
 
-  const toggleDropdown = () => {
-    setShowDropdown(!showDropdown);
-  };
+//  const toggleDropdown = () => {
+//     setShowDropdown(!showDropdown);
+//   }; 
 
   const closeMobileMenu = () => {
     setIsMobileMenuOpen(false);
   };
+
+  
+  const dropdownRef = useRef(null);
+  const toggleDropdown = () => {
+    setShowDropdown(!showDropdown);
+  };
+  useEffect(() => {
+    const handleOutsideClick = (event) => {
+      if (dropdownRef.current && !dropdownRef.current.contains(event.target)) {
+        setShowDropdown(false);
+      }
+    };
+    document.addEventListener("mousedown", handleOutsideClick);
+    return () => {
+      document.removeEventListener("mousedown", handleOutsideClick);
+    };
+  }, []);
+
 
   return (
     <nav className="flex items-center justify-between py-4 px-6 w-full bg-black text-white relative z-50">
@@ -88,7 +106,7 @@ export const Navbar = () => {
         )}
       </ul>
 
-      <div className="hidden lg:flex items-center space-x-4">
+      {/* <div className="hidden lg:flex items-center space-x-4">
         {isLoggedIn ? (
           <div className="relative">
          <FaUser 
@@ -119,7 +137,43 @@ export const Navbar = () => {
             LOGIN
           </NavLink>
         )}
+      </div> */}
+         
+      <div className="hidden lg:flex items-center space-x-4">
+        {isLoggedIn ? (
+          <div className="relative" ref={dropdownRef} >
+         <FaUser 
+  className="h-8 w-8 cursor-pointer" 
+  onClick={toggleDropdown} 
+/>
+            {showDropdown && (
+              <div className="absolute right-0 mt-2 w-48 bg-white text-black rounded shadow-lg">
+                <NavLink to="dashboard" className="block px-4 py-2 hover:bg-gray-200">
+                  Team Dashboard
+                </NavLink>
+                {userRole === 'Team Leader' && (
+                  <NavLink to="/createTeam" className="block px-4 py-2 hover:bg-gray-200">
+                   Create Team
+                  </NavLink>
+                )}
+                <button onClick={handleLogout} className="block w-full text-left px-4 py-2 hover:bg-gray-200">
+                  Logout
+                </button>
+              </div>
+            )}
+          </div>
+        ) : (
+          <NavLink
+            to="/login"
+            className="text-lg font-roboto-slab font-semibold hover:text-gray-300 transition-colors duration-300 block p-2"
+          >
+            LOGIN
+          </NavLink>
+        )}
       </div>
+
+
+
 
       <button onClick={toggleMobileMenu} className="lg:hidden text-white text-2xl focus:outline-none">
         {isMobileMenuOpen ? <FaTimes /> : <FaBars />}
