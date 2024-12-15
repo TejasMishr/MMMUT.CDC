@@ -276,7 +276,7 @@ const RegistrationForm = () => {
                 >
                   Verify Email
                 </button>
-                )};
+                )}
               </div>
             </div>
           </div>
