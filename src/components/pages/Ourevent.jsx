@@ -5,14 +5,14 @@ const eventDetails = [
     title: "AlgOlympics",
     description:
       "AlgOlympics is a regional-level coding competition to foster collaboration, competitiveness, and technical excellence. Following the ICPC structure, the event is open to participants from institutions throughout the region and provides an exciting two-round competition that fosters creativity and honors programming talent.",
-    img: "https://firebasestorage.googleapis.com/v0/b/indi-rp.appspot.com/o/Alogolympics%20logo.png?alt=media&token=805a4f98-3cd7-44e0-a2d3-c2046816ee6d",
+    img: "./events/cdcAlgOlympics.png",
     ispastevent: false,
   },
   {
     title: "SYNTAX SIEGE",
     description:
       "Syntax Siege is a week-long event featuring five days of offline coding classes designed to enhance programming skills. On the sixth day, participants compete in an online contest, followed by an exciting offline contest on the final day",
-    img: "https://firebasestorage.googleapis.com/v0/b/indi-rp.appspot.com/o/SyntaxSeize%20(1).jpg?alt=media&token=e0fcb88c-610c-411c-ac73-cd1c5910d9a8",
+    img: "./events/Syntax.jpg",
     ispastevent: true,
   },
   {
