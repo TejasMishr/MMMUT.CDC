@@ -22,14 +22,14 @@ import PaymentPage from "./components/pages/payment";
 
 function App() {
   const [isLoggedIn, setIsLoggedIn] = useState(false);
-  useEffect(() => {
-    // Disable right-click globally
-    document.addEventListener('contextmenu', (e) => e.preventDefault());
+  // useEffect(() => {
+  //   // Disable right-click globally
+  //   document.addEventListener('contextmenu', (e) => e.preventDefault());
 
-    return () => {
-      document.removeEventListener('contextmenu', (e) => e.preventDefault());
-    };
-  }, []);
+  //   return () => {
+  //     document.removeEventListener('contextmenu', (e) => e.preventDefault());
+  //   };
+  // }, []);
 
   useEffect(() => {
     // Check login status

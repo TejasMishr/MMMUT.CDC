@@ -3,6 +3,8 @@ import API_BASE_URL from "../../config/apiConfig";
 import { useNavigate } from 'react-router-dom';
 import { IoMdEye, IoMdEyeOff } from 'react-icons/io';
 
+ 
+  
 const RegistrationForm = () => {
   const [formData, setFormData] = useState({
     firstName: '',
@@ -28,6 +30,52 @@ const RegistrationForm = () => {
   const navigate = useNavigate();
 
   const colleges = ['MMMUT', 'ITM', 'BIT', 'KIPM', 'SUYANSH', 'Other'];
+  const [searchTerm, setSearchTerm] = useState('');
+  const [suggestions, setSuggestions] = useState([]);
+  const [selectedCollege, setSelectedCollege] = useState('');
+  const [loading, setLoading] = useState(false);
+  // const [error, setError] = useState('');
+
+  // Fetch college suggestions
+  const fetchCollegeSuggestions = async (term) => {
+    if (term.trim() === '') {
+      setSuggestions([]); // Clear suggestions if input is empty
+      return;
+    }
+  
+    try {
+      setLoading(true);
+      setError('');
+      const response = await fetch(
+        `https://unstop.com/api/autocomplete/${term}/Organisation/name`
+      );
+  
+      if (!response.ok) {
+        throw new Error('Failed to fetch suggestions');
+      }
+  
+      const responseData = await response.json(); // Parse JSON response
+  
+      // Extract 'name' property from the 'data' key
+      setSuggestions(responseData.data.map((item) => ({ name: item.name })));
+    } catch (err) {
+      setError('Error fetching suggestions');
+      console.error('Error fetching suggestions:', err);
+    } finally {
+      setLoading(false);
+    }
+
+  };
+  const handleSuggestionClick = (name) => {
+    setSearchTerm(name); // Set the clicked suggestion as the input value
+    setSuggestions([]); // Clear suggestions after selection
+  }
+  const handleInputChange = (e) => {
+  console.log("Input changed:", e.target.value);
+  const value = e.target.value;
+  setSearchTerm(value);
+  fetchCollegeSuggestions(value);
+};
 
   const handleChange = (e) => {
     const { name, value } = e.target;
@@ -268,35 +316,37 @@ const RegistrationForm = () => {
             />
           </div>
           <div>
-            <label className="block text-gray-300 mb-2">College</label>
-            <select
-              name="college"
-              value={formData.college}
-              onChange={handleChange}
-              className="w-full px-4 py-2 bg-gray-700 text-white rounded-md"
-            >
-              <option value="">Select your college</option>
-              {colleges.map((college) => (
-                <option key={college} value={college}>
-                  {college}
-                </option>
-              ))}
-            </select>
-          </div>
-          {formData.college === 'Other' && (
-            <div>
-              <label className="block text-gray-300 mb-2">Custom College</label>
-              <input
-                type="text"
-                name="customCollege"
-                value={formData.customCollege}
-                onChange={handleChange}
-                placeholder="Enter your college"
-                className="w-full px-4 py-2 bg-gray-700 text-white rounded-md"
-                required
-              />
-            </div>
-          )}
+      <label className="block text-gray-300 mb-2">College</label>
+      <input
+        type="text"
+        value={searchTerm}
+        onChange={handleInputChange} // Call handleInputChange here
+        placeholder="Search for your college"
+        className="w-full px-4 py-2 bg-gray-700 text-white rounded-md"
+      />
+      {loading && <p className="text-gray-400 mt-2">Loading...</p>}
+      {error && <p className="text-red-500 mt-2">{error}</p>}
+
+      {/* Suggestions Dropdown */}
+      {suggestions.length > 0 && (
+          <ul className="bg-gray-800 text-white mt-2 rounded-md shadow-lg max-h-40 overflow-y-auto">
+            {suggestions.map((suggestion, index) => (
+              <li
+                key={index}
+                onClick={() => handleSuggestionClick(suggestion.name)}
+                className="px-4 py-2 hover:bg-gray-600 cursor-pointer"
+              >
+                {suggestion.name}
+              </li>
+            ))}
+          </ul>
+        )}
+
+      {/* Display selected college */}
+      {selectedCollege && (
+        <p className="text-green-400 mt-2">Selected College: {selectedCollege}</p>
+      )}
+    </div>
           <div>
             <label className="block text-gray-300 mb-2">University Roll Number</label>
             <input
