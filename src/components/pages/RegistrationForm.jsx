@@ -263,6 +263,7 @@ const RegistrationForm = () => {
                     value={formData.email}
                     onChange={handleChange}
                     placeholder="email@gmail.com"
+                    disabled={emailVerified}
                     className="w-full px-4 py-2 bg-gray-700 text-white rounded-md"
                     required
                   />
@@ -278,6 +279,7 @@ const RegistrationForm = () => {
                 </button>
                 )}
               </div>
+              {emailVerified && <p className="text-green-500 mt-2">Email verified</p>}
             </div>
           </div>
           {emailError && <p className="text-red-500">{emailError}</p>}
