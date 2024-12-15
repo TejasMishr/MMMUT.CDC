@@ -321,7 +321,7 @@ const CreateTeam = () => {
 
 
             {team.payment && team.payment.status ? (
-              team.payment.status === "incomplete" ? (
+              team.payment.status === "pending" ? (
                 <button
                   onClick={handleProceedToPayment}
                   className="w-full text-lg py-2 mt-4 bg-blue-600 hover:bg-blue-700 text-white rounded-md"

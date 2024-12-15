@@ -220,7 +220,7 @@ export const Navbar = () => {
                   </NavLink>
                 </li>
               )}
-              <li>
+              <li onClick={closeMobileMenu}>
                 <button
                   onClick={handleLogout}
                   className="text-white text-lg p-2 rounded-full bg-red-500 hover:bg-red-700 font-roboto-slab hover:text-gray-300 transition-colors duration-300 w-32 text-center"
@@ -231,7 +231,7 @@ export const Navbar = () => {
             </>
           )}
           {!isLoggedIn && (
-            <li className="flex justify-center">
+            <li onClick={closeMobileMenu} className="flex justify-center">
               <NavLink
                 to="/login"
                 className="text-white text-lg w-20 p-2 text-center font-roboto-slab rounded-full bg-green-500 hover:bg-green-700 transition-colors duration-300 block"

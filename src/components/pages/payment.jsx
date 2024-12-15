@@ -6,6 +6,13 @@ const PaymentPage = () => {
   const [transactionId, setTransactionId] = useState("");
   var teamName = JSON.parse(localStorage.getItem("teamData")).name;
   const [loading, setLoading] = useState(false);
+  const [copiedText, setCopiedText] = useState("");
+
+  const copyToClipboard = (text) => {
+    navigator.clipboard.writeText(text);
+    setCopiedText(text);
+    setTimeout(() => setCopiedText(""), 2000); 
+  };
 
   // EmailJS configuration
   const serviceID = "service_4401q79";
@@ -13,7 +20,7 @@ const PaymentPage = () => {
   const userID = "6SYFkuz4yz71tbNLR";
 
   // Constant image URL
-  const constantImage = "./payment/manya.png"; // Update with the actual path
+  const constantImage = "./payment/qr.png"; // Update with the actual path
 
   const handleSubmit = async (e) => {
     e.preventDefault();
@@ -109,27 +116,59 @@ const PaymentPage = () => {
         <h1 className="text-2xl text-white mb-4">Payment Form</h1>
 
         {/* Display constant image */}
-        <div className="flex justify-center mb-6">
+        <div className="flex justify-center mb-2">
           <img
             src={constantImage}
             alt="Constant Preview"
             className="w-40 h-40 border-4 border-gray-600"
           />
         </div>
-
+        <div className="bg-gray-800 text-white p-4 rounded-md shadow-lg flex flex-col items-center">
+        <p className="text-lg font-semibold mb-2">Account Details</p>
+        <p className="mb-1">
+          Account Holder: <span className="font-medium">Ayush Sharma</span>
+        </p>
+        <p className="mb-1 flex items-center">
+          ACC No.: 
+          <span className="font-medium ml-2">41441152413</span>
+          <button
+            onClick={() => copyToClipboard("41441152413")}
+            className="ml-2 text-gray-400 text-lg hover:text-white"
+            title="Copy Account Number"
+          >
+            📋
+          </button>
+        </p>
+        <p className="mb-1 flex items-center">
+          IFSC: 
+          <span className="font-medium ml-2">SBIN0002578</span>
+          <button
+            onClick={() => copyToClipboard("SBIN0002578")}
+            className="ml-2 text-gray-400 text-lg hover:text-white"
+            title="Copy IFSC Code"
+          >
+            📋
+          </button>
+        </p>
+        {copiedText && (
+          <p className="text-green-400 mt-2">Copied: {copiedText}</p>
+        )}
+      </div>
+  
+  
         {/* Form */}
-        <form onSubmit={handleSubmit} className="space-y-4">
+        <form onSubmit={handleSubmit} className="space-y-4 mb-2">
           {/* Transaction ID Input */}
           <div>
             <label htmlFor="transactionId" className="block text-gray-300 mb-2">
-              Transaction ID
+              Transaction ID or UTR
             </label>
             <input
               type="text"
               id="transactionId"
               value={transactionId}
               onChange={(e) => setTransactionId(e.target.value)}
-              placeholder="Enter Transaction ID"
+              placeholder="Enter Transaction ID or UTR"
               className="w-full px-4 py-2 border border-gray-600 bg-gray-700 text-white rounded-md"
               required
             />

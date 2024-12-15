@@ -253,9 +253,9 @@ const RegistrationForm = () => {
             </div>
           </div>
           <div className="flex items-center">
-            <div className="w-1/2">
+            <div className="w-3/4">
               <label className="block text-gray-300 mb-2">Email</label>
-              <div className='flex items-center space-x-4'>
+              <div className='flex items-center space-x-4 '>
                 <div>
                   <input
                     type="email"
@@ -273,7 +273,7 @@ const RegistrationForm = () => {
                 <button
                   type="button"
                   onClick={verifyEmail}
-                  className="ml-4 bg-blue-600 text-white px-4 py-2 rounded-md"
+                  className="ml-4 bg-blue-600 text-white text-lg py-2 px-4 text-sm rounded-md"
                 >
                   Verify Email
                 </button>
