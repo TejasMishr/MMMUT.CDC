@@ -5,7 +5,7 @@ const eventDetails = [
     title: "AlgOlympics",
     description:
       "AlgOlympics is a regional-level coding competition to foster collaboration, competitiveness, and technical excellence. Following the ICPC structure, the event is open to participants from institutions throughout the region and provides an exciting two-round competition that fosters creativity and honors programming talent.",
-    img: "./events/ss.png",
+    img: "https://firebasestorage.googleapis.com/v0/b/indi-rp.appspot.com/o/Alogolympics%20logo.png?alt=media&token=805a4f98-3cd7-44e0-a2d3-c2046816ee6d",
     ispastevent: false,
   },
   {
@@ -25,8 +25,8 @@ const eventDetails = [
   {
     title: "GENESIS",
     description:
-      "An exclusive event for first-year students, guided by accomplished alumni and technical experts. The session helps students understand industry trends, refine their skills, and set clear career goals. The event fosters learning, collaboration, and a strong foundation in coding and technology.",
-    img: "./events/gen.png",
+      "Syntax Siege is a week-long event featuring five days of offline coding classes designed to enhance programming skills. On the sixth day, participants compete in an online contest, followed by an exciting offline contest on the final day",
+    img: "./events/ss.png",
     ispastevent: true,
   },
 ];
