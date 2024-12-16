@@ -156,7 +156,7 @@ const ContactForm = () => {
             <FaWhatsapp />
           </a>
           <a
-            href="https://t.me/CDC_Support"
+            href="https://t.me/+mx_KGfILn8VhODA1"
             target="_blank"
             rel="noopener noreferrer"
             className="text-blue-500 text-5xl hover:text-blue-400 transition duration-200"
