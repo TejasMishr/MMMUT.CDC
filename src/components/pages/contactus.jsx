@@ -1,7 +1,7 @@
 import React, { useState } from "react";
-import { Lottie } from "../hooks/lottie/lottie"; 
+import { Lottie } from "../hooks/lottie/lottie";
 import emailjs from "emailjs-com";
-import { FaWhatsapp, FaTelegramPlane } from "react-icons/fa"; 
+import { FaWhatsapp, FaTelegramPlane } from "react-icons/fa";
 
 const ContactForm = () => {
   const [formData, setFormData] = useState({
@@ -28,7 +28,7 @@ const ContactForm = () => {
     const serviceID = "service_4401q79";
     const templateID = "template_rizf9og";
     const userID = "6SYFkuz4yz71tbNLR";
-  
+
     emailjs
       .send(serviceID, templateID, formData, userID)
       .then(
@@ -50,7 +50,7 @@ const ContactForm = () => {
 
   return (
     <div className="bg-gray-900 min-h-screen flex flex-col items-center relative justify-center overflow-hidden">
- 
+      
       <div
         className="absolute inset-0 blur-3xl z-[0]"
         style={{
@@ -59,21 +59,23 @@ const ContactForm = () => {
         }}
       />
 
-    
       <div className="flex flex-col justify-evenly items-center h-auto w-full p-4 relative z-10">
         <h1 className="text-white text-4xl font-extrabold text-center mt-4 mb-6">
           Get in Touch with Us
         </h1>
         <p className="text-gray-300 text-center max-w-2xl mb-10">
-          Have questions or need assistance? Feel free to reach out to us via the form below or connect with us on WhatsApp and Telegram for quick responses. We’re here to help!
+          Have questions or need assistance? Feel free to reach out to us via
+          the form below or connect with us on WhatsApp and Telegram for quick
+          responses. We’re here to help!
         </p>
 
-        <div className="flex flex-col sm:flex-row justify-around items-center w-[90%] h-auto p-4 sm:space-x-8 space-y-8 sm:space-y-0">
-        
+      
+        <div className="flex flex-col sm:flex-row justify-around items-center w-[90%] h-auto p-4 sm:space-x-8 space-y-8 sm:space-y-0 relative z-20">
+         
           <div className="flex flex-col sm:w-2/5 w-full items-center justify-between">
             <form
               onSubmit={handleSubmit}
-              className="flex flex-col justify-between h-full w-full space-y-4 z-18 bg-gray-800 p-6 rounded-lg shadow-xl"
+              className="flex flex-col justify-between h-full w-full space-y-4 bg-gray-800 p-6 rounded-lg shadow-xl relative z-30"
             >
               <div className="flex space-x-4">
                 <input
@@ -130,10 +132,10 @@ const ContactForm = () => {
                 </button>
               </div>
             </form>
-            {status && <p className="text-white mt-4">{status}</p>}
+            {status && <p className="text-white mt-4 relative z-30">{status}</p>}
           </div>
 
-  
+          {/* Lottie Animation */}
           <div className="flex flex-col h-[300px] sm:w-2/5 w-full items-center justify-center mt-[1%] sm:mt-0">
             <Lottie
               link="https://lottie.host/e6328aed-b731-4b3a-be87-c559a8e86b32/huTVlPDewn.json"
@@ -143,7 +145,7 @@ const ContactForm = () => {
           </div>
         </div>
 
-     
+  
         <p className="text-white text-xl mt-8">Connect with us on:</p>
         <div className="flex space-x-8 justify-center items-center mt-4">
           <a
@@ -152,7 +154,7 @@ const ContactForm = () => {
             rel="noopener noreferrer"
             className="text-green-500 text-5xl hover:text-green-400 transition duration-200"
             style={{ zIndex: 50 }}
-         >
+          >
             <FaWhatsapp />
           </a>
           <a
@@ -161,7 +163,7 @@ const ContactForm = () => {
             rel="noopener noreferrer"
             className="text-blue-500 text-5xl hover:text-blue-400 transition duration-200"
             style={{ zIndex: 50 }}
-         >
+          >
             <FaTelegramPlane />
           </a>
         </div>
